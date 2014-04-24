@@ -1,0 +1,120 @@
+body {
+}
+
+
+ul.dropdown-menu {
+	min-width: 100px;
+}
+
+.login-box {
+	padding: 50px 0;
+	background-color: white;
+}
+
+div.container {
+	width: 98%;
+}
+
+.c-sidebar-nav {
+	padding: 9px 0;
+}
+
+#left-column {
+	position:fixed;
+	left: -10px;
+}
+
+#chat-column {
+	position: fixed;
+	background-color: whiteSmoke;
+	left: 220px;
+	overflow:auto;
+	height:600px;
+}
+
+#right-column {
+	position:fixed;
+	right: 10px;
+}
+
+#input-box {
+	position:fixed;
+	bottom: 0px;
+	left: 220px;
+	height: 65px;
+	background-color: #DDD;
+}
+
+.post-form{
+	margin: 10px 10px;
+}
+
+.separator {
+	border-bottom: 1px solid #222;
+}
+
+#chat-column ul{
+	list-style-type: none;
+	margin-left: 0px;
+}
+
+div.message-container{
+	clear: both;
+	position:relative;
+	line-height: 20px;
+	padding: 6px 10px;
+}
+
+div#chat-messages {
+	overflow: auto;
+	height:600px;
+}
+
+div.msg-time{
+	position:absolute;
+	top:7px;
+	right:10px;
+	font-size: 11px;
+	color: #999;
+}
+
+div.message{
+	margin-right:100px;
+}
+
+#chat-column .userpic{
+	float:left;
+	margin-right:5px;
+}
+
+li.user-online {
+	margin-bottom: 5px;
+}
+
+li.user-online img {
+	margin-right: 5px;
+}
+
+#group-column {
+	left: 250px;
+	position: fixed;
+}
+
+.chat-room{
+	margin-bottom: 20px;
+}
+#left-userlist {
+	margin-left: 10px;
+}
+
+#left-userlist li {
+	float: left;
+    height: 60px;
+    list-style: none outside none;
+    margin-top: 10px;
+    width: 60px;
+    margin-left: 0px;
+}
+#left-userlist li img{
+   border-radius: 5px;
+}

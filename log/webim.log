@@ -1,0 +1,14 @@
+2014-04-24 13:54:49 INFO Swoole[#0]. running. on 0.0.0.0:9503
+2014-04-24 13:54:49 INFO Swoole[#3]. running. on 0.0.0.0:9503
+2014-04-24 13:54:49 INFO Swoole[#2]. running. on 0.0.0.0:9503
+2014-04-24 13:54:49 INFO Swoole[#1]. running. on 0.0.0.0:9503
+2014-04-24 13:54:49 INFO Swoole[#4]. running. on 0.0.0.0:9503
+2014-04-24 13:56:46 INFO Swoole[#1]. running. on 0.0.0.0:9503
+2014-04-24 13:56:46 INFO Swoole[#3]. running. on 0.0.0.0:9503
+2014-04-24 13:56:46 INFO Swoole[#0]. running. on 0.0.0.0:9503
+2014-04-24 13:56:46 INFO Swoole[#4]. running. on 0.0.0.0:9503
+2014-04-24 13:56:46 INFO Swoole[#2]. running. on 0.0.0.0:9503
+2014-04-24 13:57:04 INFO connected client_id = 28
+2014-04-24 13:57:04 INFO onMessage: {"cmd":"login","name":"swoole","avatar":"http://tp2.sinaimg.cn/1072494141/180/40036684976/1"}
+2014-04-24 13:57:04 INFO onMessage: {"cmd":"getOnline"}
+2014-04-24 13:57:04 INFO onMessage: {"cmd":"getHistory"}
