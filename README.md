@@ -157,15 +157,17 @@ vi /etc/hosts
 
 2.Socket Server与Socket Client通信数据格式
 
-如：Client登录时发送数据
+如：登录
+
+Client发送数据
 
 ```js
 {"cmd":"login","name":"xdy","avatar":"http://tp3.sinaimg.cn/1586005914/50/5649388281/1"}
 ```
 
-   Server响应登录
+Server响应登录
 
-```
+```js
 {"cmd":"login", "fd": "31", "name":"xdy","avatar":"http://tp3.sinaimg.cn/1586005914/50/5649388281/1"}
 ```
 
