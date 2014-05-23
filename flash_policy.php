@@ -10,10 +10,11 @@ $serv->on('connect', function ($serv, $fd, $from_id){
     echo "[#".posix_getpid()."]\tClient@[$fd:$from_id]: Connect.\n";
 });
 
-$serv->on('receive', function ($serv, $fd, $from_id, $data) {
-	global $xml;
+$serv->on('receive', function (swoole_server $serv, $fd, $from_id, $data) {
+	static $xml = null;
+    if (!$xml) file_get_contents(__DIR__ . '/policy.xml');
     echo "[#".posix_getpid()."]\tClient[$fd]: $data\n";
-    $serv->send($fd, $xml);
+    $serv->send($fd, $xml."\0");
     //$serv->close($fd);
 });
 $serv->on('close', function ($serv, $fd, $from_id) {
