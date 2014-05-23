@@ -3,7 +3,6 @@ namespace WebIM\Store;
 
 class File
 {
-    static $shm_dir = '/dev/shm/swoole_webim/';
     protected $online_dir;
     protected $save_dir;
     protected $history_fp;
@@ -41,29 +40,23 @@ class File
         return $n;
     }
 
-    function __construct($save_dir)
+    function __construct($save_dir, $online_dir = '/dev/shm/swoole_webim/')
     {
-        if (!is_dir(self::$shm_dir))
+        $this->online_dir = $online_dir;
+        if (!is_dir($this->online_dir))
         {
-            if (!mkdir(self::$shm_dir, 0777, true))
+            if (!mkdir($this->online_dir, 0777, true))
             {
                 rw_deny:
-                trigger_error("can not read/write dir[".self::$shm_dir."]", E_ERROR);
+                trigger_error("can not read/write dir[".$this->online_dir."]", E_ERROR);
                 return;
             }
         }
         else
         {
-            self::clearDir(self::$shm_dir);
-            $this->online_dir = self::$shm_dir.'/online/';
-            if (!is_dir($this->online_dir))
-            {
-                if (!mkdir($this->online_dir, 0777, true))
-                {
-                    goto rw_deny;
-                }
-            }
+            self::clearDir($this->online_dir);
         }
+
         $this->last_day = date('d');
         $this->save_dir = $save_dir;
 

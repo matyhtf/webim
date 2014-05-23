@@ -53,3 +53,46 @@
 2014-05-23 19:35:50 INFO onMessage: {"cmd":"message","from":28,"channal":0,"data":"有人码？"}
 2014-05-23 19:35:59 INFO connected client_id = 29
 2014-05-23 19:35:59 CLOSE request object not found.
+2014-05-23 19:41:20 INFO SwooleFramework[#0]. running. on 0.0.0.0:9503
+2014-05-23 19:41:20 INFO SwooleFramework[#2]. running. on 0.0.0.0:9503
+2014-05-23 19:41:20 INFO SwooleFramework[#1]. running. on 0.0.0.0:9503
+2014-05-23 19:41:20 INFO SwooleFramework[#4]. running. on 0.0.0.0:9503
+2014-05-23 19:41:20 INFO SwooleFramework[#3]. running. on 0.0.0.0:9503
+2014-05-23 19:41:22 INFO connected client_id = 28
+2014-05-23 19:41:22 INFO onMessage: {"cmd":"login","name":"matyhtf","avatar":"http://tp2.sinaimg.cn/1072494141/180/40036684976/1"}
+2014-05-23 19:41:22 INFO onMessage: {"cmd":"getOnline"}
+2014-05-23 19:41:22 INFO onMessage: {"cmd":"getHistory"}
+2014-05-23 19:41:53 INFO connected client_id = 29
+2014-05-23 19:41:53 CLOSE request object not found.
+2014-05-23 19:42:45 INFO connected client_id = 29
+2014-05-23 19:42:45 CLOSE request object not found.
+2014-05-23 19:45:52 INFO connected client_id = 29
+2014-05-23 19:45:52 CLOSE request object not found.
+2014-05-23 19:47:42 INFO connected client_id = 29
+2014-05-23 19:47:42 CLOSE request object not found.
+2014-05-23 19:53:10 INFO connected client_id = 29
+2014-05-23 19:53:10 INFO onMessage: {"cmd":"login","name":"Rango","avatar":"http://img1.gtimg.com/new_ak/0f/ee/0fee3375fdfe37e340cabd3f88ebe4a7_90_60.jpg"}
+2014-05-23 19:53:10 INFO onMessage: {"cmd":"getOnline"}
+2014-05-23 19:53:10 INFO onMessage: {"cmd":"getHistory"}
+2014-05-23 19:53:13 INFO onMessage: {"cmd":"message","from":29,"channal":0,"data":"wssss"}
+2014-05-23 19:53:14 INFO onMessage: {"cmd":"message","from":29,"channal":0,"data":"\nssss"}
+2014-05-23 19:53:16 INFO onMessage: {"cmd":"message","from":29,"channal":0,"data":"\nsssss"}
+2014-05-23 19:53:17 INFO onMessage: {"cmd":"message","from":29,"channal":0,"data":"\nsdfsdfsd"}
+2014-05-23 19:53:26 INFO onMessage: {"cmd":"message","from":28,"channal":0,"data":"你好"}
+2014-05-23 19:53:32 INFO onOffline: 29
+2014-05-23 19:53:32 INFO close client_id = 29
+2014-05-23 19:53:39 INFO onOffline: 28
+2014-05-23 19:53:39 INFO close client_id = 28
+2014-05-23 19:55:05 INFO connected client_id = 28
+2014-05-23 19:55:05 INFO onMessage: {"cmd":"login","name":"韩天峰","avatar":"http://tp2.sinaimg.cn/1072494141/180/40036684976/1"}
+2014-05-23 19:55:05 INFO onMessage: {"cmd":"getOnline"}
+2014-05-23 19:55:05 INFO onMessage: {"cmd":"getHistory"}
+2014-05-23 19:56:25 INFO connected client_id = 29
+2014-05-23 19:56:25 INFO onMessage: {"cmd":"login","name":"Rango","avatar":"http://tp2.sinaimg.cn/1072494141/180/40036684976/1"}
+2014-05-23 19:56:25 INFO onMessage: {"cmd":"getOnline"}
+2014-05-23 19:56:25 INFO onMessage: {"cmd":"getHistory"}
+2014-05-23 19:56:28 INFO onMessage: {"cmd":"message","from":29,"channal":0,"data":"Ok&nbsp;"}
+2014-05-23 19:56:31 INFO onOffline: 29
+2014-05-23 19:56:31 INFO close client_id = 29
+2014-05-23 19:56:33 INFO onOffline: 28
+2014-05-23 19:56:33 INFO close client_id = 28
