@@ -1,7 +1,11 @@
 <?php
 $config['server'] = array(
+    //监听的HOST
     'host' => '0.0.0.0',
+    //监听的端口
     'port' => '9503',
+    //WebSocket的URL地址，供浏览器使用的
+    'url' => 'ws://webim.swoole.com:9503',
 );
 
 $config['swoole'] = array(
