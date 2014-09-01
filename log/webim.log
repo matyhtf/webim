@@ -96,3 +96,999 @@
 2014-05-23 19:56:31 INFO close client_id = 29
 2014-05-23 19:56:33 INFO onOffline: 28
 2014-05-23 19:56:33 INFO close client_id = 28
+[2014-06-05 11:02:06]	INFO	SwooleFramework[#1]. running. on 0.0.0.0:9503
+[2014-06-05 11:02:06]	INFO	SwooleFramework[#3]. running. on 0.0.0.0:9503
+[2014-06-05 11:02:06]	INFO	SwooleFramework[#0]. running. on 0.0.0.0:9503
+[2014-06-05 11:02:06]	INFO	SwooleFramework[#2]. running. on 0.0.0.0:9503
+[2014-06-05 11:02:06]	INFO	SwooleFramework[#4]. running. on 0.0.0.0:9503
+[2014-06-05 11:02:26]	INFO	connected client_id = 28
+[2014-06-05 11:02:26]	INFO	onMessage: {"cmd":"login","name":"Èü©Â§©Â≥∞","avatar":"http://tp2.sinaimg.cn/1072494141/180/40036684976/1"}
+[2014-06-05 11:02:26]	INFO	onMessage: {"cmd":"getOnline"}
+[2014-06-05 11:02:26]	INFO	onMessage: {"cmd":"getHistory"}
+[2014-06-09 20:59:19]	INFO	SwooleFramework[#1]. running. on 0.0.0.0:9503
+[2014-06-09 20:59:19]	INFO	SwooleFramework[#2]. running. on 0.0.0.0:9503
+[2014-06-09 20:59:19]	INFO	SwooleFramework[#0]. running. on 0.0.0.0:9503
+[2014-06-09 20:59:19]	INFO	SwooleFramework[#4]. running. on 0.0.0.0:9503
+[2014-06-09 20:59:19]	INFO	SwooleFramework[#3]. running. on 0.0.0.0:9503
+[2014-06-09 20:59:42]	INFO	connected client_id = 28
+[2014-06-09 20:59:42]	INFO	NewFrame finish. Opcode=1|Length=96
+[2014-06-09 20:59:42]	INFO	onMessage: {"cmd":"login","name":"Èü©Â§©Â≥∞","avatar":"http://tp2.sinaimg.cn/1072494141/180/40036684976/1"}
+[2014-06-09 20:59:43]	INFO	NewFrame finish. Opcode=1|Length=19
+[2014-06-09 20:59:43]	INFO	onMessage: {"cmd":"getOnline"}
+[2014-06-09 20:59:43]	INFO	NewFrame finish. Opcode=1|Length=20
+[2014-06-09 20:59:43]	INFO	onMessage: {"cmd":"getHistory"}
+[2014-06-09 20:59:51]	INFO	connected client_id = 29
+[2014-06-09 20:59:51]	INFO	NewFrame finish. Opcode=1|Length=96
+[2014-06-09 20:59:51]	INFO	onMessage: {"cmd":"login","name":"Èü©Â§©Â≥∞","avatar":"http://tp2.sinaimg.cn/1072494141/180/40036684976/1"}
+[2014-06-09 20:59:51]	INFO	NewFrame finish. Opcode=1|Length=19
+[2014-06-09 20:59:51]	INFO	onMessage: {"cmd":"getOnline"}
+[2014-06-09 20:59:51]	INFO	NewFrame finish. Opcode=1|Length=20
+[2014-06-09 20:59:51]	INFO	onMessage: {"cmd":"getHistory"}
+[2014-06-09 20:59:58]	INFO	onOffline: 29
+[2014-06-09 20:59:58]	INFO	close client_id = 29
+[2014-06-09 21:11:21]	INFO	NewFrame finish. Opcode=8|Length=2
+[2014-06-09 21:11:21]	INFO	server close connection[28]. reason: , OPCODE = 1002
+[2014-06-09 21:11:21]	INFO	onOffline: 28
+[2014-06-09 21:11:21]	INFO	close client_id = 28
+[2014-06-09 21:11:22]	INFO	connected client_id = 28
+[2014-06-09 21:11:22]	INFO	NewFrame finish. Opcode=1|Length=96
+[2014-06-09 21:11:22]	INFO	onMessage: {"cmd":"login","name":"Èü©Â§©Â≥∞","avatar":"http://tp2.sinaimg.cn/1072494141/180/40036684976/1"}
+[2014-06-09 21:11:22]	INFO	NewFrame finish. Opcode=1|Length=19
+[2014-06-09 21:11:22]	INFO	onMessage: {"cmd":"getOnline"}
+[2014-06-09 21:11:22]	INFO	NewFrame finish. Opcode=1|Length=20
+[2014-06-09 21:11:22]	INFO	onMessage: {"cmd":"getHistory"}
+[2014-06-09 21:11:24]	INFO	onOffline: 28
+[2014-06-09 21:11:24]	INFO	close client_id = 28
+[2014-06-25 15:46:33]	INFO	SwooleFramework[#1]. running. on 0.0.0.0:9503
+[2014-06-25 15:46:33]	INFO	SwooleFramework[#0]. running. on 0.0.0.0:9503
+[2014-06-25 15:46:33]	INFO	SwooleFramework[#4]. running. on 0.0.0.0:9503
+[2014-06-25 15:46:33]	INFO	SwooleFramework[#2]. running. on 0.0.0.0:9503
+[2014-06-25 15:46:33]	INFO	SwooleFramework[#3]. running. on 0.0.0.0:9503
+[2014-06-25 15:46:50]	INFO	connected client_id = 28
+[2014-06-25 15:46:50]	INFO	new http request. fd=28
+[2014-06-25 15:46:50]	INFO	NewFrame finish. Opcode=1|Length=96
+[2014-06-25 15:46:50]	INFO	onMessage: {"cmd":"login","name":"Èü©Â§©Â≥∞","avatar":"http://tp2.sinaimg.cn/1072494141/180/40036684976/1"}
+[2014-06-25 15:46:50]	INFO	NewFrame finish. Opcode=1|Length=19
+[2014-06-25 15:46:50]	INFO	onMessage: {"cmd":"getOnline"}
+[2014-06-25 15:46:50]	INFO	NewFrame finish. Opcode=1|Length=20
+[2014-06-25 15:46:50]	INFO	onMessage: {"cmd":"getHistory"}
+[2014-06-25 15:46:53]	INFO	NewFrame finish. Opcode=1|Length=58
+[2014-06-25 15:46:53]	INFO	onMessage: {"cmd":"message","from":28,"channal":0,"data":"ss&nbsp;?"}
+[2014-06-25 15:46:59]	INFO	NewFrame finish. Opcode=1|Length=63
+[2014-06-25 15:46:59]	INFO	onMessage: {"cmd":"message","from":28,"channal":0,"data":"\nhello&nbsp;?"}
+[2014-06-25 15:55:58]	INFO	onOffline: 28
+[2014-06-25 15:55:58]	INFO	close client_id = 28
+[2014-07-04 22:56:36]	INFO	SwooleFramework[#1]. running. on 0.0.0.0:9503
+[2014-07-04 22:56:36]	INFO	SwooleFramework[#4]. running. on 0.0.0.0:9503
+[2014-07-04 22:56:36]	INFO	SwooleFramework[#3]. running. on 0.0.0.0:9503
+[2014-07-04 22:56:36]	INFO	SwooleFramework[#2]. running. on 0.0.0.0:9503
+[2014-07-04 22:56:36]	INFO	SwooleFramework[#0]. running. on 0.0.0.0:9503
+[2014-07-04 22:56:58]	INFO	connected client_id = 33
+[2014-07-04 22:56:58]	INFO	new http request. fd=33
+[2014-07-04 22:56:58]	INFO	NewFrame finish. Opcode=1|Length=96
+[2014-07-04 22:56:58]	INFO	onMessage: {"cmd":"login","name":"Èü©Â§©Â≥∞","avatar":"http://tp2.sinaimg.cn/1072494141/180/40036684976/1"}
+[2014-07-04 22:56:58]	INFO	NewFrame finish. Opcode=1|Length=19
+[2014-07-04 22:56:58]	INFO	onMessage: {"cmd":"getOnline"}
+[2014-07-04 22:56:58]	INFO	NewFrame finish. Opcode=1|Length=20
+[2014-07-04 22:56:58]	INFO	onMessage: {"cmd":"getHistory"}
+[2014-07-04 22:57:00]	INFO	NewFrame finish. Opcode=1|Length=51
+[2014-07-04 22:57:00]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"??"}
+[2014-07-04 22:57:01]	INFO	NewFrame finish. Opcode=1|Length=59
+[2014-07-04 22:57:01]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\nsdfsdfsd"}
+[2014-07-04 22:57:02]	INFO	NewFrame finish. Opcode=1|Length=59
+[2014-07-04 22:57:02]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\nsdfsdfsd"}
+[2014-07-04 22:57:02]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 22:57:02]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\nfsd"}
+[2014-07-04 22:57:02]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 22:57:02]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\nfsd"}
+[2014-07-04 22:57:02]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 22:57:02]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\nfsd"}
+[2014-07-04 22:57:02]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 22:57:02]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\nfsd"}
+[2014-07-04 22:57:03]	INFO	NewFrame finish. Opcode=1|Length=52
+[2014-07-04 22:57:03]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\nf"}
+[2014-07-04 22:57:03]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 22:57:03]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\nsdf"}
+[2014-07-04 22:57:03]	INFO	NewFrame finish. Opcode=1|Length=53
+[2014-07-04 22:57:03]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\nsd"}
+[2014-07-04 22:57:03]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 22:57:03]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\nfsd"}
+[2014-07-04 22:57:04]	INFO	NewFrame finish. Opcode=1|Length=55
+[2014-07-04 22:57:04]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\nfsdf"}
+[2014-07-04 22:57:04]	INFO	NewFrame finish. Opcode=1|Length=53
+[2014-07-04 22:57:04]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\nsd"}
+[2014-07-04 22:57:04]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 22:57:04]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\nfsd"}
+[2014-07-04 22:57:04]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 22:57:04]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\nfsd"}
+[2014-07-04 22:57:04]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 22:57:04]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\nfsd"}
+[2014-07-04 22:57:05]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 22:57:05]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\nfsd"}
+[2014-07-04 22:57:05]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 22:57:05]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\nfsd"}
+[2014-07-04 22:57:05]	INFO	NewFrame finish. Opcode=1|Length=52
+[2014-07-04 22:57:05]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\nf"}
+[2014-07-04 22:57:05]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 22:57:05]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\nsdf"}
+[2014-07-04 22:57:05]	INFO	NewFrame finish. Opcode=1|Length=53
+[2014-07-04 22:57:05]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\nsd"}
+[2014-07-04 22:57:06]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 22:57:06]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\nfsd"}
+[2014-07-04 22:57:06]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 22:57:06]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\nfsd"}
+[2014-07-04 22:57:06]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 22:57:06]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\nfsd"}
+[2014-07-04 22:57:06]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 22:57:06]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\nfsd"}
+[2014-07-04 22:57:07]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 22:57:07]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\nfsd"}
+[2014-07-04 22:57:07]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 22:57:07]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\nfsd"}
+[2014-07-04 22:57:07]	INFO	NewFrame finish. Opcode=1|Length=52
+[2014-07-04 22:57:07]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\nf"}
+[2014-07-04 22:57:07]	INFO	NewFrame finish. Opcode=1|Length=53
+[2014-07-04 22:57:07]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\nsd"}
+[2014-07-04 22:57:07]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 22:57:07]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\nfsd"}
+[2014-07-04 22:57:08]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 22:57:08]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\nfsd"}
+[2014-07-04 22:57:08]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 22:57:08]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\nfsd"}
+[2014-07-04 22:57:08]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 22:57:08]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\nfsd"}
+[2014-07-04 22:57:08]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 22:57:08]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\nfsd"}
+[2014-07-04 22:57:09]	INFO	NewFrame finish. Opcode=1|Length=52
+[2014-07-04 22:57:09]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\nf"}
+[2014-07-04 22:57:09]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 22:57:09]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\nsdf"}
+[2014-07-04 22:57:09]	INFO	NewFrame finish. Opcode=1|Length=53
+[2014-07-04 22:57:09]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\nsd"}
+[2014-07-04 22:57:11]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 22:57:11]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\nfsd"}
+[2014-07-04 22:57:11]	INFO	NewFrame finish. Opcode=8|Length=2
+[2014-07-04 22:57:11]	INFO	server close connection[33]. reason: , OPCODE = 1002
+[2014-07-04 22:57:11]	INFO	onOffline: 33
+[2014-07-04 22:57:11]	INFO	close client_id = 33
+[2014-07-04 22:57:11]	INFO	connected client_id = 33
+[2014-07-04 22:57:11]	INFO	new http request. fd=33
+[2014-07-04 22:57:11]	INFO	NewFrame finish. Opcode=1|Length=96
+[2014-07-04 22:57:11]	INFO	onMessage: {"cmd":"login","name":"Èü©Â§©Â≥∞","avatar":"http://tp2.sinaimg.cn/1072494141/180/40036684976/1"}
+[2014-07-04 22:57:11]	INFO	NewFrame finish. Opcode=1|Length=19
+[2014-07-04 22:57:11]	INFO	onMessage: {"cmd":"getOnline"}
+[2014-07-04 22:57:11]	INFO	NewFrame finish. Opcode=1|Length=20
+[2014-07-04 22:57:11]	INFO	onMessage: {"cmd":"getHistory"}
+[2014-07-04 22:57:35]	INFO	connected client_id = 34
+[2014-07-04 22:57:35]	INFO	new http request. fd=34
+[2014-07-04 22:57:35]	INFO	NewFrame finish. Opcode=1|Length=92
+[2014-07-04 22:57:35]	INFO	onMessage: {"cmd":"login","name":"Rango","avatar":"http://tp2.sinaimg.cn/1072494141/180/40036684976/1"}
+[2014-07-04 22:57:35]	INFO	NewFrame finish. Opcode=1|Length=19
+[2014-07-04 22:57:35]	INFO	onMessage: {"cmd":"getOnline"}
+[2014-07-04 22:57:35]	INFO	NewFrame finish. Opcode=1|Length=20
+[2014-07-04 22:57:35]	INFO	onMessage: {"cmd":"getHistory"}
+[2014-07-04 22:57:37]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 22:57:37]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"sdfsd"}
+[2014-07-04 22:57:37]	INFO	NewFrame finish. Opcode=1|Length=53
+[2014-07-04 22:57:37]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"\nsd"}
+[2014-07-04 22:57:37]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 22:57:37]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"\nfsd"}
+[2014-07-04 22:57:38]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 22:57:38]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"\nfsd"}
+[2014-07-04 22:57:38]	INFO	NewFrame finish. Opcode=1|Length=52
+[2014-07-04 22:57:38]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"\nf"}
+[2014-07-04 22:57:38]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 22:57:38]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"\nsdf"}
+[2014-07-04 22:57:38]	INFO	NewFrame finish. Opcode=1|Length=53
+[2014-07-04 22:57:38]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"\nsd"}
+[2014-07-04 22:57:38]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 22:57:38]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"\nfsd"}
+[2014-07-04 22:57:39]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 22:57:39]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"\nfsd"}
+[2014-07-04 22:57:39]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 22:57:39]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"\nfsd"}
+[2014-07-04 22:57:39]	INFO	NewFrame finish. Opcode=1|Length=52
+[2014-07-04 22:57:39]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"\nf"}
+[2014-07-04 22:57:43]	INFO	NewFrame finish. Opcode=1|Length=76
+[2014-07-04 22:57:43]	INFO	onMessage: {"cmd":"message","from":34,"to":"33","channal":1,"data":"\n‰Ω†Â¶àÊòØÂú∞Êñπ"}
+[2014-07-04 22:57:46]	INFO	NewFrame finish. Opcode=1|Length=60
+[2014-07-04 22:57:46]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"sdfsd&nbsp;"}
+[2014-07-04 22:57:50]	INFO	NewFrame finish. Opcode=1|Length=68
+[2014-07-04 22:57:50]	INFO	onMessage: {"cmd":"message","from":33,"to":"34","channal":1,"data":"\ngougogu"}
+[2014-07-04 22:57:55]	INFO	NewFrame finish. Opcode=8|Length=2
+[2014-07-04 22:57:55]	INFO	server close connection[34]. reason: , OPCODE = 1002
+[2014-07-04 22:57:55]	INFO	onOffline: 34
+[2014-07-04 22:57:55]	INFO	close client_id = 34
+[2014-07-04 22:58:01]	INFO	onOffline: 33
+[2014-07-04 22:58:01]	INFO	close client_id = 33
+[2014-07-04 22:58:02]	INFO	connected client_id = 33
+[2014-07-04 22:58:02]	INFO	new http request. fd=33
+[2014-07-04 22:58:02]	INFO	NewFrame finish. Opcode=1|Length=96
+[2014-07-04 22:58:02]	INFO	onMessage: {"cmd":"login","name":"Èü©Â§©Â≥∞","avatar":"http://tp2.sinaimg.cn/1072494141/180/40036684976/1"}
+[2014-07-04 22:58:02]	INFO	NewFrame finish. Opcode=1|Length=19
+[2014-07-04 22:58:02]	INFO	onMessage: {"cmd":"getOnline"}
+[2014-07-04 22:58:02]	INFO	NewFrame finish. Opcode=1|Length=20
+[2014-07-04 22:58:02]	INFO	onMessage: {"cmd":"getHistory"}
+[2014-07-04 22:58:08]	INFO	onOffline: 33
+[2014-07-04 22:58:08]	INFO	close client_id = 33
+[2014-07-04 23:04:56]	INFO	SwooleFramework[#1]. running. on 0.0.0.0:9503
+[2014-07-04 23:04:56]	INFO	SwooleFramework[#3]. running. on 0.0.0.0:9503
+[2014-07-04 23:04:56]	INFO	SwooleFramework[#2]. running. on 0.0.0.0:9503
+[2014-07-04 23:04:56]	INFO	SwooleFramework[#0]. running. on 0.0.0.0:9503
+[2014-07-04 23:04:56]	INFO	SwooleFramework[#4]. running. on 0.0.0.0:9503
+[2014-07-04 23:05:13]	INFO	connected client_id = 33
+[2014-07-04 23:05:13]	INFO	new http request. fd=33
+[2014-07-04 23:05:13]	INFO	NewFrame finish. Opcode=1|Length=92
+[2014-07-04 23:05:13]	INFO	onMessage: {"cmd":"login","name":"Rango","avatar":"http://tp2.sinaimg.cn/1072494141/180/40036684976/1"}
+[2014-07-04 23:05:13]	INFO	NewFrame finish. Opcode=1|Length=19
+[2014-07-04 23:05:13]	INFO	onMessage: {"cmd":"getOnline"}
+[2014-07-04 23:05:13]	INFO	NewFrame finish. Opcode=1|Length=20
+[2014-07-04 23:05:13]	INFO	onMessage: {"cmd":"getHistory"}
+[2014-07-04 23:05:23]	INFO	connected client_id = 34
+[2014-07-04 23:05:23]	INFO	new http request. fd=34
+[2014-07-04 23:05:23]	INFO	NewFrame finish. Opcode=1|Length=96
+[2014-07-04 23:05:23]	INFO	onMessage: {"cmd":"login","name":"Èü©Â§©Â≥∞","avatar":"http://tp2.sinaimg.cn/1072494141/180/40036684976/1"}
+[2014-07-04 23:05:23]	INFO	NewFrame finish. Opcode=1|Length=19
+[2014-07-04 23:05:23]	INFO	onMessage: {"cmd":"getOnline"}
+[2014-07-04 23:05:23]	INFO	NewFrame finish. Opcode=1|Length=20
+[2014-07-04 23:05:23]	INFO	onMessage: {"cmd":"getHistory"}
+[2014-07-04 23:05:25]	INFO	NewFrame finish. Opcode=1|Length=57
+[2014-07-04 23:05:25]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"sdfsdfsd"}
+[2014-07-04 23:05:26]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 23:05:26]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"\nfsd"}
+[2014-07-04 23:05:26]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 23:05:26]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"\nfsd"}
+[2014-07-04 23:05:26]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 23:05:26]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"\nfsd"}
+[2014-07-04 23:05:26]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 23:05:26]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"\nfsd"}
+[2014-07-04 23:05:26]	INFO	NewFrame finish. Opcode=1|Length=52
+[2014-07-04 23:05:26]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"\nf"}
+[2014-07-04 23:05:27]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 23:05:27]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"\nsdf"}
+[2014-07-04 23:05:27]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 23:05:27]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"\nswe"}
+[2014-07-04 23:05:27]	INFO	NewFrame finish. Opcode=1|Length=52
+[2014-07-04 23:05:27]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"\nr"}
+[2014-07-04 23:05:27]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 23:05:27]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"\nwer"}
+[2014-07-04 23:05:27]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 23:05:27]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"\nsdf"}
+[2014-07-04 23:05:28]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 23:05:28]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"\nsdf"}
+[2014-07-04 23:05:28]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 23:05:28]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"\nsdf"}
+[2014-07-04 23:05:28]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 23:05:28]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"\nsdf"}
+[2014-07-04 23:05:28]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 23:05:28]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"\nsdf"}
+[2014-07-04 23:05:29]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 23:05:29]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"\nsdf"}
+[2014-07-04 23:05:29]	INFO	NewFrame finish. Opcode=1|Length=56
+[2014-07-04 23:05:29]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"\nsdfsd"}
+[2014-07-04 23:05:30]	INFO	NewFrame finish. Opcode=1|Length=61
+[2014-07-04 23:05:30]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"\nsdfsdfsdfs"}
+[2014-07-04 23:05:34]	INFO	NewFrame finish. Opcode=1|Length=73
+[2014-07-04 23:05:34]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"sdfsdfsd&nbsp;sdÂèësdÂèë"}
+[2014-07-04 23:05:34]	INFO	NewFrame finish. Opcode=1|Length=51
+[2014-07-04 23:05:34]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\n"}
+[2014-07-04 23:05:35]	INFO	NewFrame finish. Opcode=1|Length=63
+[2014-07-04 23:05:35]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\nsdfsdfÊòØÁöÑ"}
+[2014-07-04 23:05:36]	INFO	NewFrame finish. Opcode=1|Length=60
+[2014-07-04 23:05:36]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\nsdfÊòØÁöÑ"}
+[2014-07-04 23:05:36]	INFO	NewFrame finish. Opcode=1|Length=57
+[2014-07-04 23:05:36]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\nÊòØÁöÑ"}
+[2014-07-04 23:05:38]	INFO	NewFrame finish. Opcode=1|Length=76
+[2014-07-04 23:05:38]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\nÊòØÂú∞ÊñπsdÂèësd&nbsp;sd "}
+[2014-07-04 23:05:38]	INFO	NewFrame finish. Opcode=1|Length=51
+[2014-07-04 23:05:38]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\n"}
+[2014-07-04 23:05:39]	INFO	NewFrame finish. Opcode=1|Length=66
+[2014-07-04 23:05:39]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\nsdfsdfsdfÊòØÁöÑ"}
+[2014-07-04 23:05:43]	INFO	NewFrame finish. Opcode=1|Length=85
+[2014-07-04 23:05:43]	INFO	onMessage: {"cmd":"message","from":33,"to":"34","channal":1,"data":"\n&nbsp;ÊòØÁöÑÊñπÂºèÂú∞Êñπ"}
+[2014-07-04 23:05:44]	INFO	NewFrame finish. Opcode=1|Length=91
+[2014-07-04 23:05:44]	INFO	onMessage: {"cmd":"message","from":33,"to":"34","channal":1,"data":"\nÊòØÁöÑÊñπÂºèÁöÑÊñπÂºèÁöÑ&nbsp;"}
+[2014-07-04 23:05:52]	INFO	NewFrame finish. Opcode=1|Length=66
+[2014-07-04 23:05:52]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"\nsdfsd&nbsp; sdf"}
+[2014-07-04 23:05:52]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 23:05:52]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"\nsdf"}
+[2014-07-04 23:05:52]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 23:05:52]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"\nsdf"}
+[2014-07-04 23:05:53]	INFO	NewFrame finish. Opcode=1|Length=57
+[2014-07-04 23:05:53]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"\nsdfsdf"}
+[2014-07-04 23:05:53]	INFO	NewFrame finish. Opcode=1|Length=59
+[2014-07-04 23:05:53]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"\nsdfsdfsd"}
+[2014-07-04 23:05:53]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 23:05:53]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"\nsdf"}
+[2014-07-04 23:05:54]	INFO	NewFrame finish. Opcode=1|Length=52
+[2014-07-04 23:05:54]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"\nf"}
+[2014-07-04 23:05:54]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 23:05:54]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"\nsdf"}
+[2014-07-04 23:05:54]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 23:05:54]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"\nsdf"}
+[2014-07-04 23:05:54]	INFO	NewFrame finish. Opcode=1|Length=56
+[2014-07-04 23:05:54]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"\nsdsdf"}
+[2014-07-04 23:05:55]	INFO	NewFrame finish. Opcode=1|Length=51
+[2014-07-04 23:05:55]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"\n"}
+[2014-07-04 23:05:55]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-07-04 23:05:55]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"\nsdf"}
+[2014-07-04 23:06:01]	INFO	NewFrame finish. Opcode=1|Length=72
+[2014-07-04 23:06:01]	INFO	onMessage: {"cmd":"message","from":34,"to":"33","channal":1,"data":"\nsdfsd&nbsp;"}
+[2014-07-04 23:06:02]	INFO	NewFrame finish. Opcode=1|Length=76
+[2014-07-04 23:06:02]	INFO	onMessage: {"cmd":"message","from":34,"to":"33","channal":1,"data":"\nsdfs&nbsp;df sd"}
+[2014-07-04 23:06:02]	INFO	NewFrame finish. Opcode=1|Length=70
+[2014-07-04 23:06:02]	INFO	onMessage: {"cmd":"message","from":34,"to":"33","channal":1,"data":"\nf&nbsp;sd"}
+[2014-07-04 23:06:02]	INFO	NewFrame finish. Opcode=1|Length=70
+[2014-07-04 23:06:02]	INFO	onMessage: {"cmd":"message","from":34,"to":"33","channal":1,"data":"\nf&nbsp;sd"}
+[2014-07-04 23:06:03]	INFO	NewFrame finish. Opcode=1|Length=64
+[2014-07-04 23:06:03]	INFO	onMessage: {"cmd":"message","from":34,"to":"33","channal":1,"data":"\nfsd"}
+[2014-07-04 23:06:03]	INFO	NewFrame finish. Opcode=1|Length=64
+[2014-07-04 23:06:03]	INFO	onMessage: {"cmd":"message","from":34,"to":"33","channal":1,"data":"\nfsd"}
+[2014-07-04 23:06:03]	INFO	NewFrame finish. Opcode=1|Length=64
+[2014-07-04 23:06:03]	INFO	onMessage: {"cmd":"message","from":34,"to":"33","channal":1,"data":"\nfsd"}
+[2014-07-04 23:06:03]	INFO	NewFrame finish. Opcode=1|Length=64
+[2014-07-04 23:06:03]	INFO	onMessage: {"cmd":"message","from":34,"to":"33","channal":1,"data":"\nfsd"}
+[2014-07-04 23:06:04]	INFO	NewFrame finish. Opcode=1|Length=64
+[2014-07-04 23:06:04]	INFO	onMessage: {"cmd":"message","from":34,"to":"33","channal":1,"data":"\nfsd"}
+[2014-07-04 23:06:04]	INFO	NewFrame finish. Opcode=1|Length=64
+[2014-07-04 23:06:04]	INFO	onMessage: {"cmd":"message","from":34,"to":"33","channal":1,"data":"\nfsd"}
+[2014-07-04 23:06:04]	INFO	NewFrame finish. Opcode=1|Length=64
+[2014-07-04 23:06:04]	INFO	onMessage: {"cmd":"message","from":34,"to":"33","channal":1,"data":"\nsdf"}
+[2014-07-04 23:06:04]	INFO	NewFrame finish. Opcode=1|Length=64
+[2014-07-04 23:06:04]	INFO	onMessage: {"cmd":"message","from":34,"to":"33","channal":1,"data":"\nfsd"}
+[2014-07-04 23:06:05]	INFO	NewFrame finish. Opcode=1|Length=64
+[2014-07-04 23:06:05]	INFO	onMessage: {"cmd":"message","from":34,"to":"33","channal":1,"data":"\nsdf"}
+[2014-07-04 23:06:05]	INFO	NewFrame finish. Opcode=1|Length=61
+[2014-07-04 23:06:05]	INFO	onMessage: {"cmd":"message","from":34,"to":"33","channal":1,"data":"\n"}
+[2014-07-04 23:06:05]	INFO	NewFrame finish. Opcode=1|Length=61
+[2014-07-04 23:06:05]	INFO	onMessage: {"cmd":"message","from":34,"to":"33","channal":1,"data":"\n"}
+[2014-07-04 23:06:05]	INFO	NewFrame finish. Opcode=1|Length=61
+[2014-07-04 23:06:05]	INFO	onMessage: {"cmd":"message","from":34,"to":"33","channal":1,"data":"\n"}
+[2014-07-04 23:06:05]	INFO	NewFrame finish. Opcode=1|Length=61
+[2014-07-04 23:06:05]	INFO	onMessage: {"cmd":"message","from":34,"to":"33","channal":1,"data":"\n"}
+[2014-07-04 23:06:06]	INFO	NewFrame finish. Opcode=1|Length=61
+[2014-07-04 23:06:06]	INFO	onMessage: {"cmd":"message","from":34,"to":"33","channal":1,"data":"\n"}
+[2014-07-04 23:06:06]	INFO	NewFrame finish. Opcode=1|Length=72
+[2014-07-04 23:06:06]	INFO	onMessage: {"cmd":"message","from":34,"to":"33","channal":1,"data":"\nsdfsdfsdfsd"}
+[2014-07-04 23:06:10]	INFO	NewFrame finish. Opcode=1|Length=79
+[2014-07-04 23:06:10]	INFO	onMessage: {"cmd":"message","from":33,"to":"34","channal":1,"data":"\nÊòØÁöÑÊñπÂºèÂú∞Êñπ"}
+[2014-07-04 23:06:10]	INFO	NewFrame finish. Opcode=1|Length=76
+[2014-07-04 23:06:10]	INFO	onMessage: {"cmd":"message","from":33,"to":"34","channal":1,"data":"\nÊòØÁöÑÊñπÂºèÁöÑ"}
+[2014-07-04 23:06:11]	INFO	NewFrame finish. Opcode=1|Length=70
+[2014-07-04 23:06:11]	INFO	onMessage: {"cmd":"message","from":33,"to":"34","channal":1,"data":"\nÊñπÂºèÁöÑ"}
+[2014-07-04 23:06:12]	INFO	NewFrame finish. Opcode=1|Length=89
+[2014-07-04 23:06:12]	INFO	onMessage: {"cmd":"message","from":33,"to":"34","channal":1,"data":"\nÊòØÂú∞Êñπsd&nbsp;sdÊñπÂºèÁöÑ"}
+[2014-07-04 23:06:14]	INFO	NewFrame finish. Opcode=1|Length=96
+[2014-07-04 23:06:14]	INFO	onMessage: {"cmd":"message","from":33,"to":"34","channal":1,"data":"\n&nbsp;sdÊñπÂºèÁöÑÊñπÂºèÁöÑsdfÊòØÁöÑ"}
+[2014-07-04 23:06:18]	INFO	onOffline: 34
+[2014-07-04 23:06:18]	INFO	close client_id = 34
+[2014-07-04 23:06:25]	INFO	NewFrame finish. Opcode=8|Length=2
+[2014-07-04 23:06:25]	INFO	server close connection[33]. reason: , OPCODE = 1002
+[2014-07-04 23:06:25]	INFO	onOffline: 33
+[2014-07-04 23:06:25]	INFO	close client_id = 33
+[2014-07-04 23:09:04]	INFO	SwooleFramework[#0]. running. on 0.0.0.0:9503
+[2014-07-04 23:09:04]	INFO	SwooleFramework[#1]. running. on 0.0.0.0:9503
+[2014-07-04 23:09:04]	INFO	SwooleFramework[#3]. running. on 0.0.0.0:9503
+[2014-07-04 23:09:04]	INFO	SwooleFramework[#4]. running. on 0.0.0.0:9503
+[2014-07-04 23:09:04]	INFO	SwooleFramework[#2]. running. on 0.0.0.0:9503
+[2014-07-04 23:09:09]	INFO	connected client_id = 33
+[2014-07-04 23:09:09]	INFO	new http request. fd=33
+[2014-07-04 23:09:09]	INFO	NewFrame finish. Opcode=1|Length=92
+[2014-07-04 23:09:09]	INFO	onMessage: {"cmd":"login","name":"Rango","avatar":"http://tp2.sinaimg.cn/1072494141/180/40036684976/1"}
+[2014-07-04 23:09:09]	INFO	NewFrame finish. Opcode=1|Length=19
+[2014-07-04 23:09:09]	INFO	onMessage: {"cmd":"getOnline"}
+[2014-07-04 23:09:09]	INFO	NewFrame finish. Opcode=1|Length=20
+[2014-07-04 23:09:09]	INFO	onMessage: {"cmd":"getHistory"}
+[2014-07-04 23:09:09]	INFO	NewFrame finish. Opcode=8|Length=2
+[2014-07-04 23:09:10]	INFO	server close connection[33]. reason: , OPCODE = 1002
+[2014-07-04 23:09:10]	INFO	onOffline: 33
+[2014-07-04 23:09:10]	INFO	close client_id = 33
+[2014-07-04 23:09:10]	INFO	connected client_id = 33
+[2014-07-04 23:09:10]	INFO	new http request. fd=33
+[2014-07-04 23:09:10]	INFO	NewFrame finish. Opcode=1|Length=92
+[2014-07-04 23:09:10]	INFO	onMessage: {"cmd":"login","name":"Rango","avatar":"http://tp2.sinaimg.cn/1072494141/180/40036684976/1"}
+[2014-07-04 23:09:10]	INFO	NewFrame finish. Opcode=1|Length=19
+[2014-07-04 23:09:10]	INFO	onMessage: {"cmd":"getOnline"}
+[2014-07-04 23:09:10]	INFO	NewFrame finish. Opcode=1|Length=20
+[2014-07-04 23:09:10]	INFO	onMessage: {"cmd":"getHistory"}
+[2014-07-04 23:09:16]	INFO	connected client_id = 34
+[2014-07-04 23:09:16]	INFO	new http request. fd=34
+[2014-07-04 23:09:17]	INFO	NewFrame finish. Opcode=1|Length=96
+[2014-07-04 23:09:17]	INFO	onMessage: {"cmd":"login","name":"Èü©Â§©Â≥∞","avatar":"http://tp2.sinaimg.cn/1072494141/180/40036684976/1"}
+[2014-07-04 23:09:17]	INFO	NewFrame finish. Opcode=1|Length=19
+[2014-07-04 23:09:17]	INFO	onMessage: {"cmd":"getOnline"}
+[2014-07-04 23:09:17]	INFO	NewFrame finish. Opcode=1|Length=20
+[2014-07-04 23:09:17]	INFO	onMessage: {"cmd":"getHistory"}
+[2014-07-04 23:09:17]	INFO	NewFrame finish. Opcode=8|Length=2
+[2014-07-04 23:09:17]	INFO	server close connection[34]. reason: , OPCODE = 1002
+[2014-07-04 23:09:17]	INFO	onOffline: 34
+[2014-07-04 23:09:17]	INFO	close client_id = 34
+[2014-07-04 23:09:17]	INFO	connected client_id = 34
+[2014-07-04 23:09:17]	INFO	new http request. fd=34
+[2014-07-04 23:09:17]	INFO	NewFrame finish. Opcode=1|Length=96
+[2014-07-04 23:09:17]	INFO	onMessage: {"cmd":"login","name":"Èü©Â§©Â≥∞","avatar":"http://tp2.sinaimg.cn/1072494141/180/40036684976/1"}
+[2014-07-04 23:09:17]	INFO	NewFrame finish. Opcode=1|Length=19
+[2014-07-04 23:09:17]	INFO	onMessage: {"cmd":"getOnline"}
+[2014-07-04 23:09:17]	INFO	NewFrame finish. Opcode=1|Length=20
+[2014-07-04 23:09:17]	INFO	onMessage: {"cmd":"getHistory"}
+[2014-07-04 23:10:04]	INFO	NewFrame finish. Opcode=8|Length=2
+[2014-07-04 23:10:04]	INFO	server close connection[34]. reason: , OPCODE = 1002
+[2014-07-04 23:10:04]	INFO	onOffline: 34
+[2014-07-04 23:10:04]	INFO	close client_id = 34
+[2014-07-04 23:10:04]	INFO	connected client_id = 34
+[2014-07-04 23:10:04]	INFO	new http request. fd=34
+[2014-07-04 23:10:04]	INFO	NewFrame finish. Opcode=1|Length=96
+[2014-07-04 23:10:04]	INFO	onMessage: {"cmd":"login","name":"Èü©Â§©Â≥∞","avatar":"http://tp2.sinaimg.cn/1072494141/180/40036684976/1"}
+[2014-07-04 23:10:04]	INFO	NewFrame finish. Opcode=1|Length=19
+[2014-07-04 23:10:04]	INFO	onMessage: {"cmd":"getOnline"}
+[2014-07-04 23:10:04]	INFO	NewFrame finish. Opcode=1|Length=20
+[2014-07-04 23:10:04]	INFO	onMessage: {"cmd":"getHistory"}
+[2014-07-04 23:13:25]	INFO	SwooleFramework[#0]. running. on 0.0.0.0:9503
+[2014-07-04 23:13:25]	INFO	SwooleFramework[#1]. running. on 0.0.0.0:9503
+[2014-07-04 23:13:25]	INFO	SwooleFramework[#2]. running. on 0.0.0.0:9503
+[2014-07-04 23:13:25]	INFO	SwooleFramework[#3]. running. on 0.0.0.0:9503
+[2014-07-04 23:13:25]	INFO	SwooleFramework[#4]. running. on 0.0.0.0:9503
+[2014-07-04 23:13:29]	INFO	connected client_id = 33
+[2014-07-04 23:13:29]	INFO	new http request. fd=33
+[2014-07-04 23:13:29]	INFO	NewFrame finish. Opcode=1|Length=92
+[2014-07-04 23:13:29]	INFO	onMessage: {"cmd":"login","name":"Rango","avatar":"http://tp2.sinaimg.cn/1072494141/180/40036684976/1"}
+[2014-07-04 23:13:29]	INFO	NewFrame finish. Opcode=1|Length=19
+[2014-07-04 23:13:29]	INFO	onMessage: {"cmd":"getOnline"}
+[2014-07-04 23:13:29]	INFO	NewFrame finish. Opcode=1|Length=20
+[2014-07-04 23:13:29]	INFO	onMessage: {"cmd":"getHistory"}
+[2014-07-04 23:13:30]	INFO	NewFrame finish. Opcode=8|Length=2
+[2014-07-04 23:13:30]	INFO	server close connection[33]. reason: , OPCODE = 1002
+[2014-07-04 23:13:30]	INFO	onOffline: 33
+[2014-07-04 23:13:30]	INFO	close client_id = 33
+[2014-07-04 23:13:30]	INFO	connected client_id = 33
+[2014-07-04 23:13:30]	INFO	new http request. fd=33
+[2014-07-04 23:13:30]	INFO	NewFrame finish. Opcode=1|Length=92
+[2014-07-04 23:13:30]	INFO	onMessage: {"cmd":"login","name":"Rango","avatar":"http://tp2.sinaimg.cn/1072494141/180/40036684976/1"}
+[2014-07-04 23:13:30]	INFO	NewFrame finish. Opcode=1|Length=19
+[2014-07-04 23:13:30]	INFO	onMessage: {"cmd":"getOnline"}
+[2014-07-04 23:13:30]	INFO	NewFrame finish. Opcode=1|Length=20
+[2014-07-04 23:13:30]	INFO	onMessage: {"cmd":"getHistory"}
+[2014-07-04 23:13:31]	INFO	NewFrame finish. Opcode=8|Length=2
+[2014-07-04 23:13:31]	INFO	server close connection[33]. reason: , OPCODE = 1002
+[2014-07-04 23:13:31]	INFO	onOffline: 33
+[2014-07-04 23:13:31]	INFO	close client_id = 33
+[2014-07-04 23:13:31]	INFO	connected client_id = 33
+[2014-07-04 23:13:31]	INFO	new http request. fd=33
+[2014-07-04 23:13:31]	INFO	NewFrame finish. Opcode=1|Length=92
+[2014-07-04 23:13:31]	INFO	onMessage: {"cmd":"login","name":"Rango","avatar":"http://tp2.sinaimg.cn/1072494141/180/40036684976/1"}
+[2014-07-04 23:13:31]	INFO	NewFrame finish. Opcode=1|Length=19
+[2014-07-04 23:13:31]	INFO	onMessage: {"cmd":"getOnline"}
+[2014-07-04 23:13:31]	INFO	NewFrame finish. Opcode=1|Length=20
+[2014-07-04 23:13:31]	INFO	onMessage: {"cmd":"getHistory"}
+[2014-07-04 23:13:32]	INFO	NewFrame finish. Opcode=8|Length=2
+[2014-07-04 23:13:32]	INFO	server close connection[33]. reason: , OPCODE = 1002
+[2014-07-04 23:13:32]	INFO	onOffline: 33
+[2014-07-04 23:13:32]	INFO	close client_id = 33
+[2014-07-04 23:13:32]	INFO	connected client_id = 33
+[2014-07-04 23:13:32]	INFO	new http request. fd=33
+[2014-07-04 23:13:32]	INFO	NewFrame finish. Opcode=1|Length=92
+[2014-07-04 23:13:32]	INFO	onMessage: {"cmd":"login","name":"Rango","avatar":"http://tp2.sinaimg.cn/1072494141/180/40036684976/1"}
+[2014-07-04 23:13:32]	INFO	NewFrame finish. Opcode=1|Length=19
+[2014-07-04 23:13:32]	INFO	onMessage: {"cmd":"getOnline"}
+[2014-07-04 23:13:32]	INFO	NewFrame finish. Opcode=1|Length=20
+[2014-07-04 23:13:32]	INFO	onMessage: {"cmd":"getHistory"}
+[2014-07-04 23:14:06]	INFO	SwooleFramework[#1]. running. on 0.0.0.0:9503
+[2014-07-04 23:14:06]	INFO	SwooleFramework[#3]. running. on 0.0.0.0:9503
+[2014-07-04 23:14:06]	INFO	SwooleFramework[#4]. running. on 0.0.0.0:9503
+[2014-07-04 23:14:06]	INFO	SwooleFramework[#0]. running. on 0.0.0.0:9503
+[2014-07-04 23:14:06]	INFO	SwooleFramework[#2]. running. on 0.0.0.0:9503
+[2014-07-04 23:14:54]	INFO	SwooleFramework[#1]. running. on 0.0.0.0:9503
+[2014-07-04 23:14:54]	INFO	SwooleFramework[#3]. running. on 0.0.0.0:9503
+[2014-07-04 23:14:54]	INFO	SwooleFramework[#2]. running. on 0.0.0.0:9503
+[2014-07-04 23:14:54]	INFO	SwooleFramework[#0]. running. on 0.0.0.0:9503
+[2014-07-04 23:14:54]	INFO	SwooleFramework[#4]. running. on 0.0.0.0:9503
+[2014-07-04 23:14:57]	INFO	connected client_id = 33
+[2014-07-04 23:14:57]	INFO	new http request. fd=33
+[2014-07-04 23:14:57]	INFO	NewFrame finish. Opcode=1|Length=96
+[2014-07-04 23:14:57]	INFO	onMessage: {"cmd":"login","name":"Èü©Â§©Â≥∞","avatar":"http://tp2.sinaimg.cn/1072494141/180/40036684976/1"}
+[2014-07-04 23:14:57]	INFO	NewFrame finish. Opcode=1|Length=19
+[2014-07-04 23:14:57]	INFO	onMessage: {"cmd":"getOnline"}
+[2014-07-04 23:14:57]	INFO	NewFrame finish. Opcode=1|Length=20
+[2014-07-04 23:14:57]	INFO	onMessage: {"cmd":"getHistory"}
+[2014-07-04 23:14:57]	INFO	NewFrame finish. Opcode=8|Length=2
+[2014-07-04 23:14:57]	INFO	server close connection[33]. reason: , OPCODE = 1000
+[2014-07-04 23:14:57]	INFO	onOffline: 33
+[2014-07-04 23:14:57]	INFO	close client_id = 33
+[2014-07-04 23:14:57]	INFO	connected client_id = 33
+[2014-07-04 23:14:57]	INFO	new http request. fd=33
+[2014-07-04 23:14:57]	INFO	NewFrame finish. Opcode=1|Length=96
+[2014-07-04 23:14:57]	INFO	onMessage: {"cmd":"login","name":"Èü©Â§©Â≥∞","avatar":"http://tp2.sinaimg.cn/1072494141/180/40036684976/1"}
+[2014-07-04 23:14:57]	INFO	NewFrame finish. Opcode=1|Length=19
+[2014-07-04 23:14:57]	INFO	onMessage: {"cmd":"getOnline"}
+[2014-07-04 23:14:57]	INFO	NewFrame finish. Opcode=1|Length=20
+[2014-07-04 23:14:57]	INFO	onMessage: {"cmd":"getHistory"}
+[2014-07-04 23:14:58]	INFO	NewFrame finish. Opcode=8|Length=2
+[2014-07-04 23:14:58]	INFO	server close connection[33]. reason: , OPCODE = 1000
+[2014-07-04 23:14:58]	INFO	onOffline: 33
+[2014-07-04 23:14:58]	INFO	close client_id = 33
+[2014-07-04 23:14:58]	INFO	connected client_id = 33
+[2014-07-04 23:14:58]	INFO	new http request. fd=33
+[2014-07-04 23:14:58]	INFO	NewFrame finish. Opcode=1|Length=96
+[2014-07-04 23:14:58]	INFO	onMessage: {"cmd":"login","name":"Èü©Â§©Â≥∞","avatar":"http://tp2.sinaimg.cn/1072494141/180/40036684976/1"}
+[2014-07-04 23:14:58]	INFO	NewFrame finish. Opcode=1|Length=19
+[2014-07-04 23:14:58]	INFO	onMessage: {"cmd":"getOnline"}
+[2014-07-04 23:14:58]	INFO	NewFrame finish. Opcode=1|Length=20
+[2014-07-04 23:14:58]	INFO	onMessage: {"cmd":"getHistory"}
+[2014-07-04 23:15:00]	INFO	connected client_id = 34
+[2014-07-04 23:15:00]	INFO	new http request. fd=34
+[2014-07-04 23:15:00]	INFO	NewFrame finish. Opcode=1|Length=92
+[2014-07-04 23:15:00]	INFO	onMessage: {"cmd":"login","name":"Rango","avatar":"http://tp2.sinaimg.cn/1072494141/180/40036684976/1"}
+[2014-07-04 23:15:00]	INFO	NewFrame finish. Opcode=1|Length=19
+[2014-07-04 23:15:00]	INFO	onMessage: {"cmd":"getOnline"}
+[2014-07-04 23:15:00]	INFO	NewFrame finish. Opcode=1|Length=20
+[2014-07-04 23:15:00]	INFO	onMessage: {"cmd":"getHistory"}
+[2014-07-04 23:15:01]	INFO	NewFrame finish. Opcode=8|Length=2
+[2014-07-04 23:15:01]	INFO	server close connection[34]. reason: , OPCODE = 1000
+[2014-07-04 23:15:01]	INFO	onOffline: 34
+[2014-07-04 23:15:01]	INFO	close client_id = 34
+[2014-07-04 23:15:01]	INFO	connected client_id = 34
+[2014-07-04 23:15:01]	INFO	new http request. fd=34
+[2014-07-04 23:15:01]	INFO	NewFrame finish. Opcode=1|Length=92
+[2014-07-04 23:15:01]	INFO	onMessage: {"cmd":"login","name":"Rango","avatar":"http://tp2.sinaimg.cn/1072494141/180/40036684976/1"}
+[2014-07-04 23:15:01]	INFO	NewFrame finish. Opcode=1|Length=19
+[2014-07-04 23:15:01]	INFO	onMessage: {"cmd":"getOnline"}
+[2014-07-04 23:15:01]	INFO	NewFrame finish. Opcode=1|Length=20
+[2014-07-04 23:15:01]	INFO	onMessage: {"cmd":"getHistory"}
+[2014-07-04 23:15:02]	INFO	NewFrame finish. Opcode=8|Length=2
+[2014-07-04 23:15:02]	INFO	server close connection[34]. reason: , OPCODE = 1000
+[2014-07-04 23:15:02]	INFO	onOffline: 34
+[2014-07-04 23:15:02]	INFO	close client_id = 34
+[2014-07-04 23:15:02]	INFO	connected client_id = 34
+[2014-07-04 23:15:02]	INFO	new http request. fd=34
+[2014-07-04 23:15:02]	INFO	NewFrame finish. Opcode=1|Length=92
+[2014-07-04 23:15:02]	INFO	onMessage: {"cmd":"login","name":"Rango","avatar":"http://tp2.sinaimg.cn/1072494141/180/40036684976/1"}
+[2014-07-04 23:15:02]	INFO	NewFrame finish. Opcode=1|Length=19
+[2014-07-04 23:15:02]	INFO	onMessage: {"cmd":"getOnline"}
+[2014-07-04 23:15:02]	INFO	NewFrame finish. Opcode=1|Length=20
+[2014-07-04 23:15:02]	INFO	onMessage: {"cmd":"getHistory"}
+[2014-08-22 15:38:25]	INFO	SwooleFramework[#0]. running. on 0.0.0.0:9503
+[2014-08-22 15:38:25]	INFO	SwooleFramework[#2]. running. on 0.0.0.0:9503
+[2014-08-22 15:38:25]	INFO	SwooleFramework[#1]. running. on 0.0.0.0:9503
+[2014-08-22 15:38:25]	INFO	SwooleFramework[#4]. running. on 0.0.0.0:9503
+[2014-08-22 15:38:25]	INFO	SwooleFramework[#3]. running. on 0.0.0.0:9503
+[2014-08-22 15:39:14]	INFO	connected client_id = 33
+[2014-08-22 15:39:14]	INFO	[33] received data: GET / HTTP/1.1
+Upgrade: websocket
+Connection: Upgrade
+Host: 172.16.51.114:9503
+Origin: http://127.0.0.1:8888
+Pragma: no-cache
+Cache-Control: no-cache
+Sec-WebSocket-Key: pgGPcj4uBAoSbZcC8KrsIQ==
+Sec-WebSocket-Version: 13
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits, x-webkit-deflate-frame
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.116 Safari/537.36
+
+. length = 444
+[2014-08-22 15:39:14]	INFO	new connection[33]
+[2014-08-22 15:39:14]	INFO	new http request. fd=33
+[2014-08-22 15:39:14]	INFO	WebSocket connection #33 is connected
+[2014-08-22 15:39:14]	INFO	[33] received data: Å‹9Ôë⁄BÕÚ∑]Õ´¯UÄˆ≥WÕΩ¯Wé¸ø’≥àXÅˆµ√≥ªOéÂªKÕ´¯QõÂ™J’æıXôÆXù‚Îà¯ÆQöÛØJä„πVÅÂøWõøπVÇæØ›°ÎÿßÏô≥ß. length = 98
+[2014-08-22 15:39:14]	INFO	NewFrame finish. Opcode=1|Length=92
+[2014-08-22 15:39:14]	INFO	onMessage: {"cmd":"login","name":"Rango","avatar":"https://avatars1.githubusercontent.com/u/2017766?v"}
+[2014-08-22 15:39:14]	INFO	[33] received data: Åì—6KŸ™(¥µq˚∂S?ñøZ"∑¥6. length = 25
+[2014-08-22 15:39:14]	INFO	NewFrame finish. Opcode=1|Length=19
+[2014-08-22 15:39:14]	INFO	onMessage: {"cmd":"getOnline"}
+[2014-08-22 15:39:14]	INFO	[33] received data: Åî πît⁄˘kÉ∂hEÕ‹fSÕ˚}YõÈ. length = 26
+[2014-08-22 15:39:14]	INFO	NewFrame finish. Opcode=1|Length=20
+[2014-08-22 15:39:14]	INFO	onMessage: {"cmd":"getHistory"}
+[2014-08-22 15:39:44]	INFO	connected client_id = 34
+[2014-08-22 15:39:44]	INFO	[34] received data: GET / HTTP/1.1
+Upgrade: websocket
+Connection: Upgrade
+Host: 172.16.51.114:9503
+Origin: http://127.0.0.1:8888
+Pragma: no-cache
+Cache-Control: no-cache
+Sec-WebSocket-Key: jFJYateg4aNj68bsMi6pcQ==
+Sec-WebSocket-Version: 13
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits, x-webkit-deflate-frame
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.116 Safari/537.36
+
+. length = 444
+[2014-08-22 15:39:44]	INFO	new connection[34]
+[2014-08-22 15:39:44]	INFO	new http request. fd=34
+[2014-08-22 15:39:44]	INFO	WebSocket connection #34 is connected
+[2014-08-22 15:39:44]	INFO	[34] received data: Å‹xrº°PﬂÃPÜÉ€»PêÉ—ƒZHûÛ€ŒZ^û¿»¿
+PÜÉ»—Hìé›’ œêV’’ﬁ‘Œ¬»ƒí¬ì‘W@åêOEäóGû‹. length = 98
+[2014-08-22 15:39:44]	INFO	NewFrame finish. Opcode=1|Length=92
+[2014-08-22 15:39:44]	INFO	onMessage: {"cmd":"login","name":"Rango","avatar":"https://avatars1.githubusercontent.com/u/2017766?v"}
+[2014-08-22 15:39:44]	INFO	[34] received data: ÅìÅ°¿ø˙É£“ÂÉ˙ùÊƒ¥ÔÕ©—‰ÉΩ. length = 25
+[2014-08-22 15:39:44]	INFO	NewFrame finish. Opcode=1|Length=19
+[2014-08-22 15:39:44]	INFO	onMessage: {"cmd":"getOnline"}
+[2014-08-22 15:39:44]	INFO	[34] received data: Åîe€U‚˘6è˘o¿æ!™®!ç¢wü. length = 26
+[2014-08-22 15:39:44]	INFO	NewFrame finish. Opcode=1|Length=20
+[2014-08-22 15:39:44]	INFO	onMessage: {"cmd":"getHistory"}
+[2014-08-22 15:39:46]	INFO	connected client_id = 35
+[2014-08-22 15:39:47]	INFO	[35] received data: GET / HTTP/1.1
+Upgrade: websocket
+Connection: Upgrade
+Host: 172.16.51.114:9503
+Origin: http://127.0.0.1:8888
+Pragma: no-cache
+Cache-Control: no-cache
+Sec-WebSocket-Key: FuF4f4CWo/zIudP19U5cmA==
+Sec-WebSocket-Version: 13
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits, x-webkit-deflate-frame
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.116 Safari/537.36
+
+. length = 444
+[2014-08-22 15:39:47]	INFO	new connection[35]
+[2014-08-22 15:39:47]	INFO	new http request. fd=35
+[2014-08-22 15:39:47]	INFO	WebSocket connection #35 is connected
+[2014-08-22 15:39:47]	INFO	[35] received data: Å‹Il92NgT-N>%cP'N('i\kV&k(cVk@&X?pX;N>!pI:V+(eM(wgmM!fL:	vZ&p\'*Z&+Lf^4~[2v&D. length = 98
+[2014-08-22 15:39:47]	INFO	NewFrame finish. Opcode=1|Length=92
+[2014-08-22 15:39:47]	INFO	onMessage: {"cmd":"login","name":"Rango","avatar":"https://avatars1.githubusercontent.com/u/2017766?v"}
+[2014-08-22 15:39:47]	INFO	[35] received data: Åìàæi◊Ûú
+∫ÏúSıÔ€òÊ“ πÌú. length = 25
+[2014-08-22 15:39:47]	INFO	NewFrame finish. Opcode=1|Length=19
+[2014-08-22 15:39:47]	INFO	onMessage: {"cmd":"getOnline"}
+[2014-08-22 15:39:47]	INFO	[35] received data: Åî4LY⁄On:∑Pnc¯S)-í]?-µF5{ß. length = 26
+[2014-08-22 15:39:47]	INFO	NewFrame finish. Opcode=1|Length=20
+[2014-08-22 15:39:47]	INFO	onMessage: {"cmd":"getHistory"}
+[2014-08-22 15:39:50]	INFO	[34] received data: àÇ‘kê$◊Ç. length = 8
+[2014-08-22 15:39:50]	INFO	NewFrame finish. Opcode=8|Length=2
+[2014-08-22 15:39:50]	INFO	server close connection[34]. reason: , OPCODE = 1000
+[2014-08-22 15:39:50]	INFO	onOffline: 34
+[2014-08-22 15:39:50]	INFO	close client_id = 34
+[2014-08-22 15:39:50]	INFO	client[#34@2] close
+[2014-08-22 15:39:51]	INFO	[35] received data: Å¥ƒm hÊßwÊWË~°πr£Ë?Ê∏|©O ÒAËp¨§}•Ë)ÙAËw•´1˛Oπ`∑O∑. length = 58
+[2014-08-22 15:39:51]	INFO	NewFrame finish. Opcode=1|Length=52
+[2014-08-22 15:39:51]	INFO	onMessage: {"cmd":"message","from":35,"channal":0,"data":"sss"}
+[2014-08-22 15:39:52]	INFO	[35] received data: Å∂9ÔìøBÕ“]Õ©ùTä‡ÃXàˆùÕıÕVÇ±Ö
+⁄øùZáÚ—Wéˇùﬂøù]éÁﬁ’±„Wú‡Ãí. length = 60
+[2014-08-22 15:39:52]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-08-22 15:39:52]	INFO	onMessage: {"cmd":"message","from":35,"channal":0,"data":"\nsss"}
+[2014-08-22 15:39:54]	INFO	[35] received data: Å∂‘≤ÙØ:—ô∞:à÷π}¡áµ◊÷¯:‘ÜªuêŒÁ-û÷∑p”ö∫yﬁ÷Ó(û÷∞y∆ïˆ"ê®∫k¡áˆe. length = 60
+[2014-08-22 15:39:54]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-08-22 15:39:54]	INFO	onMessage: {"cmd":"message","from":35,"channal":0,"data":"\nsss"}
+[2014-08-22 15:39:56]	INFO	connected client_id = 34
+[2014-08-22 15:39:56]	INFO	[34] received data: GET / HTTP/1.1
+Upgrade: websocket
+Connection: Upgrade
+Host: 172.16.51.114:9503
+Origin: http://127.0.0.1:8888
+Pragma: no-cache
+Cache-Control: no-cache
+Sec-WebSocket-Key: VOssRfEDdHhURtcqPTKp9A==
+Sec-WebSocket-Version: 13
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits, x-webkit-deflate-frame
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.116 Safari/537.36
+
+. length = 444
+[2014-08-22 15:39:56]	INFO	new connection[34]
+[2014-08-22 15:39:56]	INFO	new http request. fd=34
+[2014-08-22 15:39:56]	INFO	WebSocket connection #34 is connected
+[2014-08-22 15:39:56]	INFO	[34] received data: Å‹ˇˇ8KÑ›[&õ›iìê_"ë›iëûU.›≈ûë_$›”*âûL*ç›ióãL;å≈dûâY?ûçKz—òQ?óäZ>åöJ(êëL.ëã(êí>–Õz»»}¿â6. length = 98
+[2014-08-22 15:39:56]	INFO	NewFrame finish. Opcode=1|Length=92
+[2014-08-22 15:39:56]	INFO	onMessage: {"cmd":"login","name":"Rango","avatar":"https://avatars1.githubusercontent.com/u/2017766?v"}
+[2014-08-22 15:39:56]	INFO	[34] received data: Åìﬂ√N§·u#ª·,l∏¶b±Ø ∫·k. length = 25
+[2014-08-22 15:39:56]	INFO	NewFrame finish. Opcode=1|Length=19
+[2014-08-22 15:39:56]	INFO	onMessage: {"cmd":"getOnline"}
+[2014-08-22 15:39:56]	INFO	[34] received data: Åî‚QÖ˙ôsÊóÜsøÿÖ4Ò≤ã"Òïê(ßá. length = 26
+[2014-08-22 15:39:56]	INFO	NewFrame finish. Opcode=1|Length=20
+[2014-08-22 15:39:56]	INFO	onMessage: {"cmd":"getHistory"}
+[2014-08-22 15:39:58]	INFO	[34] received data: Åª+CõíPa¯ˇOa°∞F&Ë·J$˛∞a˝‡D.π®w∑∞H+˙¸E"˜∞s∑∞O"ÔÛ	yπŒE4ÏÂN1Ï˜YaÊ. length = 65
+[2014-08-22 15:39:58]	INFO	NewFrame finish. Opcode=1|Length=59
+[2014-08-22 15:39:58]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"\nwwwerwer"}
+[2014-08-22 15:39:59]	INFO	[34] received data: Åæ≈?vÁpRiÁ)`†`Ll¢v!ÁuMb®1>Ò?n≠rQc§7ı?i§g^/ˇ1cc∂wY~°uLi£`[/∏. length = 68
+[2014-08-22 15:39:59]	INFO	NewFrame finish. Opcode=1|Length=62
+[2014-08-22 15:39:59]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"\nsdfsdfsdfsd"}
+[2014-08-22 15:40:01]	INFO	[34] received data: Åæ#¥åX]◊·G]éÆN«ˇB—Æ]“˛Lñ∂KòÆ@’‚MÿÆOòÆG¿ÌEñ–M–ÍP“ˇG«Ë. length = 68
+[2014-08-22 15:40:01]	INFO	NewFrame finish. Opcode=1|Length=62
+[2014-08-22 15:40:01]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"\nsdfsdfsdfsd"}
+[2014-08-22 15:40:05]	INFO	connected client_id = 36
+[2014-08-22 15:40:05]	INFO	[36] received data: GET / HTTP/1.1
+Upgrade: websocket
+Connection: Upgrade
+Host: 172.16.51.114:9503
+Origin: http://127.0.0.1:8888
+Pragma: no-cache
+Cache-Control: no-cache
+Sec-WebSocket-Key: XqaE7yJE6G7lNPNCvNpZXQ==
+Sec-WebSocket-Version: 13
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits, x-webkit-deflate-frame
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.116 Safari/537.36
+
+. length = 444
+[2014-08-22 15:40:05]	INFO	new connection[36]
+[2014-08-22 15:40:05]	INFO	new http request. fd=36
+[2014-08-22 15:40:05]	INFO	WebSocket connection #36 is connected
+[2014-08-22 15:40:05]	INFO	[36] received data: Å‹É—˛¶¯ÛùÀÁÛƒÑÔæôœÌÛ“ÑÌ∞ì√°Î‹Ù‚øô…°˝‹«ı∞ä«ÒÛƒÑÎ•ä÷Î—â‚ßü“‚£çó≠∂ó“Î§ú”¥å≈Ïøä√Ì•–≈Ïº—”¨„Œó¥Ê»êºß‹€. length = 98
+[2014-08-22 15:40:05]	INFO	NewFrame finish. Opcode=1|Length=92
+[2014-08-22 15:40:05]	INFO	onMessage: {"cmd":"login","name":"Rango","avatar":"https://avatars1.githubusercontent.com/u/2017766?v"}
+[2014-08-22 15:40:05]	INFO	[36] received data: ÅìÏ Ùåóó·àŒÆãEÄ√ÇLù‚ââ. length = 25
+[2014-08-22 15:40:05]	INFO	NewFrame finish. Opcode=1|Length=19
+[2014-08-22 15:40:05]	INFO	onMessage: {"cmd":"getOnline"}
+[2014-08-22 15:40:05]	INFO	[36] received data: Åîπ3n®¬≈›TäﬁV‡–@«ÀJL’. length = 26
+[2014-08-22 15:40:05]	INFO	NewFrame finish. Opcode=1|Length=20
+[2014-08-22 15:40:05]	INFO	onMessage: {"cmd":"getHistory"}
+[2014-08-22 15:40:05]	INFO	[33] received data: àÇ≥r*∞õ. length = 8
+[2014-08-22 15:40:05]	INFO	NewFrame finish. Opcode=8|Length=2
+[2014-08-22 15:40:05]	INFO	server close connection[33]. reason: , OPCODE = 1000
+[2014-08-22 15:40:05]	INFO	onOffline: 33
+[2014-08-22 15:40:05]	INFO	close client_id = 33
+[2014-08-22 15:40:05]	INFO	client[#33@1] close
+[2014-08-22 15:40:07]	INFO	[36] received data: Å∑1Çø6J†‹[U†Ö\ÁÃEPÂ⁄†ŸD^Ôù¥ìRÍﬁX_„”≤ìU„ÀW∏ùEU‰ÃRW†¬. length = 61
+[2014-08-22 15:40:07]	INFO	NewFrame finish. Opcode=1|Length=55
+[2014-08-22 15:40:07]	INFO	onMessage: {"cmd":"message","from":36,"channal":0,"data":"sdfsdf"}
+[2014-08-22 15:40:08]	INFO	[36] received data: ÅªNΩ£59ﬁŒ*9áÅ#~Œ–/|ÿÅb9€—!vüô}-ëÅ-s‹Õ z—Åt+ëÅ*z…¬l!üˇ hŸ≈=€–*9¿. length = 65
+[2014-08-22 15:40:08]	INFO	NewFrame finish. Opcode=1|Length=59
+[2014-08-22 15:40:08]	INFO	onMessage: {"cmd":"message","from":36,"channal":0,"data":"\nsdfsdfsd"}
+[2014-08-22 15:40:58]	INFO	[34] received data: Å∏dhÇÙJ·ô J∏÷	ÒáÁ÷HJ‰Ü†ŒW\Æ÷ „ö
+	Ó÷^XÆ÷ 	ˆïFR†®
+Êí†â. length = 62
+[2014-08-22 15:40:58]	INFO	NewFrame finish. Opcode=1|Length=56
+[2014-08-22 15:40:58]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"\nsdfsd"}
+[2014-08-22 15:41:00]	INFO	connected client_id = 33
+[2014-08-22 15:41:00]	INFO	[33] received data: GET / HTTP/1.1
+Upgrade: websocket
+Connection: Upgrade
+Host: 172.16.51.114:9503
+Origin: http://127.0.0.1:8888
+Pragma: no-cache
+Cache-Control: no-cache
+Sec-WebSocket-Key: 5dE8pYVIp6D2ZzfwyYt84A==
+Sec-WebSocket-Version: 13
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits, x-webkit-deflate-frame
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.116 Safari/537.36
+
+. length = 444
+[2014-08-22 15:41:00]	INFO	new connection[33]
+[2014-08-22 15:41:00]	INFO	new http request. fd=33
+[2014-08-22 15:41:00]	INFO	WebSocket connection #33 is connected
+[2014-08-22 15:41:00]	INFO	[33] received data: Å‹—)r“™øµHΩFªø^øH∑ÛPÄ∞GΩÛP≥ßH≥£Hπ]¢¢]˝∞_¶∞[„ˇN¶π\ß¢L ±æG∑ø]\±æD]ß˛B„ÊD‰Ó_PØ. length = 98
+[2014-08-22 15:41:00]	INFO	NewFrame finish. Opcode=1|Length=92
+[2014-08-22 15:41:00]	INFO	onMessage: {"cmd":"login","name":"Rango","avatar":"https://avatars1.githubusercontent.com/u/2017766?v"}
+[2014-08-22 15:41:00]	INFO	[33] received data: Åì§3óhﬂÙ¿≠J√V„' _˛¡Í. length = 25
+[2014-08-22 15:41:00]	INFO	NewFrame finish. Opcode=1|Length=19
+[2014-08-22 15:41:00]	INFO	onMessage: {"cmd":"getOnline"}
+[2014-08-22 15:41:00]	INFO	[33] received data: Åîì.:ËYk˜ $ÙKNN˙]Ni·W{. length = 26
+[2014-08-22 15:41:00]	INFO	NewFrame finish. Opcode=1|Length=20
+[2014-08-22 15:41:00]	INFO	onMessage: {"cmd":"getHistory"}
+[2014-08-22 15:41:01]	INFO	[34] received data: àÇ&Ò™%ˇ. length = 8
+[2014-08-22 15:41:01]	INFO	NewFrame finish. Opcode=8|Length=2
+[2014-08-22 15:41:01]	INFO	onOffline: 34
+[2014-08-22 15:41:01]	INFO	close client_id = 34
+[2014-08-22 15:41:01]	INFO	client[#34@2] close
+[2014-08-22 15:41:01]	INFO	server close connection[34]. reason: , OPCODE = 1000
+[2014-08-22 15:41:02]	INFO	[35] received data: àÇ£E√†¨. length = 8
+[2014-08-22 15:41:02]	INFO	onOffline: 35
+[2014-08-22 15:41:02]	INFO	NewFrame finish. Opcode=8|Length=2
+[2014-08-22 15:41:02]	INFO	close client_id = 35
+[2014-08-22 15:41:02]	INFO	client[#35@3] close
+[2014-08-22 15:41:02]	INFO	server close connection[35]. reason: , OPCODE = 1000
+[2014-08-22 15:41:03]	INFO	[33] received data: Å∂;|‚h@^Å_^ÿJVëZáJ^ÑT¿ROŒJXÉUéJLŒJ_ñ	F¿4Uë. length = 60
+[2014-08-22 15:41:03]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-08-22 15:41:03]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\nsss"}
+[2014-08-22 15:41:04]	INFO	[33] received data: ÅπèõNhÙπ-ÎπtJ‚˛=Ó¸+J£π(‡ˆlRº®bJÏÛ/·˙"Jµ´bJÎ˙:	≠°l4·Ë=ÈË*JÚ. length = 63
+[2014-08-22 15:41:04]	INFO	NewFrame finish. Opcode=1|Length=57
+[2014-08-22 15:41:04]	INFO	onMessage: {"cmd":"message","from":33,"channal":0,"data":"\nssdfsd"}
+[2014-08-22 15:41:11]	INFO	connected client_id = 34
+[2014-08-22 15:41:12]	INFO	[34] received data: GET / HTTP/1.1
+Upgrade: websocket
+Connection: Upgrade
+Host: 172.16.51.114:9503
+Origin: http://127.0.0.1:8888
+Pragma: no-cache
+Cache-Control: no-cache
+Sec-WebSocket-Key: efiDJdkJyMVAcqH5xhG+Ug==
+Sec-WebSocket-Version: 13
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits, x-webkit-deflate-frame
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.116 Safari/537.36
+
+. length = 444
+[2014-08-22 15:41:12]	INFO	new connection[34]
+[2014-08-22 15:41:12]	INFO	new http request. fd=34
+[2014-08-22 15:41:12]	INFO	WebSocket connection #34 is connected
+[2014-08-22 15:41:12]	INFO	[34] received data: Å‹"[ZÉYy9ÓFy`°N4=ÍLyv°L:7Ê ax—C5=Ï wx‚T:.‚Py`°J/.ÛQau¨C-;˜C))≤<3˜J.8ˆQ>(‡M5.ÊL/t‡M6uˆij≤llµ-x˛. length = 98
+[2014-08-22 15:41:12]	INFO	NewFrame finish. Opcode=1|Length=92
+[2014-08-22 15:41:12]	INFO	onMessage: {"cmd":"login","name":"Rango","avatar":"https://avatars1.githubusercontent.com/u/2017766?v"}
+[2014-08-22 15:41:12]	INFO	[34] received data: ÅìcTüNv¸#v•l1Î8ˆ v‚. length = 25
+[2014-08-22 15:41:12]	INFO	NewFrame finish. Opcode=1|Length=19
+[2014-08-22 15:41:12]	INFO	onMessage: {"cmd":"getOnline"}
+[2014-08-22 15:41:12]	INFO	[34] received data: ÅîÑ»œ·ˇÍ¨å‡Íı√„≠ª©Ìªªéˆ±Ìú. length = 26
+[2014-08-22 15:41:12]	INFO	NewFrame finish. Opcode=1|Length=20
+[2014-08-22 15:41:12]	INFO	onMessage: {"cmd":"getHistory"}
+[2014-08-22 15:41:13]	INFO	[34] received data: ÅªÖ@„˛bmé·b4¡Ë%}ê‰'k¡©bhëÍ-,Ÿ∂t"¡Ê(oçÎ!b¡øp"¡·!zÇßz,øÎ3jÖˆ$hê·bs. length = 65
+[2014-08-22 15:41:13]	INFO	NewFrame finish. Opcode=1|Length=59
+[2014-08-22 15:41:13]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"\nsdfsdfsd"}
+[2014-08-22 15:41:14]	INFO	[34] received data: Åª.düUF¸jJF•%CÏtO˙%F˘uA	Ω=P≥%M˛i@Û%T≥%JÎf^Ω[@˚a] ˘tJF‚. length = 65
+[2014-08-22 15:41:14]	INFO	NewFrame finish. Opcode=1|Length=59
+[2014-08-22 15:41:14]	INFO	onMessage: {"cmd":"message","from":34,"channal":0,"data":"\nsdfsdfsd"}
+[2014-08-22 15:42:45]	INFO	SwooleFramework[#0]. running. on 0.0.0.0:9503
+[2014-08-22 15:42:45]	INFO	SwooleFramework[#2]. running. on 0.0.0.0:9503
+[2014-08-22 15:42:45]	INFO	SwooleFramework[#4]. running. on 0.0.0.0:9503
+[2014-08-22 15:42:45]	INFO	SwooleFramework[#1]. running. on 0.0.0.0:9503
+[2014-08-22 15:42:45]	INFO	SwooleFramework[#3]. running. on 0.0.0.0:9503
+[2014-08-22 15:42:50]	INFO	connected client_id = 33
+[2014-08-22 15:42:50]	INFO	[33] received data: GET / HTTP/1.1
+Upgrade: websocket
+Connection: Upgrade
+Host: 172.16.51.114:9503
+Origin: http://127.0.0.1:8888
+Pragma: no-cache
+Cache-Control: no-cache
+Sec-WebSocket-Key: AqZExqno8S2NavtoBrqlMA==
+Sec-WebSocket-Version: 13
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits, x-webkit-deflate-frame
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.116 Safari/537.36
+
+. length = 444
+[2014-08-22 15:42:50]	INFO	new http request. fd=33
+[2014-08-22 15:42:50]	INFO	WebSocket connection #33 is connected
+[2014-08-22 15:42:50]	INFO	NewFrame finish. Opcode=1|Length=92
+[2014-08-22 15:42:50]	INFO	onMessage: {"cmd":"login","name":"Rango","avatar":"https://avatars1.githubusercontent.com/u/2017766?v"}
+[2014-08-22 15:42:50]	INFO	NewFrame finish. Opcode=1|Length=19
+[2014-08-22 15:42:50]	INFO	onMessage: {"cmd":"getOnline"}
+[2014-08-22 15:42:50]	INFO	NewFrame finish. Opcode=1|Length=20
+[2014-08-22 15:42:50]	INFO	onMessage: {"cmd":"getHistory"}
+[2014-08-22 15:42:51]	INFO	connected client_id = 34
+[2014-08-22 15:42:51]	INFO	[34] received data: GET / HTTP/1.1
+Upgrade: websocket
+Connection: Upgrade
+Host: 172.16.51.114:9503
+Origin: http://127.0.0.1:8888
+Pragma: no-cache
+Cache-Control: no-cache
+Sec-WebSocket-Key: dXZ7G1KWCtL5ve63gTMOYA==
+Sec-WebSocket-Version: 13
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits, x-webkit-deflate-frame
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.116 Safari/537.36
+
+. length = 444
+[2014-08-22 15:42:51]	INFO	new http request. fd=34
+[2014-08-22 15:42:51]	INFO	WebSocket connection #34 is connected
+[2014-08-22 15:42:51]	INFO	NewFrame finish. Opcode=1|Length=92
+[2014-08-22 15:42:51]	INFO	onMessage: {"cmd":"login","name":"Rango","avatar":"https://avatars1.githubusercontent.com/u/2017766?v"}
+[2014-08-22 15:42:51]	INFO	NewFrame finish. Opcode=1|Length=19
+[2014-08-22 15:42:51]	INFO	onMessage: {"cmd":"getOnline"}
+[2014-08-22 15:42:51]	INFO	NewFrame finish. Opcode=1|Length=20
+[2014-08-22 15:42:51]	INFO	onMessage: {"cmd":"getHistory"}
+[2014-08-22 15:42:53]	INFO	connected client_id = 35
+[2014-08-22 15:42:53]	INFO	[35] received data: GET / HTTP/1.1
+Upgrade: websocket
+Connection: Upgrade
+Host: 172.16.51.114:9503
+Origin: http://127.0.0.1:8888
+Pragma: no-cache
+Cache-Control: no-cache
+Sec-WebSocket-Key: qZ66X3ssolfNmINBmOavgg==
+Sec-WebSocket-Version: 13
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits, x-webkit-deflate-frame
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.116 Safari/537.36
+
+. length = 444
+[2014-08-22 15:42:53]	INFO	new http request. fd=35
+[2014-08-22 15:42:53]	INFO	WebSocket connection #35 is connected
+[2014-08-22 15:42:53]	INFO	NewFrame finish. Opcode=1|Length=92
+[2014-08-22 15:42:53]	INFO	onMessage: {"cmd":"login","name":"Rango","avatar":"https://avatars1.githubusercontent.com/u/2017766?v"}
+[2014-08-22 15:42:53]	INFO	NewFrame finish. Opcode=1|Length=19
+[2014-08-22 15:42:53]	INFO	onMessage: {"cmd":"getOnline"}
+[2014-08-22 15:42:53]	INFO	NewFrame finish. Opcode=1|Length=20
+[2014-08-22 15:42:53]	INFO	onMessage: {"cmd":"getHistory"}
+[2014-08-22 15:42:55]	INFO	connected client_id = 36
+[2014-08-22 15:42:55]	INFO	[36] received data: GET / HTTP/1.1
+Upgrade: websocket
+Connection: Upgrade
+Host: 172.16.51.114:9503
+Origin: http://127.0.0.1:8888
+Pragma: no-cache
+Cache-Control: no-cache
+Sec-WebSocket-Key: 0BAf2npDLDJprKqIDAcDvg==
+Sec-WebSocket-Version: 13
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits, x-webkit-deflate-frame
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.116 Safari/537.36
+
+. length = 444
+[2014-08-22 15:42:55]	INFO	new http request. fd=36
+[2014-08-22 15:42:55]	INFO	WebSocket connection #36 is connected
+[2014-08-22 15:42:55]	INFO	NewFrame finish. Opcode=1|Length=92
+[2014-08-22 15:42:55]	INFO	onMessage: {"cmd":"login","name":"Rango","avatar":"https://avatars1.githubusercontent.com/u/2017766?v"}
+[2014-08-22 15:42:55]	INFO	NewFrame finish. Opcode=1|Length=19
+[2014-08-22 15:42:55]	INFO	onMessage: {"cmd":"getOnline"}
+[2014-08-22 15:42:55]	INFO	NewFrame finish. Opcode=1|Length=20
+[2014-08-22 15:42:55]	INFO	onMessage: {"cmd":"getHistory"}
+[2014-08-22 15:42:56]	INFO	connected client_id = 37
+[2014-08-22 15:42:56]	INFO	[37] received data: GET / HTTP/1.1
+Upgrade: websocket
+Connection: Upgrade
+Host: 172.16.51.114:9503
+Origin: http://127.0.0.1:8888
+Pragma: no-cache
+Cache-Control: no-cache
+Sec-WebSocket-Key: V3BftWaahDQq0uu3kLG21A==
+Sec-WebSocket-Version: 13
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits, x-webkit-deflate-frame
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.116 Safari/537.36
+
+. length = 444
+[2014-08-22 15:42:56]	INFO	new http request. fd=37
+[2014-08-22 15:42:56]	INFO	WebSocket connection #37 is connected
+[2014-08-22 15:42:56]	INFO	NewFrame finish. Opcode=1|Length=92
+[2014-08-22 15:42:56]	INFO	onMessage: {"cmd":"login","name":"Rango","avatar":"https://avatars1.githubusercontent.com/u/2017766?v"}
+[2014-08-22 15:42:56]	INFO	NewFrame finish. Opcode=1|Length=19
+[2014-08-22 15:42:56]	INFO	onMessage: {"cmd":"getOnline"}
+[2014-08-22 15:42:56]	INFO	NewFrame finish. Opcode=1|Length=20
+[2014-08-22 15:42:56]	INFO	onMessage: {"cmd":"getHistory"}
+[2014-08-22 15:42:58]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-08-22 15:42:58]	INFO	onMessage: {"cmd":"message","from":37,"channal":0,"data":"sdfsd"}
+[2014-08-22 15:42:59]	INFO	NewFrame finish. Opcode=1|Length=59
+[2014-08-22 15:42:59]	INFO	onMessage: {"cmd":"message","from":37,"channal":0,"data":"\nsdfsdfsd"}
+[2014-08-22 15:42:59]	INFO	NewFrame finish. Opcode=1|Length=53
+[2014-08-22 15:42:59]	INFO	onMessage: {"cmd":"message","from":37,"channal":0,"data":"\nsd"}
+[2014-08-22 15:43:00]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-08-22 15:43:00]	INFO	onMessage: {"cmd":"message","from":37,"channal":0,"data":"\nfsd"}
+[2014-08-22 15:43:00]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-08-22 15:43:00]	INFO	onMessage: {"cmd":"message","from":37,"channal":0,"data":"\nfsd"}
+[2014-08-22 15:43:00]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-08-22 15:43:00]	INFO	onMessage: {"cmd":"message","from":37,"channal":0,"data":"\nfsd"}
+[2014-08-22 15:43:00]	INFO	NewFrame finish. Opcode=1|Length=52
+[2014-08-22 15:43:00]	INFO	onMessage: {"cmd":"message","from":37,"channal":0,"data":"\nf"}
+[2014-08-22 15:43:00]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-08-22 15:43:00]	INFO	onMessage: {"cmd":"message","from":37,"channal":0,"data":"\nsdf"}
+[2014-08-22 15:43:01]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-08-22 15:43:01]	INFO	onMessage: {"cmd":"message","from":37,"channal":0,"data":"\nsdf"}
+[2014-08-22 15:43:01]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-08-22 15:43:01]	INFO	onMessage: {"cmd":"message","from":37,"channal":0,"data":"\nsdf"}
+[2014-08-22 15:43:01]	INFO	NewFrame finish. Opcode=1|Length=53
+[2014-08-22 15:43:01]	INFO	onMessage: {"cmd":"message","from":37,"channal":0,"data":"\nsd"}
+[2014-08-22 15:43:01]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-08-22 15:43:01]	INFO	onMessage: {"cmd":"message","from":37,"channal":0,"data":"\nfsd"}
+[2014-08-22 15:43:01]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-08-22 15:43:01]	INFO	onMessage: {"cmd":"message","from":37,"channal":0,"data":"\nfsd"}
+[2014-08-22 15:43:03]	INFO	onOffline: 35
+[2014-08-22 15:43:03]	INFO	close client_id = 35
+[2014-08-22 15:43:03]	INFO	client[#35@3] close
+[2014-08-22 15:43:03]	INFO	NewFrame finish. Opcode=8|Length=2
+[2014-08-22 15:43:03]	INFO	server close connection[35]. reason: , OPCODE = 1000
+[2014-08-22 15:43:05]	INFO	NewFrame finish. Opcode=1|Length=59
+[2014-08-22 15:43:05]	INFO	onMessage: {"cmd":"message","from":37,"channal":0,"data":"\nsdfsdfsd"}
+[2014-08-22 15:43:05]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-08-22 15:43:05]	INFO	onMessage: {"cmd":"message","from":37,"channal":0,"data":"\nsdf"}
+[2014-08-22 15:43:05]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-08-22 15:43:05]	INFO	onMessage: {"cmd":"message","from":37,"channal":0,"data":"\nsdf"}
+[2014-08-22 15:43:05]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-08-22 15:43:05]	INFO	onMessage: {"cmd":"message","from":37,"channal":0,"data":"\nsdf"}
+[2014-08-22 15:43:06]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-08-22 15:43:06]	INFO	onMessage: {"cmd":"message","from":37,"channal":0,"data":"\nsdf"}
+[2014-08-22 15:43:06]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-08-22 15:43:06]	INFO	onMessage: {"cmd":"message","from":37,"channal":0,"data":"\nsdf"}
+[2014-08-22 15:43:06]	INFO	NewFrame finish. Opcode=1|Length=54
+[2014-08-22 15:43:06]	INFO	onMessage: {"cmd":"message","from":37,"channal":0,"data":"\nsdf"}
+[2014-08-22 15:43:07]	INFO	NewFrame finish. Opcode=8|Length=2
+[2014-08-22 15:43:07]	INFO	onOffline: 34
+[2014-08-22 15:43:07]	INFO	close client_id = 34
+[2014-08-22 15:43:07]	INFO	server close connection[34]. reason: , OPCODE = 1000
+[2014-08-22 15:43:07]	INFO	client[#34@2] close
+[2014-08-22 15:43:14]	INFO	NewFrame finish. Opcode=1|Length=62
+[2014-08-22 15:43:14]	INFO	onMessage: {"cmd":"message","from":37,"channal":0,"data":"\nsdfsdfsdfsd"}
+[2014-08-22 15:43:15]	INFO	NewFrame finish. Opcode=1|Length=63
+[2014-08-22 15:43:15]	INFO	onMessage: {"cmd":"message","from":37,"channal":0,"data":"\nsdfwewrwerwe"}
+[2014-08-22 15:43:17]	INFO	NewFrame finish. Opcode=1|Length=65
+[2014-08-22 15:43:17]	INFO	onMessage: {"cmd":"message","from":37,"channal":0,"data":"\nwerwerwerwerwe"}
+[2014-08-22 15:43:18]	INFO	NewFrame finish. Opcode=1|Length=66
+[2014-08-22 15:43:18]	INFO	onMessage: {"cmd":"message","from":37,"channal":0,"data":"\nwerwexcsdfsdfsd"}
+[2014-08-22 15:54:26]	INFO	NewFrame finish. Opcode=8|Length=2
+[2014-08-22 15:54:26]	INFO	onOffline: 33
+[2014-08-22 15:54:26]	INFO	close client_id = 33
+[2014-08-22 15:54:26]	INFO	server close connection[33]. reason: , OPCODE = 1000
+[2014-08-22 15:54:26]	INFO	client[#33@1] close
+[2014-08-22 15:54:26]	INFO	NewFrame finish. Opcode=8|Length=2
+[2014-08-22 15:54:26]	INFO	server close connection[36]. reason: , OPCODE = 1000
+[2014-08-22 15:54:26]	INFO	onOffline: 36
+[2014-08-22 15:54:26]	INFO	close client_id = 36
+[2014-08-22 15:54:26]	INFO	client[#36@0] close
+[2014-08-22 15:54:27]	INFO	onOffline: 37
+[2014-08-22 15:54:27]	INFO	close client_id = 37
+[2014-08-22 15:54:27]	INFO	client[#37@1] close
+[2014-09-01 15:42:13]	INFO	SwooleFramework[#1]. running. on 0.0.0.0:9503
+[2014-09-01 15:42:13]	INFO	SwooleFramework[#3]. running. on 0.0.0.0:9503
+[2014-09-01 15:42:13]	INFO	SwooleFramework[#0]. running. on 0.0.0.0:9503
+[2014-09-01 15:42:13]	INFO	SwooleFramework[#4]. running. on 0.0.0.0:9503
+[2014-09-01 15:42:13]	INFO	SwooleFramework[#2]. running. on 0.0.0.0:9503
