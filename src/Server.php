@@ -1,7 +1,8 @@
 <?php
 namespace WebIM;
+use Swoole;
 
-class Server extends \Swoole\Network\Protocol\WebSocket
+class Server extends Swoole\Protocol\WebSocket
 {
     /**
      * @var Store\File;
@@ -27,22 +28,20 @@ class Server extends \Swoole\Network\Protocol\WebSocket
     function onClose($serv, $client_id, $from_id)
     {
         $userInfo = $this->store->getUser($client_id);
-        if (!$userInfo)
+        if ($userInfo)
         {
-            return;
+            $resMsg = array(
+                'cmd' => 'offline',
+                'fd' => $client_id,
+                'from' => 0,
+                'channal' => 0,
+                'data' => $userInfo['name'] . "下线了。。",
+            );
+            $this->store->logout($client_id);
+            //将下线消息发送给所有人
+            $this->broadcastJson($client_id, $resMsg);
         }
-        $resMsg = array(
-            'cmd' => 'offline',
-            'fd' => $client_id,
-            'from' => 0,
-            'channal' => 0,
-            'data' => $userInfo['name'] . "下线了。。",
-        );
-        //将下线消息发送给所有人
         $this->log("onOffline: " . $client_id);
-
-        $this->store->logout($client_id);
-        $this->broadcastJson($client_id, $resMsg);
         parent::onClose($serv, $client_id, $from_id);
     }
 

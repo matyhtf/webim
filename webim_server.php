@@ -11,7 +11,7 @@ $config = require __DIR__.'/config.php';
 //将配置写入config.js
 $config_js = <<<HTML
 var webim = {
-    'server' : {$config['server']['url']}
+    'server' : '{$config['server']['url']}'
 }
 HTML;
 file_put_contents(__DIR__ . '/client/config.js', $config_js);
