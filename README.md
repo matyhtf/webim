@@ -93,30 +93,24 @@ apache
 
 ```php
 $config['server'] = array(
-    'host' => '19.0.3.245',
+    //监听的HOST
+    'host' => '0.0.0.0',
+    //监听的端口
     'port' => '9503',
+    //WebSocket的URL地址，供浏览器使用的
+    'url' => 'ws://127.0.0.1:9503',
 );
 ```
 
-其中server项为WebIM服务器即WebSocket服务器的IP与端口，其他选择项根据具体情况修改
+其中server项为WebIM服务器即WebSocket服务器的IP与端口，其他选择项根据具体情况修改。url对应的就是服务器IP或域名以及websocket服务的端口。
 
-5.修改配置PHPWebIM/client/config.js
-
-```js
-var webim = {
-    'server' : 'ws://19.0.3.245:9503'
-}
-```
-
-server对应4中的配置，ws://IP:端口
-
-6.启动WebSocket服务器
+5.启动WebSocket服务器
 
 ```shell
 php PHPWebIM/webim_server.php
 ```
 
-7.绑定host与访问聊天窗口
+6.绑定host与访问聊天窗口
 
 ```shell
 vi /etc/hosts
