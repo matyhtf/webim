@@ -16,6 +16,11 @@ var webim = {
 HTML;
 file_put_contents(__DIR__ . '/client/config.js', $config_js);
 
+if (!is_dir(dirname($config['webim']['log_file'])))
+{
+    mkdir(dirname($config['webim']['log_file']), 0777, true);
+}
+
 $webim = new WebIM\Server();
 $webim->loadSetting(__DIR__."/swoole.ini"); //加载配置文件
 $webim->setLogger(new Swoole\Log\FileLog($config['webim']['log_file']));   //Logger

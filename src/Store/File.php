@@ -40,26 +40,32 @@ class File
         return $n;
     }
 
-    function __construct($save_dir, $online_dir = '/dev/shm/swoole_webim/')
+    function checkDir($dir, $clear_file = false)
     {
-        $this->online_dir = $online_dir;
-        if (!is_dir($this->online_dir))
+        if (!is_dir($dir))
         {
-            if (!mkdir($this->online_dir, 0777, true))
+            if (!mkdir($dir, 0777, true))
             {
                 rw_deny:
-                trigger_error("can not read/write dir[".$this->online_dir."]", E_ERROR);
+                trigger_error("can not read/write dir[".$dir."]", E_ERROR);
                 return;
             }
         }
-        else
+        else if ($clear_file)
         {
-            self::clearDir($this->online_dir);
+            self::clearDir($dir);
         }
+    }
+
+    function __construct($save_dir, $online_dir = '/dev/shm/swoole_webim/')
+    {
+        $this->online_dir = $online_dir;
+        $this->checkDir($this->online_dir, true);
 
         $this->last_day = date('d');
         $this->save_dir = $save_dir;
 
+        $this->checkDir($save_dir);
         $this->loadHistory();
 
         $this->history_fp = fopen($save_dir.'/'.date('Ymd').'.log', 'a+');
