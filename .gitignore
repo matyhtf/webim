@@ -1,6 +1,4 @@
 /vendor/
 /.idea/
-/log/*
-/data/*
 *.lock
 *.log
