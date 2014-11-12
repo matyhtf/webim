@@ -6,7 +6,7 @@ require __DIR__.'/../vendor/autoload.php';
 Swoole\Loader::vendor_init();
 Swoole\Loader::setRootNS('WebIM', __DIR__.'/src/');
 
-$AppSvr = new Swoole\Network\Protocol\HttpServer();
+$AppSvr = new Swoole\Protocol\HttpServer();
 $AppSvr->loadSetting(__DIR__.'/../swoole.ini'); //加载配置文件
 $AppSvr->setDocumentRoot(__DIR__);
 $AppSvr->setLogger(new \Swoole\Log\EchoLog(true)); //Logger

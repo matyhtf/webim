@@ -223,15 +223,21 @@ class Server extends Swoole\Protocol\WebSocket
             while(true)
             {
                 $conn_list = $sw_serv->connection_list($start_fd, 10);
-                if($conn_list === false)
+                if ($conn_list === false or count($conn_list) == 0)
                 {
                     break;
                 }
                 $start_fd = end($conn_list);
                 foreach($conn_list as $fd)
                 {
-                    if($fd === $client_id) continue;
-                    $this->send($fd, $msg);
+                    if ($fd == $client_id)
+                    {
+                        continue;
+                    }
+                    if ($this->store->exists($fd))
+                    {
+                        $this->send($fd, $msg);
+                    }
                 }
             }
         }

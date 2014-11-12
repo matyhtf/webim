@@ -127,6 +127,11 @@ class File
         return $info;
     }
 
+    function exists($userid)
+    {
+        return is_file($this->online_dir.$userid);
+    }
+
     function addHistory($userid, $msg)
     {
         $info = $this->getUser($userid);
