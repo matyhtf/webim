@@ -155,7 +155,7 @@ HTML;
             'cmd' => 'fromMsg',
             'from' => 0,
             'channal' => 0,
-            'data' => $msg['name'] . "上线鸟。。",
+            'data' => $msg['name'] . "上线了",
         );
         $this->broadcastJson($client_id, $loginMsg);
     }
