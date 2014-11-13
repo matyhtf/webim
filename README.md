@@ -34,7 +34,7 @@ php webim_server.php
 详细部署说明
 ----
 
-1.安装composer(php依赖包工具)
+__1.安装composer(php依赖包工具)__
 
 ```shell
 curl -sS https://getcomposer.org/installer | php
@@ -44,7 +44,7 @@ mv composer.phar /usr/local/bin/composer
 注意：如果未将php解释器程序设置为环境变量PATH中，需要设置。因为composer文件第一行为#!/usr/bin/env php，并不能修改。
 更加详细的对composer说明：http://blog.csdn.net/zzulp/article/details/18981029
 
-2.composer install
+__2.composer install__
 
 切换到PHPWebIM项目目录，执行指令composer install，如很慢则
 
@@ -102,12 +102,19 @@ $config['server'] = array(
 );
 ```
 
-其中server项为WebIM服务器即WebSocket服务器的IP与端口，其他选择项根据具体情况修改。url对应的就是服务器IP或域名以及websocket服务的端口。
+* server.host server.port 项为WebIM服务器即WebSocket服务器的IP与端口，其他选择项根据具体情况修改
+* server.url对应的就是服务器IP或域名以及websocket服务的端口，这个就是提供给浏览器的WebSocket地址
+* webim.data_dir用于修改聊天记录存储的目录，必须有可写权限
 
-5.启动WebSocket服务器
+__5.启动WebSocket服务器__
 
 ```shell
 php PHPWebIM/webim_server.php
+```
+
+IE浏览器不支持WebSocket，需要使用FlashWebSocket模拟，请修改flash_policy.php中对应的端口，然后启动flash_policy.php。
+```shell
+php PHPWebIM/flash_policy.php
 ```
 
 6.绑定host与访问聊天窗口
