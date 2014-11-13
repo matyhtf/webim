@@ -108,7 +108,7 @@ document.onkeydown = function (e) {
         sendMsg();
         $('#msg_content').val("");
     }
-}
+};
 
 function selectUser(userid) {
     $('#userlist').val(userid);

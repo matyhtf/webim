@@ -2,6 +2,7 @@ function Comet(url) {
     this.url = url.replace('ws://', 'http://');
     this.connected = false;
     this.session_id = '';
+    jQuery.support.cors = true;
 
     this.send = function (msg) {
         var websocket = this;
@@ -52,7 +53,7 @@ function Comet(url) {
             error: function (XMLHttpRequest, textStatus, errorThrown) {
                 var e = {};
                 e.data = textStatus;
-                websocket.onerror(e);
+                alert("connect to server [" + websocket.url + "] failed. Error: " + errorThrown);
             }
         });
     };
