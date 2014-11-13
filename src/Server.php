@@ -2,7 +2,7 @@
 namespace WebIM;
 use Swoole;
 
-class Server extends Swoole\Protocol\WebSocket
+class Server extends Swoole\Protocol\CometServer
 {
     /**
      * @var Store\File;
@@ -14,6 +14,35 @@ class Server extends Swoole\Protocol\WebSocket
 
     function __construct($config = array())
     {
+        //将配置写入config.js
+        $config_js = <<<HTML
+var webim = {
+    'server' : '{$config['server']['url']}'
+}
+HTML;
+        file_put_contents(WEBPATH . '/client/config.js', $config_js);
+
+        //检测日志目录是否存在
+        $log_dir = dirname($config['webim']['log_file']);
+        if (!is_dir($log_dir))
+        {
+            mkdir($log_dir, 0777, true);
+        }
+        if (!empty($config['webim']['log_file']))
+        {
+            $logger = new Swoole\Log\FileLog($config['webim']['log_file']);
+        }
+        else
+        {
+            $logger = new Swoole\Log\EchoLog;
+        }
+        $this->setLogger($logger);   //Logger
+
+        /**
+         * 使用文件或redis存储聊天信息
+         */
+        $this->setStore(new \WebIM\Store\File($config['webim']['data_dir']));
+        $this->origin = $config['server']['origin'];
         parent::__construct($config);
     }
 
@@ -25,7 +54,7 @@ class Server extends Swoole\Protocol\WebSocket
     /**
      * 下线时，通知所有人
      */
-    function onClose($serv, $client_id, $from_id)
+    function onExit($client_id)
     {
         $userInfo = $this->store->getUser($client_id);
         if ($userInfo)
@@ -42,7 +71,6 @@ class Server extends Swoole\Protocol\WebSocket
             $this->broadcastJson($client_id, $resMsg);
         }
         $this->log("onOffline: " . $client_id);
-        parent::onClose($serv, $client_id, $from_id);
     }
 
     function onTask($serv, $task_id, $from_id, $data)
@@ -114,6 +142,7 @@ class Server extends Swoole\Protocol\WebSocket
             'name' => $msg['name'],
             'avatar' => $msg['avatar'],
         );
+
         $this->store->login($client_id, $resMsg);
         $this->sendJson($client_id, $resMsg);
 
@@ -208,48 +237,21 @@ class Server extends Swoole\Protocol\WebSocket
      * @param $client_id
      * @param $array
      */
-    function broadcastJson($client_id, $array)
+    function broadcastJson($sesion_id, $array)
     {
         $msg = json_encode($array);
-        $this->broadcast($client_id, $msg);
+        $this->broadcast($sesion_id, $msg);
     }
 
-    function broadcast($client_id, $msg)
+    function broadcast($current_session_id, $msg)
     {
-        if (extension_loaded('swoole'))
+        foreach ($this->sessions as $sesion_id => $sesssion)
         {
-            $sw_serv = $this->getSwooleServer();
-            $start_fd = 0;
-            while(true)
+            if ($current_session_id != $sesion_id)
             {
-                $conn_list = $sw_serv->connection_list($start_fd, 10);
-                if ($conn_list === false or count($conn_list) == 0)
-                {
-                    break;
-                }
-                $start_fd = end($conn_list);
-                foreach($conn_list as $fd)
-                {
-                    if ($fd == $client_id)
-                    {
-                        continue;
-                    }
-                    if ($this->store->exists($fd))
-                    {
-                        $this->send($fd, $msg);
-                    }
-                }
-            }
-        }
-        else
-        {
-            foreach ($this->connections as $fd => $info)
-            {
-                if ($client_id != $fd)
-                {
-                    $this->send($fd, $msg);
-                }
+                $this->send($sesion_id, $msg);
             }
         }
     }
 }
+

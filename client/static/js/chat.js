@@ -4,18 +4,25 @@ var userlist = {};
 var GET = getRequest();
 
 $(document).ready(function () {
-    if (window.WebSocket || window.MozWebSocket) {
-        ws = new WebSocket(webim.server);
-        listenEvent();
-    } else {
-        WEB_SOCKET_SWF_LOCATION = "/static/flash-websocket/WebSocketMain.swf";
-        $.getScript("/static/flash-websocket/swfobject.js", function(){
-            $.getScript("/static/flash-websocket/web_socket.js", function(){
-                ws = new WebSocket(webim.server);
-                listenEvent();
-            });
-        });
-    }
+    //使用原生WebSocket
+//    if (window.WebSocket || window.MozWebSocket) {
+//        ws = new WebSocket(webim.server);
+//    }
+//    //使用flash websocket
+//    else if (webim.flash_websocket) {
+//        WEB_SOCKET_SWF_LOCATION = "/static/flash-websocket/WebSocketMain.swf";
+//        $.getScript("/static/flash-websocket/swfobject.js", function () {
+//            $.getScript("/static/flash-websocket/web_socket.js", function () {
+//                ws = new WebSocket(webim.server);
+//            });
+//        });
+//    }
+//    //使用http xhr长轮循
+//    else {
+//        ws = new Comet(webim.server);
+//    }
+    ws = new Comet(webim.server);
+    listenEvent();
 });
 
 function listenEvent() {
@@ -29,7 +36,8 @@ function listenEvent() {
             ws.close();
             return false;
         }
-
+        //连接成功
+        console.log("connect webim server success.");
         //发送登录信息
         msg = new Object();
         msg.cmd = 'login';
@@ -98,6 +106,7 @@ document.onkeydown = function (e) {
     var ev = document.all ? window.event : e;
     if (ev.keyCode == 13) {
         sendMsg();
+        $('#msg_content').val("");
     }
 }
 
@@ -229,7 +238,6 @@ function showNewMsg(dataObj) {
     }
     $("#chat-messages").append($("#msg-template").html());
     $('#chat-messages')[0].scrollTop = 1000000;
-
 }
 
 function xssFilter(val) {
@@ -287,7 +295,6 @@ function delUser(userid) {
     $('#user_' + userid).remove();
     $('#inroom_' + userid).remove();
     delete (userlist[userid]);
-
 }
 
 function sendMsg() {
@@ -315,9 +322,8 @@ function sendMsg() {
     }
     showNewMsg(msg);
     $('#msg_content').val("");
-    return true;
+    return false;
 }
-
 
 $(document).ready(function () {
     var a = '';
@@ -379,3 +385,4 @@ function toggleFace() {
     $("#chat_face").toggleClass("chat_face_hover");
     $("#show_face").toggleClass("show_face_hovers");
 }
+

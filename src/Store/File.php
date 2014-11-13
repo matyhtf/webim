@@ -128,6 +128,10 @@ class File
 
     function getUser($userid)
     {
+        if (!is_file($this->online_dir.$userid))
+        {
+            return false;
+        }
         $ret = file_get_contents($this->online_dir.$userid);
         $info = unserialize($ret);
         return $info;

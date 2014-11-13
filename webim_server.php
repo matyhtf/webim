@@ -1,6 +1,6 @@
 <?php
 define('DEBUG', 'on');
-define("WEBPATH", realpath(__DIR__ . '/../'));
+define("WEBPATH", __DIR__);
 
 require __DIR__.'/vendor/autoload.php';
 Swoole\Loader::vendor_init();
@@ -8,27 +8,8 @@ Swoole\Loader::setRootNS('WebIM', __DIR__.'/src/');
 
 $config = require __DIR__.'/config.php';
 
-//将配置写入config.js
-$config_js = <<<HTML
-var webim = {
-    'server' : '{$config['server']['url']}'
-}
-HTML;
-file_put_contents(__DIR__ . '/client/config.js', $config_js);
-
-if (!is_dir(dirname($config['webim']['log_file'])))
-{
-    mkdir(dirname($config['webim']['log_file']), 0777, true);
-}
-
-$webim = new WebIM\Server();
+$webim = new WebIM\Server($config);
 $webim->loadSetting(__DIR__."/swoole.ini"); //加载配置文件
-$webim->setLogger(new Swoole\Log\FileLog($config['webim']['log_file']));   //Logger
-
-/**
- * 使用文件或redis存储聊天信息
- */
-$webim->setStore(new WebIM\Store\File($config['webim']['data_dir']));
 
 /**
  * webim必须使用swoole扩展

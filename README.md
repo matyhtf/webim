@@ -117,7 +117,9 @@ IE浏览器不支持WebSocket，需要使用FlashWebSocket模拟，请修改flas
 php PHPWebIM/flash_policy.php
 ```
 
-6.绑定host与访问聊天窗口
+__6.绑定host与访问聊天窗口（可选）__
+
+如果URL直接使用IP:PORT，这里不需要设置。
 
 ```shell
 vi /etc/hosts
