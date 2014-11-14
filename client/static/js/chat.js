@@ -5,20 +5,22 @@ var GET = getRequest();
 
 $(document).ready(function () {
     //使用原生WebSocket
-//    if (window.WebSocket || window.MozWebSocket) {
-//        ws = new WebSocket(webim.server);
-//    }
-//    //使用flash websocket
-//    else if (webim.flash_websocket) {
-//        WEB_SOCKET_SWF_LOCATION = "/static/flash-websocket/WebSocketMain.swf";
-//        $.getScript("/static/flash-websocket/swfobject.js", function () {
-//            $.getScript("/static/flash-websocket/web_socket.js", function () {
-//                ws = new WebSocket(webim.server);
-//            });
-//        });
-//    }
-//    //使用http xhr长轮循
-//    else
+    if (window.WebSocket || window.MozWebSocket)
+    {
+        ws = new WebSocket(webim.server);
+    }
+    //使用flash websocket
+    else if (webim.flash_websocket)
+    {
+        WEB_SOCKET_SWF_LOCATION = "/static/flash-websocket/WebSocketMain.swf";
+        $.getScript("/static/flash-websocket/swfobject.js", function () {
+            $.getScript("/static/flash-websocket/web_socket.js", function () {
+                ws = new WebSocket(webim.server);
+            });
+        });
+    }
+    //使用http xhr长轮循
+    else
     {
         ws = new Comet(webim.server);
     }
@@ -148,6 +150,7 @@ function showHistory(dataObj) {
     console.dir(dataObj);
     for (var i = 0; i < dataObj.history.length; i++) {
         msg = dataObj.history[i]['msg'];
+        if (!msg) continue;
         msg['time'] = dataObj.history[i]['time'];
         msg['user'] = dataObj.history[i]['user'];
         msg['channal'] = 3;

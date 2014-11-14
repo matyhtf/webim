@@ -8,6 +8,7 @@ class Server extends Swoole\Protocol\CometServer
      * @var Store\File;
      */
     protected $store;
+    protected $users;
 
     const MESSAGE_MAX_LEN     = 1024; //单条消息不得超过1K
     const WORKER_HISTORY_ID   = 0;
@@ -64,7 +65,7 @@ HTML;
                 'fd' => $client_id,
                 'from' => 0,
                 'channal' => 0,
-                'data' => $userInfo['name'] . "下线了。。",
+                'data' => $userInfo['name'] . "下线了",
             );
             $this->store->logout($client_id);
             //将下线消息发送给所有人
@@ -82,7 +83,15 @@ HTML;
             {
                 case 'getHistory':
                     $history = array('cmd'=> 'getHistory', 'history' => $this->store->getHistory());
-                    return $req['fd'].json_encode($history);
+                    if ($this->isCometClient($req['fd']))
+                    {
+                        return $req['fd'].json_encode($history);
+                    }
+                    //WebSocket客户端可以task中直接发送
+                    else
+                    {
+                        $this->sendJson($req['fd'], $history);
+                    }
                 case 'addHistory':
                     $this->store->addHistory($req['fd'], $req['msg']);
                     break;
@@ -141,6 +150,9 @@ HTML;
             'name' => $msg['name'],
             'avatar' => $msg['avatar'],
         );
+
+        //把会话存起来
+        $this->users[$client_id] = $resMsg;
 
         $this->store->login($client_id, $resMsg);
         $this->sendJson($client_id, $resMsg);
@@ -244,11 +256,11 @@ HTML;
 
     function broadcast($current_session_id, $msg)
     {
-        foreach ($this->sessions as $sesion_id => $sesssion)
+        foreach ($this->users as $client_id => $name)
         {
-            if ($current_session_id != $sesion_id)
+            if ($current_session_id != $client_id)
             {
-                $this->send($sesion_id, $msg);
+                $this->send($client_id, $msg);
             }
         }
     }
