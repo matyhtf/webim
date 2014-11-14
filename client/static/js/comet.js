@@ -2,23 +2,38 @@ function Comet(url) {
     this.url = url.replace('ws://', 'http://');
     this.connected = false;
     this.session_id = '';
+    this.send_queue = [];
+    this.sending = false;
     jQuery.support.cors = true;
 
     this.send = function (msg) {
-        var websocket = this;
-        if (!this.connected) {
-            alert("尚未建立连接");
+        this.send_queue.push(msg);
+        //当前状态是否可以发送数据
+        if (this.connected && !this.sending) {
+            this.sendMessage();
         }
+    };
+
+    this.sendMessage = function () {
+        if (this.send_queue.length == 0) {
+            this.sending = false;
+            return;
+        }
+
+        var websocket = this;
+        var msg = this.send_queue.pop();
+        this.sending = true;
 
         $.ajax({
             type: "POST",
             dataType: "json",
             url: this.url + '/pub',
-            data: {type: 'pub', message: msg, session_id: this.session_id},
+            data: {type: 'pub', message: msg, session_id: websocket.session_id},
             success: function (data, textStatus) {
                 //发送数据成功
                 if (data.success == "1") {
-                    console.log("Send Success");
+                    //继续发送
+                    websocket.sendMessage();
                 } else {
                     console.log("ErrorMessage: " + data);
                 }
@@ -37,7 +52,7 @@ function Comet(url) {
         $.ajax({
             type: "POST",
             dataType: "json",
-            url: this.url + '/sub',
+            url: this.url + '/connect',
             data: {'type': 'connect'},
             success: function (data, textStatus) {
                 //发送数据成功

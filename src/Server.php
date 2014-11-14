@@ -81,9 +81,8 @@ HTML;
             switch($req['cmd'])
             {
                 case 'getHistory':
-                    $history = $this->store->getHistory();
-                    $this->sendJson($req['fd'], array('cmd'=> 'getHistory', 'history' => $history));
-                    break;
+                    $history = array('cmd'=> 'getHistory', 'history' => $this->store->getHistory());
+                    return pack('N',  $req['fd']).json_encode($history);
                 case 'addHistory':
                     $this->store->addHistory($req['fd'], $req['msg']);
                     break;
@@ -95,7 +94,9 @@ HTML;
 
     function onFinish($serv, $task_id, $data)
     {
-
+        echo "strlen = " . strlen($data) . "\n";
+        $info = unpack('Nclient_id', substr($data, 0, 4));
+        $this->send($info['client_id'], substr($data, 4));
     }
 
     /**
@@ -199,7 +200,7 @@ HTML;
      */
     function onMessage($client_id, $ws)
     {
-        $this->log("onMessage: " . $ws['message']);
+        $this->log("onMessage #$client_id: " . $ws['message']);
         $msg = json_decode($ws['message'], true);
         if (empty($msg['cmd']))
         {
