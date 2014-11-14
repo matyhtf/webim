@@ -82,7 +82,7 @@ HTML;
             {
                 case 'getHistory':
                     $history = array('cmd'=> 'getHistory', 'history' => $this->store->getHistory());
-                    return pack('N',  $req['fd']).json_encode($history);
+                    return $req['fd'].json_encode($history);
                 case 'addHistory':
                     $this->store->addHistory($req['fd'], $req['msg']);
                     break;
@@ -94,9 +94,7 @@ HTML;
 
     function onFinish($serv, $task_id, $data)
     {
-        echo "strlen = " . strlen($data) . "\n";
-        $info = unpack('Nclient_id', substr($data, 0, 4));
-        $this->send($info['client_id'], substr($data, 4));
+        $this->send(substr($data, 0, 32), substr($data, 32));
     }
 
     /**

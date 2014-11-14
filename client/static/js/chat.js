@@ -18,10 +18,10 @@ $(document).ready(function () {
 //        });
 //    }
 //    //使用http xhr长轮循
-//    else {
-//        ws = new Comet(webim.server);
-//    }
-    ws = new Comet(webim.server);
+//    else
+    {
+        ws = new Comet(webim.server);
+    }
     listenEvent();
 });
 
@@ -124,8 +124,8 @@ function showOnlineList(dataObj) {
 
     for (var i = 0; i < dataObj.list.length; i++) {
         li = li + "<li id='inroom_" + dataObj.list[i].fd + "'>" +
-            "<a href='javascript:selectUser("
-            + dataObj.list[i].fd + ")'>" + "<img src='" + dataObj.list[i].avatar
+            "<a href=\"javascript:selectUser('"
+            + dataObj.list[i].fd + "')\">" + "<img src='" + dataObj.list[i].avatar
             + "' width='50' height='50'></a></li>"
 
         userlist[dataObj.list[i].fd] = dataObj.list[i].name;
