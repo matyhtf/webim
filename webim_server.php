@@ -4,7 +4,7 @@ define("WEBPATH", __DIR__);
 
 require __DIR__.'/vendor/autoload.php';
 Swoole\Loader::vendor_init();
-Swoole\Loader::setRootNS('WebIM', __DIR__.'/src/');
+Swoole\Loader::addNameSpace('WebIM', __DIR__.'/src/');
 
 $config = require __DIR__.'/config.php';
 
