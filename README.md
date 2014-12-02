@@ -54,7 +54,9 @@ __2.composer install__
 composer install --prefer-dist
 ```
 
-3.Ningx/Apache配置（这里未使用swoole_framework提供的Web AppServer）
+__3.Ningx/Apache配置__
+
+> 这里未使用swoole_framework提供的Web AppServer
 
 nginx
 
@@ -91,7 +93,7 @@ apache
 </VirtualHost>
 ```
 
-4.修改配置PHPWebIM/config.php
+__4.修改配置PHPWebIM/config.php__
 
 ```php
 $config['server'] = array(
@@ -100,13 +102,16 @@ $config['server'] = array(
     //监听的端口
     'port' => '9503',
     //WebSocket的URL地址，供浏览器使用的
-    'url' => 'ws://127.0.0.1:9503',
+    'url' => 'ws://im.swoole.com:9503',
+    //用于Comet跨域，必须设置为web页面的URL
+    'origin' => 'http://im.swoole.com:8888',
 );
 ```
 
 * server.host server.port 项为WebIM服务器即WebSocket服务器的IP与端口，其他选择项根据具体情况修改
 * server.url对应的就是服务器IP或域名以及websocket服务的端口，这个就是提供给浏览器的WebSocket地址
 * webim.data_dir用于修改聊天记录存储的目录，必须有可写权限
+* 必须修改origin才可以支持IE等不支持WebSocket的浏览器
 
 __5.启动WebSocket服务器__
 
