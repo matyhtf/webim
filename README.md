@@ -104,6 +104,8 @@ $config['server'] = array(
     //WebSocket的URL地址，供浏览器使用的
     'url' => 'ws://im.swoole.com:9503',
     //用于Comet跨域，必须设置为web页面的URL
+    //比如你的网站静态页面放在 http://im.swoole.com:8888/main.html
+    //这里就是 http://im.swoole.com:8888
     'origin' => 'http://im.swoole.com:8888',
 );
 ```
@@ -111,7 +113,7 @@ $config['server'] = array(
 * server.host server.port 项为WebIM服务器即WebSocket服务器的IP与端口，其他选择项根据具体情况修改
 * server.url对应的就是服务器IP或域名以及websocket服务的端口，这个就是提供给浏览器的WebSocket地址
 * webim.data_dir用于修改聊天记录存储的目录，必须有可写权限
-* 必须修改origin才可以支持IE等不支持WebSocket的浏览器
+* server.origin为Comet跨域设置，必须修改origin才可以支持IE等不支持WebSocket的浏览器
 
 __5.启动WebSocket服务器__
 
