@@ -184,12 +184,12 @@ function showNewUser(dataObj) {
 function showNewMsg(dataObj) {
 
     var content;
-    if (dataObj.type == 'text') {
+    if (!dataObj.type || dataObj.type == 'text') {
         content = xssFilter(dataObj.data);
     }
-    else {
+    else if (dataObj.type == 'image') {
         var image = eval('(' + dataObj.data + ')');
-        content = '<img src="' + image.url + '" />';
+        content = '<br /><a href="' + image.url + '" target="_blank"><img src="' + image.thumb + '" /></a>';
     }
 
     var fromId = dataObj.from;
