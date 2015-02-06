@@ -182,9 +182,19 @@ function showNewUser(dataObj) {
  * 显示新消息
  */
 function showNewMsg(dataObj) {
-    var content = xssFilter(dataObj.data)
+
+    var content;
+    if (dataObj.type == 'text') {
+        content = xssFilter(dataObj.data);
+    }
+    else {
+        var image = eval('(' + dataObj.data + ')');
+        content = '<img src="' + image.url + '" />';
+    }
+
     var fromId = dataObj.from;
     var channal = dataObj.channal;
+
     content = parseXss(content);
     var said = '';
     var time_str;

@@ -8,6 +8,7 @@ $config['server'] = array(
     'url' => 'ws://im.swoole.com:9503',
     //用于Comet跨域，必须设置为html所在的URL
     'origin' => 'http://im.swoole.com:8888',
+    'upload_url' => 'http://local.swoole.com/',
 );
 
 $config['swoole'] = array(

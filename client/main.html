@@ -12,6 +12,54 @@
     <script src="/config.js" charset="utf-8"></script>
     <script src="/static/js/comet.js" charset="utf-8"></script>
     <script src="/static/js/chat.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/static/js/swfupload.js"></script>
+    <script type="text/javascript" src="/static/js/swfupload.queue.js"></script>
+    <script type="text/javascript" src="/static/js/fileprogress.js"></script>
+    <script type="text/javascript" src="/static/js/handlers.js"></script>
+
+    <script type="text/javascript">
+        var swfu;
+        window.onload = function()
+        {
+            var settings = {
+                flash_url: "/static/swf/swfupload.swf",
+                //upload_script: '/myphoto/add_photo/',
+                upload_url: "/apps/upload.php",
+                post_params: {"uid": '0', 'post': 1, 'PHPSESSID': "0"},
+                file_size_limit: "2 MB",
+                file_types: "*.jpg;*.png;*.gif",
+                file_types_description: "图片文件",
+                file_upload_limit: 100,
+                file_queue_limit: 0,
+                custom_settings: {
+                    progressTarget: "fsUploadProgress",
+                    cancelButtonId: "btnCancel"
+                },
+                debug: false,
+
+                // Button settings
+                button_image_url: "/static/img/button.png",
+                button_width: "65",
+                button_height: "29",
+                button_placeholder_id: "upload_button",
+                button_text : "<span>上传</span>",
+                button_text_left_padding: 15,
+                button_text_top_padding: 2,
+
+                // The event handler functions are defined in handlers.js
+                file_queued_handler : fileQueued,
+                file_queue_error_handler : fileQueueError,
+                file_dialog_complete_handler : fileDialogComplete,
+                upload_start_handler : uploadStart,
+                upload_progress_handler : uploadProgress,
+                upload_error_handler : uploadError,
+                upload_success_handler : uploadSuccess,
+                upload_complete_handler : uploadComplete,
+                queue_complete_handler : queueComplete	// Queue plugin event
+            };
+            swfu = new SWFUpload(settings);
+        };
+    </script>
     <style>
         body {
             padding-top: 60px;
@@ -63,25 +111,27 @@
 
 
                 <!--工具栏区-->
-                <div id="chat-tool"
-                     style="padding-left:10px;height:30px;border:0px solid #ccc;background-color:#F5F5F5;">
-                    <select id="userlist" style="float: left; width: 90px;">
-                        <option value=0>所有人</option>
-                    </select>
-
-                    <!-- 聊天表情 -->
-                    <a onclick="toggleFace()" id="chat_face" class="chat_face">
-                        <img src="/static/img/face/15.gif"/>
-                    </a>
+                <div id="chat-tool" style="padding-left:10px;height:30px;border:0px solid #ccc;background-color:#F5F5F5;">
+                    <div style="float: left; width: 100px;">
+                        <select id="userlist" style="float: left; width: 90px;">
+                            <option value=0>所有人</option>
+                        </select>
+                        <!-- 聊天表情 -->
+                        <a onclick="toggleFace()" id="chat_face" class="chat_face">
+                            <img src="/static/img/face/15.gif"/>
+                        </a>
+                    </div>
+                    <div style="float: left; width: 200px;height: 25px;">
+                        <span id="upload_button" style=" background-color: #f5f5f5;"></span>
+                        <span><input id="btnCancel" style="height: 25px;" type="button" value="取消上传" onclick="swfu.cancelQueue();" disabled="disabled" /></span>
+                    </div>
                 </div>
                 <!--工具栏结束-->
-
 
                 <!--聊天表情弹出层-->
                 <div id="show_face" class="show_face">
                 </div>
                 <!--聊天表情弹出层结束-->
-
 
                 <!--发送消息区-->
                 <div id="input-msg" style="height:110px;border:0px solid #ccc;">
@@ -89,8 +139,7 @@
                         <div class="input-append">
                             <textarea id="msg_content" style="width:500px;height:80px;" rows="3" cols="500"
                                       contentEditable="true"></textarea>
-                            <img style="width:80px;height:90px;" onclick="sendMsg()" style=""
-                                 src="/static/img/button.gif"/>
+                            <img style="width:80px;height:90px;" onclick="sendMsg()" src="/static/img/button.gif"/>
                         </div>
                     </form>
                 </div>
