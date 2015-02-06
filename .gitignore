@@ -2,3 +2,4 @@
 /.idea/
 *.lock
 *.log
+/client/uploads/
