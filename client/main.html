@@ -31,18 +31,19 @@
                 file_types_description: "图片文件",
                 file_upload_limit: 100,
                 file_queue_limit: 0,
+                
                 custom_settings: {
                     progressTarget: "fsUploadProgress",
-                    cancelButtonId: "btnCancel"
+                    //cancelButtonId: "btnCancel"
                 },
                 debug: false,
 
-                // Button settings
+                //Button settings
                 button_image_url: "/static/img/button.png",
                 button_width: "65",
                 button_height: "29",
                 button_placeholder_id: "upload_button",
-                button_text : "<span>上传</span>",
+                button_text : "<span>发送图片</span>",
                 button_text_left_padding: 15,
                 button_text_top_padding: 2,
 
@@ -112,7 +113,7 @@
 
                 <!--工具栏区-->
                 <div id="chat-tool" style="padding-left:10px;height:30px;border:0px solid #ccc;background-color:#F5F5F5;">
-                    <div style="float: left; width: 120px;">
+                    <div style="float: left; width: 140px;">
                         <select id="userlist" style="float: left; width: 90px;">
                             <option value=0>所有人</option>
                         </select>
@@ -123,7 +124,7 @@
                     </div>
                     <div style="float: left; width: 200px;height: 25px;">
                         <span id="upload_button" style=" background-color: #f5f5f5;"></span>
-                        <span><input id="btnCancel" style="height: 25px;" type="button" value="取消上传" onclick="swfu.cancelQueue();" disabled="disabled" /></span>
+                        <!--<span><input id="btnCancel" style="height: 25px;" type="button" value="取消上传" onclick="swfu.cancelQueue();" disabled="disabled" /></span>-->
                     </div>
                 </div>
                 <!--工具栏结束-->
