@@ -16,7 +16,8 @@ div.container {
 }
 
 .c-sidebar-nav {
-	padding: 9px 0;
+    padding: 9px 0;
+    height: 620px;
 }
 
 #left-column {
