@@ -153,6 +153,10 @@ function showHistory(dataObj) {
         if (!msg) continue;
         msg['time'] = dataObj.history[i]['time'];
         msg['user'] = dataObj.history[i]['user'];
+        if (dataObj.history[i]['type'])
+        {
+            msg['type'] = dataObj.history[i]['type'];
+        }
         msg['channal'] = 3;
         showNewMsg(msg);
     }
