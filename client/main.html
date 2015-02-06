@@ -26,7 +26,7 @@
                 //upload_script: '/myphoto/add_photo/',
                 upload_url: "/apps/upload.php",
                 post_params: {"uid": '0', 'post': 1, 'PHPSESSID': "0"},
-                file_size_limit: "2 MB",
+                file_size_limit: "2MB",
                 file_types: "*.jpg;*.png;*.gif",
                 file_types_description: "图片文件",
                 file_upload_limit: 100,
@@ -34,7 +34,7 @@
                 
                 custom_settings: {
                     progressTarget: "fsUploadProgress",
-                    //cancelButtonId: "btnCancel"
+                    cancelButtonId: "btnCancel"
                 },
                 debug: false,
 
@@ -123,8 +123,8 @@
                         </a>
                     </div>
                     <div style="float: left; width: 200px;height: 25px;">
-                        <span id="upload_button" style=" background-color: #f5f5f5;"></span>
-                        <!--<span><input id="btnCancel" style="height: 25px;" type="button" value="取消上传" onclick="swfu.cancelQueue();" disabled="disabled" /></span>-->
+                        <span id="upload_button" style="background-color: #f5f5f5;"></span>
+                        <span style="display: none"><input id="btnCancel" style="height: 25px;" type="button" value="取消上传" onclick="swfu.cancelQueue();" disabled="disabled" /></span>
                     </div>
                 </div>
                 <!--工具栏结束-->
