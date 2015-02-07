@@ -139,7 +139,8 @@
                     <form id="msgform" class="form-horizontal post-form">
                         <div class="input-append">
                             <textarea id="msg_content" style="width:480px; height:80px;" rows="3" cols="500" contentEditable="true"></textarea>
-                            <img style="width:80px;height:90px;" onclick="sendMsg()" src="/static/img/button.gif"/>
+                            <img style="width:80px;height:90px;" onclick="sendMsg($('#msg_content').val(), 'text');"
+                                 src="/static/img/button.gif"/>
                         </div>
                     </form>
                 </div>

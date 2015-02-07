@@ -107,8 +107,10 @@ function listenEvent() {
 document.onkeydown = function (e) {
     var ev = document.all ? window.event : e;
     if (ev.keyCode == 13) {
-        sendMsg();
-        $('#msg_content').val("");
+        sendMsg($('#msg_content').val(), 'text');
+        return false;
+    } else {
+        return true;
     }
 };
 
@@ -314,10 +316,13 @@ function delUser(userid) {
     delete (userlist[userid]);
 }
 
-function sendMsg() {
-    var content = $('#msg_content').val();
+function sendMsg(content, type) {
     var msg = {};
-    content = content.replace(" ", "&nbsp;");
+
+    if (typeof content == "string") {
+        content = content.replace(" ", "&nbsp;");
+    }
+
     if (!content) {
         return false;
     }
@@ -327,6 +332,7 @@ function sendMsg() {
         msg.from = client_id;
         msg.channal = 0;
         msg.data = content;
+        msg.type = type;
         ws.send($.toJSON(msg));
     }
     else {
@@ -335,11 +341,11 @@ function sendMsg() {
         msg.to = $('#userlist').val();
         msg.channal = 1;
         msg.data = content;
+        msg.type = type;
         ws.send($.toJSON(msg));
     }
     showNewMsg(msg);
-    $('#msg_content').val("");
-    return false;
+    $('#msg_content').val('')
 }
 
 $(document).ready(function () {

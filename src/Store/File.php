@@ -149,6 +149,7 @@ class File
         $log['user'] = $info;
         $log['msg'] = $msg;
         $log['time'] = time();
+        $log['type'] = empty($msg['type']) ? '' : $msg['type'];
 
         $this->history[] = $log;
 

@@ -99,14 +99,7 @@ function uploadProgress(file, bytesLoaded, bytesTotal) {
 }
 
 function uploadSuccess(file, serverData) {
-    console.log("upload " + file + " success");
-    console.dir(serverData);
-    msg.cmd = 'image';
-    msg.from = client_id;
-    msg.to = $('#userlist').val();
-    msg.channal = 1;
-    msg.data = serverData;
-    ws.send($.toJSON(msg));
+    sendMsg(serverData, 'image');
 }
 
 function uploadError(file, errorCode, message) {

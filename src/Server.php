@@ -90,8 +90,9 @@ HTML;
                     //WebSocket客户端可以task中直接发送
                     else
                     {
-                        $this->sendJson($req['fd'], $history);
+                        $this->sendJson(intval($req['fd']), $history);
                     }
+                    break;
                 case 'addHistory':
                     if (empty($req['msg']))
                     {
@@ -175,30 +176,6 @@ HTML;
         $this->broadcastJson($client_id, $loginMsg);
     }
 
-    function cmd_image($client_id, $msg)
-    {
-        $resMsg = $msg;
-        $resMsg['cmd'] = 'fromMsg';
-        $resMsg['type'] = 'image';
-
-        //表示群发
-        if ($msg['to'] == 0)
-        {
-            $this->broadcastJson($client_id, $resMsg);
-            $this->getSwooleServer()->task(serialize(array(
-                'cmd' => 'addHistory',
-                'msg' => $msg,
-                'fd'  => $client_id,
-            )), self::WORKER_HISTORY_ID);
-        }
-        //表示私聊
-        else
-        {
-            $this->sendJson($msg['to'], $resMsg);
-            //$this->store->addHistory($client_id, $msg['data']);
-        }
-    }
-
     /**
      * 发送信息请求
      */
@@ -206,7 +183,6 @@ HTML;
     {
         $resMsg = $msg;
         $resMsg['cmd'] = 'fromMsg';
-        $resMsg['type'] = 'text';
 
         if (strlen($msg['data']) > self::MESSAGE_MAX_LEN)
         {
@@ -229,7 +205,6 @@ HTML;
         {
             $this->sendJson($msg['to'], $resMsg);
             //$this->store->addHistory($client_id, $msg['data']);
-            //$this->sendJson($msg['from'], $resMsg);
         }
     }
 
