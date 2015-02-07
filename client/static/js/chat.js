@@ -177,10 +177,8 @@ function showNewUser(dataObj) {
         }
         $('#left-userlist').append(
             "<li id='inroom_" + dataObj.fd + "'>" +
-                "<a href='javascript:selectUser("
-                + dataObj.fd + ")'>" + "<img src='" + dataObj.avatar
+                '<a href="javascript: selectUser(\'' + dataObj.fd + '\')">' + "<img src='" + dataObj.avatar
                 + "' width='50' height='50'></a></li>");
-
     }
 }
 
