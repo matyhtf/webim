@@ -1,6 +1,7 @@
 <?php
 namespace WebIM;
 use Swoole;
+use Swoole\Filter;
 
 class Server extends Swoole\Protocol\CometServer
 {
@@ -145,8 +146,8 @@ HTML;
      */
     function cmd_login($client_id, $msg)
     {
-        $info['name'] = $msg['name'];
-        $info['avatar'] = $msg['avatar'];
+        $info['name'] = Filter::escape($msg['name']);
+        $info['avatar'] = Filter::escape($msg['avatar']);
 
         //回复给登录用户
         $resMsg = array(
@@ -252,7 +253,10 @@ HTML;
     function sendJson($client_id, $array)
     {
         $msg = json_encode($array);
-        $this->send($client_id, $msg);
+        if ($this->send($client_id, $msg) === false)
+        {
+            $this->close($client_id);
+        }
     }
 
     /**
