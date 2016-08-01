@@ -99,8 +99,8 @@ function listenEvent() {
      * 异常事件
      */
     ws.onerror = function (e) {
-        alert("异常:" + e.data);
-        console.log("onerror");
+        alert("服务器["+webim.server+"]: 拒绝了连接. 请检查服务器是否启动. ");
+        console.log("onerror: " + e.data);
     };
 }
 
