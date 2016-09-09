@@ -3,3 +3,4 @@
 *.lock
 *.log
 /client/uploads/
+/framework
