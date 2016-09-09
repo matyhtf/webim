@@ -128,9 +128,9 @@ function showOnlineList(dataObj) {
 
     for (var i = 0; i < dataObj.list.length; i++) {
         li = li + "<li id='inroom_" + dataObj.list[i].fd + "'>" +
-            "<a href=\"javascript:selectUser('"
-            + dataObj.list[i].fd + "')\">" + "<img src='" + dataObj.list[i].avatar
-            + "' width='50' height='50'></a></li>"
+        "<a href=\"javascript:selectUser('"
+        + dataObj.list[i].fd + "')\">" + "<img src='" + dataObj.list[i].avatar
+        + "' title='" + dataObj.list[i].name + "' width='50' height='50'></a></li>";
 
         userlist[dataObj.list[i].fd] = dataObj.list[i].name;
 
