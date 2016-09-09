@@ -24,6 +24,7 @@ $config['webim'] = array(
     //聊天记录存储的目录
     'data_dir' => __DIR__ . '/data/',
     'log_file' => __DIR__ . '/log/webim.log',
+    'send_interval_limit' => 2, //只允许1秒发送一次
 );
 
 return $config;
