@@ -10,6 +10,11 @@ class Server extends Swoole\Protocol\CometServer
      */
     protected $store;
     protected $users;
+    /**
+     * 上一次发送消息的时间
+     * @var array
+     */
+    protected $lastSentTime = array();
 
     const MESSAGE_MAX_LEN     = 1024; //单条消息不得超过1K
     const WORKER_HISTORY_ID   = 0;
@@ -190,6 +195,16 @@ HTML;
             $this->sendErrorMessage($client_id, 102, 'message max length is '.self::MESSAGE_MAX_LEN);
             return;
         }
+
+        $now = time();
+        //上一次发送的时间超过了允许的值，每N秒可以发送一次
+        if ($this->lastSentTime[$client_id] > $now - $this->config['webim']['send_interval_limit'])
+        {
+            $this->sendErrorMessage($client_id, 104, 'over frequency limit');
+            return;
+        }
+        //记录本次消息发送的时间
+        $this->lastSentTime[$client_id] = now();
 
         //表示群发
         if ($msg['channal'] == 0)
