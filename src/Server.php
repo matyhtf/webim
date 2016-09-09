@@ -204,7 +204,7 @@ HTML;
             return;
         }
         //记录本次消息发送的时间
-        $this->lastSentTime[$client_id] = now();
+        $this->lastSentTime[$client_id] = $now;
 
         //表示群发
         if ($msg['channal'] == 0)
