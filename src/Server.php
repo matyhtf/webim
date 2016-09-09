@@ -146,15 +146,15 @@ HTML;
      */
     function cmd_login($client_id, $msg)
     {
-        $info['name'] = Filter::escape($msg['name']);
+        $info['name'] = Filter::escape(strip_tags($msg['name']));
         $info['avatar'] = Filter::escape($msg['avatar']);
 
         //回复给登录用户
         $resMsg = array(
             'cmd' => 'login',
             'fd' => $client_id,
-            'name' => $msg['name'],
-            'avatar' => $msg['avatar'],
+            'name' => $info['name'],
+            'avatar' => $info['avatar'],
         );
 
         //把会话存起来
@@ -172,7 +172,7 @@ HTML;
             'cmd' => 'fromMsg',
             'from' => 0,
             'channal' => 0,
-            'data' => $msg['name'] . "上线了",
+            'data' => $info['name'] . "上线了",
         );
         $this->broadcastJson($client_id, $loginMsg);
     }
