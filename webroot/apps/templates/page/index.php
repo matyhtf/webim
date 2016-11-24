@@ -74,7 +74,7 @@
 </script>
 
 <div class='container login'>
-    <form action="main.html" method="get" class="well"
+    <form action="../../../main.html" method="get" class="well"
           onsubmit="return checkForm(this)" style="height: 162px">
         <h3>Swoole WebIM(基于swoole扩展和框架开发的Web即时沟通工具)</h3>
         <input type="text" name="name" value="请输入一个昵称"

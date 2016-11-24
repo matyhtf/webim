@@ -27,11 +27,7 @@ composer install
 
 运行
 ----
-将client目录配置到Nginx/Apache的虚拟主机目录中，使client/index.html可访问。
-修改client/config.js中，IP和端口为对应的配置。
-```shell
-php webim_server.php
-```
+将`webroot`目录配置到Nginx/Apache的虚拟主机目录中，使`webroot/index.html`可访问。
 
 详细部署说明
 ----
@@ -66,7 +62,7 @@ server
     listen       80;
     server_name  im.swoole.com;
     index index.shtml index.html index.htm index.php;
-    root  /path/to/PHPWebIM/client;
+    root  /path/to/PHPWebIM/webroot;
     location ~ .*\.(php|php5)?$
     {
 	    fastcgi_pass  127.0.0.1:9000;
@@ -81,7 +77,7 @@ apache
 
 ```shell
 <VirtualHost *:80>
-    DocumentRoot "path/to/PHPWebIM/client"
+    DocumentRoot "path/to/PHPWebIM/webroot"
     ServerName im.swoole.com
     AddType application/x-httpd-php .php
     <Directory />
@@ -152,9 +148,9 @@ vi /etc/hosts
   |- webim_server.php //WebSocket协议服务器
   |- config.php // swoole运行配置
   |+ swoole.ini // WebSocket协议实现配置
-  |+ client
+  |+ webroot
     |+ static
-    |- config.js // WebSocket client配置
+    |- config.js // WebSocket配置
     |- index.html // 登录界面
     |- main.html // 聊天室主界面
   |+ data // 运行数据
