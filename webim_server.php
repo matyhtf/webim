@@ -18,7 +18,7 @@ Swoole\Loader::vendorInit();
 Swoole\Loader::addNameSpace('WebIM', __DIR__.'/src/');
 
 //设置PID文件的存储路径
-Swoole\Network\Server::setPidFile(__DIR__ . '/webim_server.pid');
+Swoole\Network\Server::setPidFile(__DIR__ . '/log/webim_server.pid');
 
 /**
  * 显示Usage界面

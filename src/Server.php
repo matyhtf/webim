@@ -41,7 +41,7 @@ HTML;
         }
         else
         {
-            $logger = new Swoole\Log\EchoLog;
+            $logger = new Swoole\Log\EchoLog(true);
         }
         $this->setLogger($logger);   //Logger
 

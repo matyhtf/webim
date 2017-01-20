@@ -1,7 +1,13 @@
 <?php
+define('DEBUG', 'on');
+define('WEBPATH', __DIR__);
 /**
- * Created by PhpStorm.
- * User: htf
- * Date: 15-7-31
- * Time: 下午7:06
+ * /vendor/autoload.php是Composer工具生成的
+ * shell: composer update
  */
+require dirname(__DIR__).'/vendor/autoload.php';
+/**
+ * Swoole框架自动载入器初始化
+ */
+Swoole\Loader::vendorInit();
+Swoole::$php->runMVC();
