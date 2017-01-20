@@ -7,4 +7,9 @@ class Page extends \Swoole\Controller
     {
         $this->display();
     }
+
+    function chatroom()
+    {
+        $this->display();
+    }
 }
