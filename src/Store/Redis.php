@@ -25,7 +25,8 @@ class Redis
 
     function logout($client_id)
     {
-        $this->redis->del(self::$prefix.'client_', $client_id);
+        //此处应该用连接符，不是逗号 zeng update
+        $this->redis->del(self::$prefix.'client_'.$client_id);
         $this->redis->sRemove(self::$prefix.'online', $client_id);
     }
 
@@ -54,7 +55,8 @@ class Redis
 
     function getUser($userid)
     {
-        $ret = $this->redis->get($userid);
+        //此处要加前缀 zeng update
+        $ret = $this->redis->get(self::$prefix.'client_'.$userid);
         $info = unserialize($ret);
         return $info;
     }
