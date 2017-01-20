@@ -1,6 +1,6 @@
 <?php
 define('DEBUG', 'on');
-define('WEBPATH', __DIR__);
+define('WEBPATH', __DIR__.'/webroot');
 
 /**
  * /vendor/autoload.php是Composer工具生成的

@@ -27,7 +27,7 @@ var webim = {
     'server' : '{$config['server']['url']}'
 }
 HTML;
-        file_put_contents(WEBPATH . '/webroot/config.js', $config_js);
+        file_put_contents(WEBPATH . '/config.js', $config_js);
 
         //检测日志目录是否存在
         $log_dir = dirname($config['webim']['log_file']);

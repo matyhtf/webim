@@ -32,19 +32,13 @@ function listenEvent() {
      * 连接建立时触发
      */
     ws.onopen = function (e) {
-        //必须的输入一个名称和一个图像才可以聊天
-        if (GET['name'] == undefined || GET['avatar'] == undefined) {
-            alert('必须的输入一个名称和一个图像才可以聊天');
-            ws.close();
-            return false;
-        }
         //连接成功
         console.log("connect webim server success.");
         //发送登录信息
         msg = new Object();
         msg.cmd = 'login';
-        msg.name = GET['name'];
-        msg.avatar = GET['avatar'];
+        msg.name = user.nickname;
+        msg.avatar = user.avatar;
         ws.send($.toJSON(msg));
     };
 
@@ -89,10 +83,7 @@ function listenEvent() {
      * 连接关闭事件
      */
     ws.onclose = function (e) {
-        if (confirm("聊天服务器已关闭")) {
-            //alert('您已退出聊天室');
-            location.href = 'index.html';
-        }
+        $(document.body).html("<h1 style='text-align: center'>服务器已下线，请刷新页面重新登录。</h1>");
     };
 
     /**
@@ -149,7 +140,9 @@ function showOnlineList(dataObj) {
  */
 function showHistory(dataObj) {
     var msg;
-    console.dir(dataObj);
+    if (debug) {
+        console.dir(dataObj);
+    }
     for (var i = 0; i < dataObj.history.length; i++) {
         msg = dataObj.history[i]['msg'];
         if (!msg) continue;
@@ -213,7 +206,7 @@ function showNewMsg(dataObj) {
     if (fromId == 0) {
         $("#msg-template .userpic").html("");
         $("#msg-template .content").html(
-            "<span style='color: green'>【系统消息】</span>" + content);
+            "<span style='color: green'>【系统消息】</span> " + content);
     }
     else {
         var html = '';
@@ -222,7 +215,7 @@ function showNewMsg(dataObj) {
         //历史记录
         if (channal == 3)
         {
-            said = '对大家说:';
+            said = '对大家说: ';
             html += '<span style="color: green">【历史记录】</span><span style="color: orange">' + dataObj.user.name + said;
             html += '</span>';
         }

@@ -5,12 +5,9 @@ class File
 {
     protected $online_dir;
     protected $save_dir;
-    protected $history_fp;
-    protected $history = array();
-    protected $history_max_size = 100;
-    protected $history_write_count = 0;
-
     protected $last_day;
+
+    const PREFIX = 'webim_';
 
     static function clearDir($dir)
     {
@@ -66,38 +63,7 @@ class File
         $this->save_dir = $save_dir;
 
         $this->checkDir($save_dir);
-        $this->loadHistory();
 
-        $this->history_fp = fopen($save_dir.'/'.date('Ymd').'.log', 'a+');
-        if (!$this->history_fp)
-        {
-            trigger_error("can not write file[".$save_dir."]", E_ERROR);
-            return;
-        }
-    }
-
-    /**
-     * 加载历史聊天记录
-     */
-    protected function loadHistory()
-    {
-        $file = $this->save_dir.'/'.date('Ymd').'.log';
-        if (!is_file($file)) return;
-        $handle = fopen($file, "r");
-        if ($handle)
-        {
-            while (($line = fgets($handle, 4096)) !== false)
-            {
-                $log = json_decode($line);
-                if (!$log) continue;
-                $this->history[] = $log;
-                if (count($this->history) > $this->history_max_size)
-                {
-                    array_shift($this->history);
-                }
-            }
-            fclose($handle);
-        }
     }
 
     function login($client_id, $info)
@@ -151,30 +117,27 @@ class File
         $log['time'] = time();
         $log['type'] = empty($msg['type']) ? '' : $msg['type'];
 
-        $this->history[] = $log;
-
-        if (count($this->history) > $this->history_max_size)
-        {
-            //丢弃历史消息
-            array_shift($this->history);
-        }
-        fwrite($this->history_fp, json_encode($log).PHP_EOL);
-        $this->history_write_count ++;
-
-        if ($this->history_write_count % 1000)
-        {
-            $day = date('d');
-            if ($day != $this->last_day)
-            {
-                fclose($this->history_fp);
-                $this->history_write_count = 0;
-                $this->history_fp = fopen($this->save_dir.'/'.date('Ymd').'.log', 'a+');
-            }
-        }
+        table(self::PREFIX.'history')->put(array(
+            'name' => $info['name'],
+            'avatar' => $info['avatar'],
+            'msg' => json_encode($msg),
+            'type' => empty($msg['type']) ? '' : $msg['type'],
+        ));
     }
 
     function getHistory($offset = 0, $num = 100)
     {
-        return $this->history;
+        $data = array();
+        $list = table(self::PREFIX.'history')->gets(array('limit' => 100,));
+        foreach ($list as $li)
+        {
+            $result['type'] = $li['type'];
+            $result['user'] = array('name' => $li['name'], 'avatar' => $li['avatar']);
+            $result['time'] = strtotime($li['addtime']);
+            $result['msg'] = json_decode($li['msg'], true);
+            $data[] = $result;
+        }
+
+        return array_reverse($data);
     }
 }
