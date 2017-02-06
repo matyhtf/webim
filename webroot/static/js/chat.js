@@ -83,14 +83,15 @@ function listenEvent() {
      * 连接关闭事件
      */
     ws.onclose = function (e) {
-        $(document.body).html("<h1 style='text-align: center'>服务器已下线，请刷新页面重新登录。</h1>");
+        $(document.body).html("<h1 style='text-align: center'>连接已断开，请刷新页面重新登录。</h1>");
     };
 
     /**
      * 异常事件
      */
     ws.onerror = function (e) {
-        alert("服务器["+webim.server+"]: 拒绝了连接. 请检查服务器是否启动. ");
+        $(document.body).html("<h1 style='text-align: center'>服务器[" + webim.server +
+            "]: 拒绝了连接. 请检查服务器是否启动. </h1>");
         console.log("onerror: " + e.data);
     };
 }

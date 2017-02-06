@@ -74,6 +74,7 @@ HTML;
                 'data' => $userInfo['name'] . "下线了",
             );
             $this->store->logout($client_id);
+            unset($this->users[$client_id]);
             //将下线消息发送给所有人
             $this->broadcastJson($client_id, $resMsg);
         }
