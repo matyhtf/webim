@@ -128,7 +128,7 @@ class File
     function getHistory($offset = 0, $num = 100)
     {
         $data = array();
-        $list = table(self::PREFIX.'history')->gets(array('limit' => 100,));
+        $list = table(self::PREFIX.'history')->gets(array('limit' => $num,));
         foreach ($list as $li)
         {
             $result['type'] = $li['type'];

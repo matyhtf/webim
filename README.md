@@ -98,9 +98,24 @@ $config['server'] = array(
 );
 ```
 
+配置`webroot/apps/configs/db.php`中数据库信息，将聊天记录存储到mysql中
+
+表结构
+```sql
+CREATE TABLE `webim_history` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `addtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `name` varchar(64) COLLATE utf8mb4_bin NOT NULL,
+  `avatar` varchar(255) COLLATE utf8mb4_bin NOT NULL,
+  `type` varchar(12) COLLATE utf8mb4_bin NOT NULL,
+  `msg` text COLLATE utf8mb4_bin NOT NULL,
+  `send_ip` varchar(20) COLLATE utf8mb4_bin NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin
+```
+
 * server.host server.port 项为WebIM服务器即WebSocket服务器的IP与端口，其他选择项根据具体情况修改
 * server.url对应的就是服务器IP或域名以及websocket服务的端口，这个就是提供给浏览器的WebSocket地址
-* webim.data_dir用于修改聊天记录存储的目录，必须有可写权限
 * server.origin为Comet跨域设置，必须修改origin才可以支持IE等不支持WebSocket的浏览器
 
 __5. 启动WebSocket服务器__
