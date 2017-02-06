@@ -8,7 +8,7 @@ class Server extends Swoole\Protocol\CometServer
     /**
      * @var Store\File;
      */
-    protected $store;
+    protected $storage;
     protected $users;
     /**
      * 上一次发送消息的时间
@@ -48,14 +48,9 @@ HTML;
         /**
          * 使用文件或redis存储聊天信息
          */
-        $this->setStore(new \WebIM\Store\File($config['webim']['data_dir']));
+        $this->storage = new Storage($config['webim']['storage']);
         $this->origin = $config['server']['origin'];
         parent::__construct($config);
-    }
-
-    function setStore($store)
-    {
-        $this->store = $store;
     }
 
     /**
@@ -63,7 +58,7 @@ HTML;
      */
     function onExit($client_id)
     {
-        $userInfo = $this->store->getUser($client_id);
+        $userInfo = $this->storage->getUser($client_id);
         if ($userInfo)
         {
             $resMsg = array(
@@ -73,7 +68,7 @@ HTML;
                 'channal' => 0,
                 'data' => $userInfo['name'] . "下线了",
             );
-            $this->store->logout($client_id);
+            $this->storage->logout($client_id);
             unset($this->users[$client_id]);
             //将下线消息发送给所有人
             $this->broadcastJson($client_id, $resMsg);
@@ -89,7 +84,7 @@ HTML;
             switch($req['cmd'])
             {
                 case 'getHistory':
-                    $history = array('cmd'=> 'getHistory', 'history' => $this->store->getHistory());
+                    $history = array('cmd'=> 'getHistory', 'history' => $this->storage->getHistory());
                     if ($this->isCometClient($req['fd']))
                     {
                         return $req['fd'].json_encode($history);
@@ -105,7 +100,7 @@ HTML;
                     {
                         $req['msg'] = '';
                     }
-                    $this->store->addHistory($req['fd'], $req['msg']);
+                    $this->storage->addHistory($req['fd'], $req['msg']);
                     break;
                 default:
                     break;
@@ -126,8 +121,8 @@ HTML;
         $resMsg = array(
             'cmd' => 'getOnline',
         );
-        $users = $this->store->getOnlineUsers();
-        $info = $this->store->getUsers(array_slice($users, 0, 100));
+        $users = $this->storage->getOnlineUsers();
+        $info = $this->storage->getUsers(array_slice($users, 0, 100));
         $resMsg['users'] = $users;
         $resMsg['list'] = $info;
         $this->sendJson($client_id, $resMsg);
@@ -166,7 +161,7 @@ HTML;
         //把会话存起来
         $this->users[$client_id] = $resMsg;
 
-        $this->store->login($client_id, $resMsg);
+        $this->storage->login($client_id, $resMsg);
         $this->sendJson($client_id, $resMsg);
 
         //广播给其它在线用户

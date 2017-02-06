@@ -16,6 +16,7 @@ Swoole\Loader::vendorInit();
  * 注册命名空间到自动载入器中
  */
 Swoole\Loader::addNameSpace('WebIM', __DIR__.'/src/');
+Swoole::getInstance()->config->setPath(__DIR__.'/configs');
 
 //设置PID文件的存储路径
 Swoole\Network\Server::setPidFile(__DIR__ . '/log/webim_server.pid');
@@ -26,7 +27,7 @@ Swoole\Network\Server::setPidFile(__DIR__ . '/log/webim_server.pid');
  */
 Swoole\Network\Server::start(function ()
 {
-    $config = require __DIR__.'/config.php';
+    $config = Swoole::getInstance()->config['webim'];
     $webim = new WebIM\Server($config);
     $webim->loadSetting(__DIR__ . "/swoole.ini"); //加载配置文件
 

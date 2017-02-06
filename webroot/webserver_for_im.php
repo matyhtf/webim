@@ -3,8 +3,6 @@ define('DEBUG', 'on');
 define('WEBPATH', __DIR__);
 define('ROOT_PATH', dirname(__DIR__));
 
-$config = require ROOT_PATH.'/config.php';
-
 /**
  * /vendor/autoload.php是Composer工具生成的
  * shell: composer update
@@ -15,6 +13,8 @@ require ROOT_PATH.'/vendor/autoload.php';
  */
 Swoole\Loader::vendorInit();
 Swoole\Loader::addNameSpace('WebIM', __DIR__.'/src/');
+Swoole::$php->config->setPath(ROOT_PATH . '/configs');
+$config = Swoole::$php->config['webim'];
 
 $AppSvr = new Swoole\Protocol\AppServer();
 $AppSvr->loadSetting(ROOT_PATH.'/swoole.ini'); //加载配置文件
