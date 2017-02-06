@@ -27,7 +27,7 @@ composer install
 
 运行
 ----
-将`webroot`目录配置到Nginx/Apache的虚拟主机目录中，使`webroot/index.html`可访问。
+将`webroot`目录配置到Nginx/Apache的虚拟主机目录中，使`webroot/`可访问。
 
 详细部署说明
 ----
@@ -50,43 +50,35 @@ __2.composer install__
 composer install --prefer-dist
 ```
 
-__3.Ningx/Apache配置__
+__3.Ningx配置__
 
-> 这里未使用swoole_framework提供的Web AppServer
-
-nginx
+> 这里未使用swoole_framework提供的Web AppServer  
+> Apache请参照Nginx配置，自行修改实现
 
 ```shell
 server
 {
     listen       80;
     server_name  im.swoole.com;
-    index index.shtml index.html index.htm index.php;
-    root  /path/to/PHPWebIM/webroot;
-    location ~ .*\.(php|php5)?$
-    {
+    index index.html index.php;
+    
+    location / {
+        root   /path/to/webim/webroot;
+
+        proxy_set_header X-Real-IP $remote_addr;
+        if (!-e $request_filename) {
+            rewrite ^/(.*)$ /index.php;
+        }
+    }
+    
+    location ~ .*\.(php|php5)?$ {
 	    fastcgi_pass  127.0.0.1:9000;
 	    fastcgi_index index.php;
 	    include fastcgi.conf;
     }
-    access_log  /Library/WebServer/nginx/logs/im.swoole.com  access;
+    
+    access_log  /data/logs/im.swoole.com.access.log  access;
 }
-```
-
-apache
-
-```shell
-<VirtualHost *:80>
-    DocumentRoot "path/to/PHPWebIM/webroot"
-    ServerName im.swoole.com
-    AddType application/x-httpd-php .php
-    <Directory />
-        Options Indexes FollowSymLinks
-        AllowOverride None
-        Require all granted
-        DirectoryIndex index.php
-    </Directory>
-</VirtualHost>
 ```
 
 __4.修改配置PHPWebIM/config.php__
@@ -192,11 +184,3 @@ Web服务器：此项目中可以用基于Swoole的App Server充当Web服务器�
 Socket服务器：此项目中浏览器的WebSocket客户端连接的服务器，swoole_framework中有实现WebSocket协议PHP版本的服务器。
 
 WebSocket Client：实现html5的浏览器都支持WebSocket对象，如不支持此项目中有提供flash版本的实现。
-
-
-
-
-
-
-
-
