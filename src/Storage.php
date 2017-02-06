@@ -13,6 +13,7 @@ class Storage
     function __construct($config)
     {
         $this->redis = \Swoole::getInstance()->redis;
+        $this->redis->delete(self::PREFIX.':online');
         $this->config = $config;
     }
 

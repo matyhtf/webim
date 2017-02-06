@@ -22,8 +22,7 @@ class Page extends \Swoole\Controller
             if (empty($user))
             {
                 login:
-                $config = require ROOT_PATH . '/config.php';
-                $this->http->redirect($this->config['login']['passport'].'?return_token=1&refer='.urlencode($config['server']['origin']));
+                $this->http->redirect($this->config['login']['passport'] . '?return_token=1&refer=' . urlencode($this->config['webim']['server']['origin']));
             }
             else
             {
