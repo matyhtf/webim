@@ -32,7 +32,7 @@ composer install
 详细部署说明
 ----
 
-__1.安装composer(php依赖包工具)__
+__1. 安装composer(php依赖包工具)__
 
 ```shell
 curl -sS https://getcomposer.org/installer | php
@@ -42,7 +42,7 @@ mv composer.phar /usr/local/bin/composer
 注意：如果未将php解释器程序设置为环境变量PATH中，需要设置。因为composer文件第一行为#!/usr/bin/env php，并不能修改。
 更加详细的对composer说明：http://blog.csdn.net/zzulp/article/details/18981029
 
-__2.composer install__
+__2. composer install__
 
 切换到PHPWebIM项目目录，执行指令composer install，如很慢则
 
@@ -50,7 +50,7 @@ __2.composer install__
 composer install --prefer-dist
 ```
 
-__3.Ningx配置__
+__3. Ningx配置__
 
 > 这里未使用swoole_framework提供的Web AppServer  
 > Apache请参照Nginx配置，自行修改实现
@@ -81,7 +81,7 @@ server
 }
 ```
 
-__4.修改配置PHPWebIM/config.php__
+__4. 修改配置PHPWebIM/config.php__
 
 ```php
 $config['server'] = array(
@@ -103,7 +103,7 @@ $config['server'] = array(
 * webim.data_dir用于修改聊天记录存储的目录，必须有可写权限
 * server.origin为Comet跨域设置，必须修改origin才可以支持IE等不支持WebSocket的浏览器
 
-__5.启动WebSocket服务器__
+__5. 启动WebSocket服务器__
 
 ```shell
 php PHPWebIM/webim_server.php
@@ -114,7 +114,7 @@ IE浏览器不支持WebSocket，需要使用FlashWebSocket模拟，请修改flas
 php PHPWebIM/flash_policy.php
 ```
 
-__6.绑定host与访问聊天窗口（可选）__
+__6. 绑定host与访问聊天窗口（可选）__
 
 如果URL直接使用IP:PORT，这里不需要设置。
 
@@ -128,7 +128,7 @@ vi /etc/hosts
 127.0.0.1 im.swoole.com
 ```
 
-用浏览器打开：http://im.swoole.com
+用浏览器打开：http://im.swoole.com/
 
 快速了解项目架构
 ----
