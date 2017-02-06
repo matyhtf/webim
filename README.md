@@ -1,4 +1,4 @@
-PHPWebIM
+WebIM
 ========
 
 使用PHP+Swoole实现的网页即时聊天工具，在线体验地址：[http://webim.swoole.com/](http://webim.swoole.com/)
