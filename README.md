@@ -6,8 +6,9 @@ WebIM
 * 全异步非阻塞Server，可以同时支持数百万TCP连接在线
 * 基于websocket+flash_websocket支持所有浏览器/客户端/移动端
 * 支持单聊/群聊/组聊等功能
-* 支持永久保存聊天记录
+* 支持永久保存聊天记录，使用MySQL存储
 * 基于Server PUSH的即时内容更新，登录/登出/状态变更/消息等会内容即时更新
+* 用户列表和在线信息使用Redis存储
 * 支持发送连接/图片/语音/视频/文件（开发中）
 * 支持Web端直接管理所有在线用户和群组（开发中）
 
@@ -98,7 +99,8 @@ $config['server'] = array(
 );
 ```
 
-配置`webroot/apps/configs/db.php`中数据库信息，将聊天记录存储到mysql中
+* 配置`webroot/apps/configs/db.php`中数据库信息，将聊天记录存储到MySQL中
+* 配置`webroot/apps/configs/redis.php`中的Redis服务器信息，将用户列表和信息存到Redis中
 
 表结构
 ```sql

@@ -34,8 +34,7 @@
         {
             var settings = {
                 flash_url: "/static/swf/swfupload.swf",
-                //upload_script: '/myphoto/add_photo/',
-                upload_url: "/apps/upload.php",
+                upload_url: "/page/upload/",
                 post_params: {"uid": '0', 'post': 1, 'PHPSESSID': "0"},
                 file_size_limit: "2MB",
                 file_types: "*.jpg;*.png;*.gif",
