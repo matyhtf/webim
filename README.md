@@ -53,12 +53,12 @@ composer install --prefer-dist
 
 __3. Ningx配置__
 
-> 这里未使用swoole_framework提供的Web AppServer  
-> Apache请参照Nginx配置，自行修改实现
+* 这里未使用swoole_framework提供的Web AppServer  
+* Apache请参照Nginx配置，自行修改实现
+* 这里使用了`im.swoole.com`作为域名，需要配置host或者改成你的域名
 
 ```shell
-server
-{
+server {
     listen       80;
     server_name  im.swoole.com;
     index index.html index.php;
@@ -77,30 +77,13 @@ server
 	    fastcgi_index index.php;
 	    include fastcgi.conf;
     }
-    
-    access_log  /data/logs/im.swoole.com.access.log  access;
 }
 ```
 
-__4. 修改配置PHPWebIM/config.php__
+__4. 修改配置__
 
-```php
-$config['server'] = array(
-    //监听的HOST
-    'host' => '0.0.0.0',
-    //监听的端口
-    'port' => '9503',
-    //WebSocket的URL地址，供浏览器使用的
-    'url' => 'ws://im.swoole.com:9503',
-    //用于Comet跨域，必须设置为web页面的URL
-    //比如你的网站静态页面放在 http://im.swoole.com:8888/main.html
-    //这里就是 http://im.swoole.com:8888
-    'origin' => 'http://im.swoole.com:8888',
-);
-```
-
-* 配置`webroot/apps/configs/db.php`中数据库信息，将聊天记录存储到MySQL中
-* 配置`webroot/apps/configs/redis.php`中的Redis服务器信息，将用户列表和信息存到Redis中
+* 配置`configs/db.php`中数据库信息，将聊天记录存储到MySQL中
+* 配置`configs/redis.php`中的Redis服务器信息，将用户列表和信息存到Redis中
 
 表结构
 ```sql
@@ -116,6 +99,22 @@ CREATE TABLE `webim_history` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin
 ```
 
+* 修改`configs/webim.php`中的选项，设置服务器的URL和端口
+```php
+$config['server'] = array(
+    //监听的HOST
+    'host' => '0.0.0.0',
+    //监听的端口
+    'port' => '9503',
+    //WebSocket的URL地址，供浏览器使用的
+    'url' => 'ws://im.swoole.com:9503',
+    //用于Comet跨域，必须设置为web页面的URL
+    //比如你的网站静态页面放在 http://im.swoole.com:8888/main.html
+    //这里就是 http://im.swoole.com:8888
+    'origin' => 'http://im.swoole.com:8888',
+);
+```
+
 * server.host server.port 项为WebIM服务器即WebSocket服务器的IP与端口，其他选择项根据具体情况修改
 * server.url对应的就是服务器IP或域名以及websocket服务的端口，这个就是提供给浏览器的WebSocket地址
 * server.origin为Comet跨域设置，必须修改origin才可以支持IE等不支持WebSocket的浏览器
@@ -123,12 +122,12 @@ CREATE TABLE `webim_history` (
 __5. 启动WebSocket服务器__
 
 ```shell
-php PHPWebIM/webim_server.php
+php webim/webim_server.php
 ```
 
 IE浏览器不支持WebSocket，需要使用FlashWebSocket模拟，请修改flash_policy.php中对应的端口，然后启动flash_policy.php。
 ```shell
-php PHPWebIM/flash_policy.php
+php webim/flash_policy.php
 ```
 
 __6. 绑定host与访问聊天窗口（可选）__
@@ -153,16 +152,13 @@ vi /etc/hosts
 1.目录结构
 
 ```
-+ PHPWebIM
++ webim
   |- webim_server.php //WebSocket协议服务器
-  |- config.php // swoole运行配置
   |+ swoole.ini // WebSocket协议实现配置
+  |+ configs //配置文件目录
   |+ webroot
     |+ static
     |- config.js // WebSocket配置
-    |- index.html // 登录界面
-    |- main.html // 聊天室主界面
-  |+ data // 运行数据
   |+ log // swoole日志及WebIM日志
   |+ src // WebIM 类文件储存目录
     |+ Store
