@@ -48,7 +48,7 @@ HTML;
         /**
          * 使用文件或redis存储聊天信息
          */
-        $this->storage = new Storage($config['webim']['storage']);
+        $this->storage = new Storage($config['storage']);
         $this->origin = $config['server']['origin'];
         parent::__construct($config);
     }
