@@ -8,8 +8,13 @@ class Server extends Swoole\Protocol\CometServer
     /**
      * @var Store\File;
      */
-    protected $store;
+    protected $storage;
     protected $users;
+    /**
+     * 上一次发送消息的时间
+     * @var array
+     */
+    protected $lastSentTime = array();
 
     const MESSAGE_MAX_LEN     = 1024; //单条消息不得超过1K
     const WORKER_HISTORY_ID   = 0;
@@ -22,7 +27,7 @@ var webim = {
     'server' : '{$config['server']['url']}'
 }
 HTML;
-        file_put_contents(WEBPATH . '/client/config.js', $config_js);
+        file_put_contents(WEBPATH . '/config.js', $config_js);
 
         //检测日志目录是否存在
         $log_dir = dirname($config['webim']['log_file']);
@@ -36,21 +41,16 @@ HTML;
         }
         else
         {
-            $logger = new Swoole\Log\EchoLog;
+            $logger = new Swoole\Log\EchoLog(true);
         }
         $this->setLogger($logger);   //Logger
 
         /**
          * 使用文件或redis存储聊天信息
          */
-        $this->setStore(new \WebIM\Store\File($config['webim']['data_dir']));
+        $this->storage = new Storage($config['webim']['storage']);
         $this->origin = $config['server']['origin'];
         parent::__construct($config);
-    }
-
-    function setStore($store)
-    {
-        $this->store = $store;
     }
 
     /**
@@ -58,7 +58,7 @@ HTML;
      */
     function onExit($client_id)
     {
-        $userInfo = $this->store->getUser($client_id);
+        $userInfo = $this->storage->getUser($client_id);
         if ($userInfo)
         {
             $resMsg = array(
@@ -68,7 +68,8 @@ HTML;
                 'channal' => 0,
                 'data' => $userInfo['name'] . "下线了",
             );
-            $this->store->logout($client_id);
+            $this->storage->logout($client_id);
+            unset($this->users[$client_id]);
             //将下线消息发送给所有人
             $this->broadcastJson($client_id, $resMsg);
         }
@@ -83,7 +84,7 @@ HTML;
             switch($req['cmd'])
             {
                 case 'getHistory':
-                    $history = array('cmd'=> 'getHistory', 'history' => $this->store->getHistory());
+                    $history = array('cmd'=> 'getHistory', 'history' => $this->storage->getHistory());
                     if ($this->isCometClient($req['fd']))
                     {
                         return $req['fd'].json_encode($history);
@@ -99,7 +100,7 @@ HTML;
                     {
                         $req['msg'] = '';
                     }
-                    $this->store->addHistory($req['fd'], $req['msg']);
+                    $this->storage->addHistory($req['fd'], $req['msg']);
                     break;
                 default:
                     break;
@@ -120,8 +121,8 @@ HTML;
         $resMsg = array(
             'cmd' => 'getOnline',
         );
-        $users = $this->store->getOnlineUsers();
-        $info = $this->store->getUsers(array_slice($users, 0, 100));
+        $users = $this->storage->getOnlineUsers();
+        $info = $this->storage->getUsers(array_slice($users, 0, 100));
         $resMsg['users'] = $users;
         $resMsg['list'] = $info;
         $this->sendJson($client_id, $resMsg);
@@ -146,21 +147,21 @@ HTML;
      */
     function cmd_login($client_id, $msg)
     {
-        $info['name'] = Filter::escape($msg['name']);
+        $info['name'] = Filter::escape(strip_tags($msg['name']));
         $info['avatar'] = Filter::escape($msg['avatar']);
 
         //回复给登录用户
         $resMsg = array(
             'cmd' => 'login',
             'fd' => $client_id,
-            'name' => $msg['name'],
-            'avatar' => $msg['avatar'],
+            'name' => $info['name'],
+            'avatar' => $info['avatar'],
         );
 
         //把会话存起来
         $this->users[$client_id] = $resMsg;
 
-        $this->store->login($client_id, $resMsg);
+        $this->storage->login($client_id, $resMsg);
         $this->sendJson($client_id, $resMsg);
 
         //广播给其它在线用户
@@ -172,7 +173,7 @@ HTML;
             'cmd' => 'fromMsg',
             'from' => 0,
             'channal' => 0,
-            'data' => $msg['name'] . "上线了",
+            'data' => $info['name'] . "上线了",
         );
         $this->broadcastJson($client_id, $loginMsg);
     }
@@ -190,6 +191,16 @@ HTML;
             $this->sendErrorMessage($client_id, 102, 'message max length is '.self::MESSAGE_MAX_LEN);
             return;
         }
+
+        $now = time();
+        //上一次发送的时间超过了允许的值，每N秒可以发送一次
+        if ($this->lastSentTime[$client_id] > $now - $this->config['webim']['send_interval_limit'])
+        {
+            $this->sendErrorMessage($client_id, 104, 'over frequency limit');
+            return;
+        }
+        //记录本次消息发送的时间
+        $this->lastSentTime[$client_id] = $now;
 
         //表示群发
         if ($msg['channal'] == 0)

@@ -2,4 +2,7 @@
 /.idea/
 *.lock
 *.log
+/log/
 /client/uploads/
+/framework
+/webroot/uploads/

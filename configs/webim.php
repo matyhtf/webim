@@ -11,7 +11,7 @@ $config['server'] = array(
 );
 
 $config['swoole'] = array(
-    'log_file'        => __DIR__ . '/log/swoole.log',
+    'log_file'        => ROOT_PATH . '/log/swoole.log',
     'worker_num'      => 1,
     //不要修改这里
     'max_request'     => 0,
@@ -22,8 +22,12 @@ $config['swoole'] = array(
 
 $config['webim'] = array(
     //聊天记录存储的目录
-    'data_dir' => __DIR__ . '/data/',
-    'log_file' => __DIR__ . '/log/webim.log',
+    'log_file' => ROOT_PATH . '/log/webim.log',
+    'send_interval_limit' => 2, //只允许1秒发送一次
+);
+
+$config['storage'] = array(
+    'history_num' => 100,
 );
 
 return $config;

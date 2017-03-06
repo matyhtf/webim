@@ -16,6 +16,17 @@
     <script type="text/javascript" src="/static/js/swfupload.queue.js"></script>
     <script type="text/javascript" src="/static/js/fileprogress.js"></script>
     <script type="text/javascript" src="/static/js/handlers.js"></script>
+    <script type="text/javascript" src="http://www.swoole.com/static/js/facebox.js"></script>
+    <script type="text/javascript">
+        $.facebox.settings.closeImage = 'http://www.swoole.com/static//images/closelabel.png';
+        $.facebox.settings.loadingImage = 'http://www.swoole.com/static/images/loading.gif';
+        $(document).ready(function($){
+            $('a[rel=facebox]').facebox();
+        });
+        var user = <?=json_encode($user)?>;
+        var debug = <?=$debug?>;
+    </script>
+    <link type="text/css" rel="stylesheet" href="http://www.swoole.com/static/css/facebox.css"/>
 
     <script type="text/javascript">
         var swfu;
@@ -23,8 +34,7 @@
         {
             var settings = {
                 flash_url: "/static/swf/swfupload.swf",
-                //upload_script: '/myphoto/add_photo/',
-                upload_url: "/apps/upload.php",
+                upload_url: "/page/upload/",
                 post_params: {"uid": '0', 'post': 1, 'PHPSESSID': "0"},
                 file_size_limit: "2MB",
                 file_types: "*.jpg;*.png;*.gif",
@@ -76,7 +86,7 @@
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container-fluid">
-            <a class="brand" href="/">Swoole Chatting--技术测试项目</a>
+            <a class="brand" href="/">Swoole WebIM (WebSocket+Comet长连接聊天室)</a>
 
             <div class="nav-collapse">
                 <!--             <ul class="nav">

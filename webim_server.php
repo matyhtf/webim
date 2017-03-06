@@ -1,31 +1,41 @@
 <?php
 define('DEBUG', 'on');
-define('WEBPATH', __DIR__);
+define('WEBPATH', __DIR__.'/webroot');
+define('ROOT_PATH', __DIR__);
 
 /**
  * /vendor/autoload.php是Composer工具生成的
  * shell: composer update
  */
 require __DIR__.'/vendor/autoload.php';
-
 /**
  * Swoole框架自动载入器初始化
  */
-Swoole\Loader::vendor_init();
+Swoole\Loader::vendorInit();
 
 /**
  * 注册命名空间到自动载入器中
  */
 Swoole\Loader::addNameSpace('WebIM', __DIR__.'/src/');
+Swoole::getInstance()->config->setPath(__DIR__.'/configs');
 
-$config = require __DIR__.'/config.php';
-
-$webim = new WebIM\Server($config);
-$webim->loadSetting(__DIR__."/swoole.ini"); //加载配置文件
+//设置PID文件的存储路径
+Swoole\Network\Server::setPidFile(__DIR__ . '/log/webim_server.pid');
 
 /**
- * webim必须使用swoole扩展
+ * 显示Usage界面
+ * php app_server.php start|stop|reload
  */
-$server = new Swoole\Network\Server($config['server']['host'], $config['server']['port']);
-$server->setProtocol($webim);
-$server->run($config['swoole']);
+Swoole\Network\Server::start(function ()
+{
+    $config = Swoole::getInstance()->config['webim'];
+    $webim = new WebIM\Server($config);
+    $webim->loadSetting(__DIR__ . "/swoole.ini"); //加载配置文件
+
+    /**
+     * webim必须使用swoole扩展
+     */
+    $server = new Swoole\Network\Server($config['server']['host'], $config['server']['port']);
+    $server->setProtocol($webim);
+    $server->run($config['swoole']);
+});
