@@ -194,7 +194,7 @@ HTML;
 
         $now = time();
         //上一次发送的时间超过了允许的值，每N秒可以发送一次
-        if ($this->lastSentTime[$client_id] > $now - $this->config['webim']['send_interval_limit'])
+        if (isset($this->lastSentTime[$client_id]) && $this->lastSentTime[$client_id] > $now - $this->config['webim']['send_interval_limit'])
         {
             $this->sendErrorMessage($client_id, 104, 'over frequency limit');
             return;
