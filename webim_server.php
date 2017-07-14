@@ -36,6 +36,7 @@ Swoole\Network\Server::start(function ()
      * webim必须使用swoole扩展
      */
     $server = new Swoole\Network\Server($config['server']['host'], $config['server']['port']);
+    $server->setProcessName('webim-server');
     $server->setProtocol($webim);
     $server->run($config['swoole']);
 });

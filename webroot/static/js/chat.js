@@ -2,6 +2,7 @@ var ws = {};
 var client_id = 0;
 var userlist = {};
 var GET = getRequest();
+var face_count = 19;
 
 $(document).ready(function () {
     //使用原生WebSocket
@@ -257,11 +258,12 @@ function xssFilter(val) {
 }
 
 function parseXss(val) {
-    val = val.replace(/#(\d*)/g, '<img src="/static/img/face/$1.gif" />');
+    for (var i = 1; i < 20; i++) {
+        val = val.replace('#' + i + '#', '<img src="/static/img/face/' + i + '.gif" />');
+    }
     val = val.replace('&amp;', '&');
     return val;
 }
-
 
 function GetDateT(time_stamp) {
     var d;
@@ -378,13 +380,11 @@ $(document).ready(function () {
     })
 })(jQuery);
 
-
 function selectFace(id) {
     var img = '<img src="/static/img/face/' + id + '.gif" />';
-    $("#msg_content").insertAtCaret("#" + id);
+    $("#msg_content").insertAtCaret('#' + id + '#');
     closeChatFace();
 }
-
 
 function showChatFace() {
     $("#chat_face").attr("class", "chat_face chat_face_hover");
