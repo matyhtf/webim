@@ -1,1 +1,0 @@
-此目录为静态文件，可以用nginx/apache作为webserver。也可以用swoole应用服务器来跑。

@@ -1,4 +1,3 @@
-<!doctype html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -23,6 +22,9 @@
         $(document).ready(function($){
             $('a[rel=facebox]').facebox();
         });
+        var webim = {
+            'server' : 'ws://<?=$config['server']['host']?>:<?=$config['server']['port']?>/websocket'
+        };
         var user = <?=json_encode($user)?>;
         var debug = <?=$debug?>;
     </script>
