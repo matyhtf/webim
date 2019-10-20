@@ -122,6 +122,32 @@ class Server
                     $resp->status(404);
                 }
             });
+            
+            $server->handle('/upload', function ($req, $resp) {
+                if (! empty($req->files['photo'])) {
+                    $app = SPF\App::getInstance();
+                    $app->upload->thumb_width = 136;
+                    $app->upload->thumb_height = 136;
+                    $app->upload->thumb_qulitity = 100;
+                    $_FILES['photo'] = $req->files['photo'];
+                    $up_pic = $app->upload->save('photo');
+                    if (empty($up_pic)) {
+                        $resp->end(json_encode([
+                            'msg' => '上传失败，请重新上传！ Error:' . $app->upload->error_msg,
+                            'data' => [],
+                            'code' => $app->upload->error_code,
+                        ]));
+                    } else {
+                        $resp->end(json_encode([
+                            'data' => $up_pic,
+                            'code' => 0,
+                            'msg' => '',
+                        ]));
+                    }
+                } else {
+                    $resp->status(403);
+                }
+            });
 
             $server->handle('/favicon.ico', function ($req, $resp) {
                 $resp->status(404);

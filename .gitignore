@@ -4,8 +4,5 @@
 /.settings
 .buildpath
 *.lock
-*.log
-/log/
-/client/uploads/
-/framework
-/webroot/uploads/
+/logs
+/resources/static/uploads/
