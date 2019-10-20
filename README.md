@@ -12,33 +12,27 @@ WebIM
 * 支持发送链接/图片/语音/视频/文件（开发中）
 * 支持`Web`端直接管理所有在线用户和群组（开发中）
 
-安装
+依赖
 ----
-swoole扩展
+需要`Swoole-4.4.7`或更高版本
 ```shell
 pecl install swoole
-```
-
-swoole框架
-```shell
-composer install
 ```
 
 部署说明
 ----
 
-### composer install
-
-切换到PHPWebIM项目目录，执行指令composer install，如很慢则
+### 安装依赖的 Composer 包
 
 ```shell
-composer install --prefer-dist
+composer install
 ```
 
 ### 修改配置
 
-* 配置`configs/db.php`中数据库信息，聊天记录会存储到`MySQL`中
 * 配置`configs/redis.php`中的`Redis`服务器信息，用户列表和信息会存到`Redis`中
+* 配置`configs/db.php`中数据库信息，聊天记录会存储到`MySQL`中
+* 导入`MySQL`表接口到对应的数据库中
 
 表结构
 ```sql
@@ -61,7 +55,7 @@ $config['server'] = array(
     'host' => '0.0.0.0',
     //监听的端口
     'port' => '9503',
-    //配置域名
+    //配置域名 [可选]
     'name' => 'im.swoole.com',
 );
 ```
@@ -77,22 +71,12 @@ $config['server'] = array(
 php server.php
 ```
 
+### 配置域名解析或者本地 Host [可选]
 
-### 配置域名解析或者本地 Host（可选）__
+* 直接使用`IP:PORT`，这里不需要设置。直接打开 `http://IP:PORT/` 即可
+* 外网域名需要配置`DNS`解析
+* 本机域名需要修改`/etc/hosts`，增加`127.0.0.1 im.swoole.com`本机域名绑定
 
-如果直接使用`IP:PORT`，这里不需要设置。直接打开 `http://IP:PORT/` 即可
+配置成功后，可以使用浏览器打开，如：`http://im.swoole.com:9503/`
 
-```shell
-vi /etc/hosts
-```
-
-增加
-
-```shell
-127.0.0.1 im.swoole.com
-```
-
-* 用浏览器打开：http://im.swoole.com:9503/
-
-
-
+> 以上仅为示例，实际项目需要修改为对应的域名
