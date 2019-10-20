@@ -1,5 +1,8 @@
 /vendor/
 /.idea/
+/.project
+/.settings
+.buildpath
 *.lock
 *.log
 /log/

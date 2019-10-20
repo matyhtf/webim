@@ -1,6 +1,7 @@
 {
     "require": {
         "matyhtf/framework": ">=3.0.0",
-        "symfony/console": "^4.3"
+        "symfony/console": "^4.3",
+        "swoole/ide-helper": "~4.4.7"
     }
 }

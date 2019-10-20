@@ -8,7 +8,6 @@
     <script src="/static/js/jquery.js"></script>
     <script src="/static/js/jquery.json.js"></script>
     <script src="/static/js/console.js"></script>
-    <script src="/config.js" charset="utf-8"></script>
     <script src="/static/js/comet.js" charset="utf-8"></script>
     <script src="/static/js/chat.js" charset="utf-8"></script>
     <script type="text/javascript" src="/static/js/swfupload.js"></script>
@@ -23,7 +22,8 @@
             $('a[rel=facebox]').facebox();
         });
         var webim = {
-            'server' : 'ws://<?=$config['server']['host']?>:<?=$config['server']['port']?>/websocket'
+            'server' : 'ws://<?=$config['server']['host']?>:<?=$config['server']['port']?>/websocket',
+            'debug' : true
         };
         var user = <?=json_encode($user)?>;
         var debug = <?=$debug?>;

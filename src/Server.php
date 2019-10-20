@@ -77,6 +77,9 @@ class Server
         \Co\Run(function () {
             $this->redis = new RedisPool(SPF\App::getInstance()->config['redis']['master']);
             $this->db = new MySQLPool(SPF\App::getInstance()->config['db']['master']);
+            //清理在线列表
+            $this->redis->delete(self::PREFIX.':online');
+
             $config = $this->config;
             $server = new Swoole\Coroutine\Http\Server($config['server']['host'], $config['server']['port']);
             $server->handle('/', function ($req, $resp) use ($config) {
@@ -116,22 +119,54 @@ class Server
             });
             
             $server->handle('/websocket', function ($req, $ws) {
-                $ws->upgrade();
-                $this->join($ws);
-                while (true) {
-                    $frame = $ws->recv();
-                    if ($frame === false) {
-                        echo "error : " . swoole_last_error() . "\n";
-                        break;
-                    } else if ($frame == '') {
-                        break;
+                $session_id = $req->cookie['session_key'];
+                $this->log("SESSOIN[$session_id], URL={$req->server['request_uri']}");
+                //comet 连接
+                if ($req->server['request_uri'] == '/websocket/connect') {
+                    $ws->end(json_encode([
+                        'success' => true,
+                    ]));
+                    $this->join($session_id, new Swoole\Coroutine\Channel(100));
+                }
+                //comet 推送
+                elseif ($req->server['request_uri'] == '/websocket/pub') {
+                    $ws->end(json_encode([
+                        'success' => true,
+                    ]));
+                    $this->onMessage($session_id, $req->post['message']);
+                }
+                //comet 接收
+                elseif ($req->server['request_uri'] == '/websocket/sub') {
+                    $chan = $this->connections[$session_id];
+                    $msg = $chan->pop($req->get['time']);
+                    if ($msg) {
+                        $ws->end(json_encode([
+                            'success' => true,
+                            'data' => $msg,
+                        ]));
                     } else {
-                        $this->onMessage($ws, $frame);
-                        //$ws->push("Hello {$frame->data}!");
-                        //$ws->push("How are you, {$frame->data}?");
+                        $ws->end(json_encode([
+                            'success' => false,
+                        ]));
                     }
                 }
-                $this->onExit($ws->fd);
+                //websocket 连接
+                else {
+                    $ws->upgrade();
+                    $this->join($session_id, $ws);
+                    while (true) {
+                        $frame = $ws->recv();
+                        if ($frame === false) {
+                            $this->log("websocket[{$session_id}] error : " . swoole_last_error());
+                            break;
+                        } else if ($frame == '') {
+                            break;
+                        } else {
+                            $this->onMessage($session_id, $frame->data);
+                        }
+                    }
+                    $this->onExit($session_id);
+                }
             });
 
             $server->start();
@@ -141,24 +176,23 @@ class Server
     /**
      * 接收到消息时
      */
-    function onMessage($ws, $frame)
+    function onMessage($session_id, $data)
     {
-        $client_id = $ws->fd;
-        $this->log("onMessage #$client_id: " . $frame->data);
-        $msg = json_decode($frame->data, true);
+        $this->log("onMessage #$session_id: " . $data);
+        $msg = json_decode($data, true);
         if (empty($msg['cmd']))
         {
-            $this->sendErrorMessage($client_id, 101, "invalid command");
+            $this->sendErrorMessage($session_id, 101, "invalid command");
             return;
         }
         $func = 'cmd_'.$msg['cmd'];
         if (method_exists($this, $func))
         {
-            $this->$func($client_id, $msg);
+            $this->$func($session_id, $msg);
         }
         else
         {
-            $this->sendErrorMessage($client_id, 102, "command $func no support.");
+            $this->sendErrorMessage($session_id, 102, "command $func no support.");
             return;
         }
     }
@@ -166,29 +200,25 @@ class Server
     /**
      * 下线时，通知所有人
      */
-    function onExit($client_id)
+    function onExit($session_id)
     {
-        $userInfo = $this->getUser($client_id);
+        $userInfo = $this->getUser($session_id);
         if ($userInfo)
         {
             $resMsg = array(
                 'cmd' => 'offline',
-                'fd' => $client_id,
+                'fd' => $session_id,
                 'from' => 0,
                 'channal' => 0,
                 'data' => $userInfo['name'] . "下线了",
             );
-            $this->logout($client_id);
-            unset($this->users[$client_id]);
+            $this->logout($session_id);
+            unset($this->users[$session_id]);
             //将下线消息发送给所有人
-            $this->broadcastJson($client_id, $resMsg);
+            $this->broadcastJson($session_id, $resMsg);
         }
-        unset($this->connections[$client_id]);
-        $this->log("onOffline: " . $client_id);
-    }
-
-    function isCometClient($fd) {
-        return false;
+        unset($this->connections[$session_id]);
+        $this->log("onOffline: " . $session_id);
     }
 
     function onTask($req)
@@ -199,15 +229,7 @@ class Server
             {
                 case 'getHistory':
                     $history = array('cmd'=> 'getHistory', 'history' => $this->getHistory());
-                    if ($this->isCometClient($req['fd']))
-                    {
-                        return $req['fd'].json_encode($history);
-                    }
-                    //WebSocket客户端可以task中直接发送
-                    else
-                    {
-                        $this->sendJson(intval($req['fd']), $history);
-                    }
+                    $this->sendJson($req['fd'], $history);
                     break;
                 case 'addHistory':
                     if (empty($req['msg']))
@@ -222,15 +244,10 @@ class Server
         }
     }
 
-    function onFinish($serv, $task_id, $data)
-    {
-        $this->send(substr($data, 0, 32), substr($data, 32));
-    }
-
     /**
      * 获取在线列表
      */
-    function cmd_getOnline($client_id, $msg)
+    function cmd_getOnline($session_id, $msg)
     {
         $resMsg = array(
             'cmd' => 'getOnline',
@@ -239,15 +256,15 @@ class Server
         $info = $this->getUsers(array_slice($users, 0, 100));
         $resMsg['users'] = $users;
         $resMsg['list'] = $info;
-        $this->sendJson($client_id, $resMsg);
+        $this->sendJson($session_id, $resMsg);
     }
 
     /**
      * 获取历史聊天记录
      */
-    function cmd_getHistory($client_id, $msg)
+    function cmd_getHistory($session_id, $msg)
     {
-        $task['fd'] = $client_id;
+        $task['fd'] = $session_id;
         $task['cmd'] = 'getHistory';
         $task['offset'] = '0,100';
         $this->onTask($task);
@@ -255,10 +272,10 @@ class Server
 
     /**
      * 登录
-     * @param $client_id
+     * @param $session_id
      * @param $msg
      */
-    function cmd_login($client_id, $msg)
+    function cmd_login($session_id, $msg)
     {
         $info['name'] = Filter::escape(strip_tags($msg['name']));
         $info['avatar'] = Filter::escape($msg['avatar']);
@@ -266,21 +283,19 @@ class Server
         //回复给登录用户
         $resMsg = array(
             'cmd' => 'login',
-            'fd' => $client_id,
+            'fd' => $session_id,
             'name' => $info['name'],
             'avatar' => $info['avatar'],
         );
 
         //把会话存起来
-        $this->users[$client_id] = $resMsg;
-
-        $this->login($client_id, $resMsg);
-        $this->sendJson($client_id, $resMsg);
+        $this->login($session_id, $resMsg);
+        $this->sendJson($session_id, $resMsg);
 
         //广播给其它在线用户
         $resMsg['cmd'] = 'newUser';
         //将上线消息发送给所有人
-        $this->broadcastJson($client_id, $resMsg);
+        $this->broadcastJson($session_id, $resMsg);
         //用户登录消息
         $loginMsg = array(
             'cmd' => 'fromMsg',
@@ -288,120 +303,122 @@ class Server
             'channal' => 0,
             'data' => $info['name'] . "上线了",
         );
-        $this->broadcastJson($client_id, $loginMsg);
+        $this->broadcastJson($session_id, $loginMsg);
     }
 
     /**
      * 发送信息请求
      */
-    function cmd_message($client_id, $msg)
+    function cmd_message($session_id, $msg)
     {
         $resMsg = $msg;
         $resMsg['cmd'] = 'fromMsg';
 
         if (strlen($msg['data']) > self::MESSAGE_MAX_LEN)
         {
-            $this->sendErrorMessage($client_id, 102, 'message max length is '.self::MESSAGE_MAX_LEN);
+            $this->sendErrorMessage($session_id, 102, 'message max length is '.self::MESSAGE_MAX_LEN);
             return;
         }
 
         $now = time();
         //上一次发送的时间超过了允许的值，每N秒可以发送一次
-        if (isset($this->lastSentTime[$client_id]) and 
-            $this->lastSentTime[$client_id] > $now - $this->config['webim']['send_interval_limit'])
+        if (isset($this->lastSentTime[$session_id]) and 
+            $this->lastSentTime[$session_id] > $now - $this->config['webim']['send_interval_limit'])
         {
-            $this->sendErrorMessage($client_id, 104, 'over frequency limit');
+            $this->sendErrorMessage($session_id, 104, 'over frequency limit');
             return;
         }
         //记录本次消息发送的时间
-        $this->lastSentTime[$client_id] = $now;
+        $this->lastSentTime[$session_id] = $now;
 
         //表示群发
         if ($msg['channal'] == 0)
         {
-            $this->broadcastJson($client_id, $resMsg);
+            $this->broadcastJson($session_id, $resMsg);
             $this->onTask(array(
                 'cmd' => 'addHistory',
                 'msg' => $msg,
-                'fd'  => $client_id,
+                'fd'  => $session_id,
             ));
         }
         //表示私聊
         elseif ($msg['channal'] == 1)
         {
             $this->sendJson($msg['to'], $resMsg);
-            //$this->store->addHistory($client_id, $msg['data']);
+            //$this->store->addHistory($session_id, $msg['data']);
         }
     }
 
     /**
      * 发送错误信息
-    * @param $client_id
+    * @param $session_id
     * @param $code
     * @param $msg
      */
-    function sendErrorMessage($client_id, $code, $msg)
+    function sendErrorMessage($session_id, $code, $msg)
     {
-        $this->sendJson($client_id, array('cmd' => 'error', 'code' => $code, 'msg' => $msg));
+        $this->sendJson($session_id, array('cmd' => 'error', 'code' => $code, 'msg' => $msg));
     }
 
     /**
      * 发送JSON数据
-     * @param $client_id
+     * @param $session_id
      * @param $array
      */
-    function sendJson($client_id, $array)
+    function sendJson($session_id, $array)
     {
         $msg = json_encode($array);
-        if ($this->send($client_id, $msg) === false)
+        if ($this->send($session_id, $msg) === false)
         {
-            $this->close($client_id);
+            $this->close($session_id);
         }
     }
 
     /**
      * 广播JSON数据
-     * @param $client_id
+     * @param $session_id
      * @param $array
      */
-    function broadcastJson($sesion_id, $array)
+    function broadcastJson($session_id, $array)
     {
         $msg = json_encode($array);
-        $this->broadcast($sesion_id, $msg);
+        $this->broadcast($session_id, $msg);
     }
 
-    function join($ws)
+    function join($session_id, $ws)
     {
-        $this->connections[$ws->fd] = $ws;
+        $this->connections[$session_id] = $ws;
     }
 
-    function send($fd, $data)
+    function send($session_id, $data)
     {
-        $ws = $this->connections[$fd];
+        if ($session_id === 0) {
+            throw  new \ErrorException("xxx");
+        }
+        $ws = $this->connections[$session_id];
         $ws->push($data);
     }
 
     function broadcast($current_session_id, $msg)
     {
-        foreach ($this->users as $client_id => $name)
-        {
-            if ($current_session_id != $client_id)
-            {
-                $this->send($client_id, $msg);
+        foreach ($this->users as $session_id => $name) {
+            if ($current_session_id != $session_id) {
+                $this->send($session_id, $msg);
             }
         }
     }
 
-    function login($client_id, $info)
+    function login($session_id, $info)
     {
-        $this->redis->set(self::PREFIX . ':client:' . $client_id, json_encode($info));
-        $this->redis->sAdd(self::PREFIX . ':online', $client_id);
+        $this->redis->set(self::PREFIX . ':client:' . $session_id, json_encode($info));
+        $this->redis->sAdd(self::PREFIX . ':online', $session_id);
+        $this->users[$session_id] = $resMsg;
     }
 
-    function logout($client_id)
+    function logout($session_id)
     {
-        $this->redis->del(self::PREFIX.':client:'.$client_id);
-        $this->redis->sRemove(self::PREFIX.':online', $client_id);
+        $this->redis->del(self::PREFIX.':client:'.$session_id);
+        $this->redis->sRemove(self::PREFIX.':online', $session_id);
     }
 
     /**
