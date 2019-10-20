@@ -99,6 +99,15 @@ class Server
                     ob_start();
                     $debug = true;
                     $user = $session['user'];
+                    if (empty($config['server']['name'])) {
+                        $config['server']['name'] = $config['server']['host'];
+                    }
+                    //80和443 端口不需要填写
+                    if ($config['server']['port'] == 80 or $config['server']['name'] == 443) {
+                        $url = "ws://{$config['server']['name']}/websocket";
+                    } else {
+                        $url = "ws://{$config['server']['name']}:{$config['server']['port']}/websocket";
+                    }
                     include dirname(__DIR__).'/resources/templates/chatroom.php';
                     $html = ob_get_clean();
                     $resp->end($html);

@@ -1,10 +1,9 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Swoole网页即时聊天</title>
+    <title>Swoole-WebIM</title>
     <link href="/static/css/bootstrap.css" rel="stylesheet">
     <link href="/static/css/chat.css" rel="stylesheet">
-
     <script src="/static/js/jquery.js"></script>
     <script src="/static/js/jquery.json.js"></script>
     <script src="/static/js/console.js"></script>
@@ -22,7 +21,7 @@
             $('a[rel=facebox]').facebox();
         });
         var webim = {
-            'server' : 'ws://<?=$config['server']['host']?>:<?=$config['server']['port']?>/websocket',
+            'server' : '<?=$url?>',
             'debug' : true
         };
         var user = <?=json_encode($user)?>;
