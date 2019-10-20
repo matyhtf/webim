@@ -34,9 +34,10 @@ $().ready(function(){
             url:'/upload',
             type:'post',
             data: formData,
+            dataType: "json",
             contentType: false,
             processData: false,
-            success:function(res){
+            success: function(res){
                 console.log(res);
                 sendMsg(res.data, 'image');
             }

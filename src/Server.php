@@ -139,7 +139,7 @@ class Server
                         ]));
                     } else {
                         $resp->end(json_encode([
-                            'data' => $up_pic,
+                            'data' => json_encode($up_pic),
                             'code' => 0,
                             'msg' => '',
                         ]));
