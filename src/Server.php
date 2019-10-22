@@ -516,7 +516,7 @@ class Server
         $log['time'] = time();
         $log['type'] = empty($msg['type']) ? '' : $msg['type'];
 
-        $_msg = $this->db->escape(json_encode($msg));
+        $_msg = Filter::escape(json_encode($msg));
         $_type = empty($msg['type']) ? '' : $msg['type'];
 
         $sql = "insert into ".self::PREFIX."_history(
