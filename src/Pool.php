@@ -14,7 +14,7 @@ class Pool
     /**
      * @param int $size 连接池的尺寸
      */
-    function __construct($config, $size = 100)
+    function __construct($config, $size = 10)
     {
         $this->pool = new Swoole\Coroutine\Channel($size);
         $this->config = $config;

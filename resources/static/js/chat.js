@@ -3,7 +3,6 @@ var client_id = 0;
 var userlist = {};
 var GET = getRequest();
 var face_count = 19;
-
 $(document).ready(function() {
 	//使用原生WebSocket
 	//if (false)

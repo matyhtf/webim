@@ -50,6 +50,11 @@ class Server
         //已登录
         if (!empty($session['isLogin'])) {
             goto _success;
+        } else {
+            $session['isLogin'] = true;
+            $session['user'] = ['name' => $session_key, 'nickname' => $session_key, 'avatar' => '/static/img/face/15.gif'];
+            $redis->set($redis_key, serialize($session));
+            goto _success;
         }
 
         if (empty($req->get['token'])) {
@@ -89,6 +94,19 @@ class Server
                 } else {
                     $resp->redirect('/chatroom');
                 }
+            });
+            // 登录
+            $server->handle('/page/login', function ($req, $resp) use ($config) {
+                $return_token = $req->get['return_token'];
+                $refer = $req->get['refer'];
+                $token = md5(time());
+                $resp->redirect($refer . '?token=' . $token);
+            });
+
+            // 获取用户信息
+            $server->handle('/api/get_user_info', function ($req, $resp) use ($config) {
+                $token = $req->get['token'];
+                $resp->end(json_encode(['name' => $token, 'avatar' => '/static/img/face/15.gif']));
             });
 
             $server->handle('/chatroom', function ($req, $resp) use ($config) {
@@ -447,7 +465,7 @@ class Server
     {
         $this->redis->set(self::PREFIX . ':client:' . $session_id, json_encode($info));
         $this->redis->sAdd(self::PREFIX . ':online', $session_id);
-        $this->users[$session_id] = $resMsg;
+        $this->users[$session_id] = $info;
     }
 
     function logout($session_id)
@@ -516,7 +534,7 @@ class Server
         $log['time'] = time();
         $log['type'] = empty($msg['type']) ? '' : $msg['type'];
 
-        $_msg = $this->db->escape(json_encode($msg));
+        $_msg = Filter::escape(json_encode($msg));
         $_type = empty($msg['type']) ? '' : $msg['type'];
 
         $sql = "insert into ".self::PREFIX."_history(
